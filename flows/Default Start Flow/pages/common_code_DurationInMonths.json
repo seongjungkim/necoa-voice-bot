@@ -1,0 +1,32 @@
+{
+  "name": "8a1e695b-c0a6-43d2-a5ab-ab713db98913",
+  "displayName": "common_code_DurationInMonths",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "common_code_DurationInMonths",
+    "tag": "common code"
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "set global variable",
+    "name": "b7ed2eb5-230a-4eae-9e4d-f439804b1342"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "set global variable",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "common_code_DurationInMonths",
+        "value": {
+        
+        }
+      } ]
+    },
+    "name": "45edadfa-a0e4-42cc-8479-5d2589b765fc"
+  } ]
+}

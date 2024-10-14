@@ -1,0 +1,203 @@
+{
+  "name": "2efcc18e-7a85-45e5-b7f7-c17092e45373",
+  "displayName": "\u003e confirm special character",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect specific path",
+    "name": "59efad2f-f8ac-4782-a858-027bfcdfb393"
+  }, {
+    "intent": "components_email_collection_confirmation_no",
+    "condition": "$session.params.user_provided_local_part != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_local_part",
+        "value": "$session.params.user_provided_local_part"
+      }, {
+        "parameter": "user_provided_local_part",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e confirm local part",
+    "name": "bb45c07b-8cb5-4ddd-9abd-e02095aeca8b"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Let's start by capturing your local part of email. " ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect local part",
+    "name": "493a8880-0580-4637-92fa-3c84fb3c2b2c"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "d3b052e0-1e69-40f8-813d-9e46deefa8c8"
+  }, {
+    "intent": "components_email_collection_confirmation_no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect local part",
+    "name": "4bd0d3f7-473d-42b5-a9e6-ad44098ec38b"
+  }, {
+    "intent": "components_email_collection_special_characters_decider",
+    "condition": "$session.params.collect_email != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.collect_email",
+        "value": "$sys.func.IDENTITY($session.params.collect_email)"
+      }, {
+        "parameter": "$flow.email_separator",
+        "value": "$sys.func.IF(\"$session.params.spelling_separator.original = null\", null, $session.params.spelling_separator.original)"
+      }, {
+        "parameter": "$flow.spelling_separator",
+        "value": "$sys.func.IF(\"$session.params.spelling_separator = null\", null, $session.params.spelling_separator)"
+      } ]
+    },
+    "targetPage": "\u003e collect specific path",
+    "name": "d33cc800-ec79-4088-9c1e-913bb1e94b3f"
+  }, {
+    "intent": "components_email_collection_special_characters_decider",
+    "condition": "$session.params.spelling_separator != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.email_separator",
+        "value": "$sys.func.IF(\"$session.params.spelling_separator.original = null\", null, $session.params.spelling_separator.original)"
+      }, {
+        "parameter": "$flow.spelling_separator",
+        "value": "$session.params.spelling_separator"
+      } ]
+    },
+    "targetPage": "\u003e collect specific path",
+    "name": "ea17d0d2-256f-4d99-be22-925b4f98e6a8"
+  }, {
+    "intent": "components_email_collection_confirmation_no",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect local part",
+    "name": "26d9d203-9be6-4c96-a5c4-fa544892e1c9"
+  }, {
+    "intent": "components_email_collection_special_characters_decider",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Could you please help us confirm whether you have any hyphens, dot, underscore, or plus sign in your email?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "00fa193c-9d1d-4466-b7f2-b11aec158c18"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "a96609c0-5907-4877-b614-d9a0689d986d"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "ffbf93ba-ce3c-4755-b814-7e2033e019a8"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren't able to hear you. Could you please help us confirm whether you have any hyphens, dot, underscore or plus sign in your email?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "4e3bf605-decf-4e67-8be8-d2d4f305690c"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b4088e19-4f44-44db-bd44-cd93542eabeb"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "8aefd92f-014d-421e-b394-b43dd2244a30"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Could you please help us confirm whether you have any hyphens, dot, underscore or plus sign in your email?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "ffa7b818-c97e-4584-bd8f-7323dca264ad"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. Please make sure you're confirming whether you have any hyphens, dot, underscore or plus sign in your email?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "c003e51b-e079-4d4d-802c-1ff6105e4a39"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "00f8d544-7d87-4621-b9ec-190be3950b36"
+  } ]
+}

@@ -1,0 +1,278 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "Why are there "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " in my wall from the install?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "They drilled extra "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": ". Why?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I didn't ask for "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " in my wall. What's up with that?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Installers put "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " in my wall. Can you fix it?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I found "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " in my wall after the install. Can you help?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "What's with the extra drill "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": "?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "There are extra "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " in my wall. Why?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Why did the crew make extra "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": "?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The installation team drilled "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " that weren't needed. What now?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "There are drill "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " in my wall from the install. This sucks."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Unnecessary "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " in my wall. Can you fix this?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Why are there extra "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " in my wall after the install?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "There are unnecessary "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " in my wall from the install. Why?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "There are extra "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " in my wall from the installation. What can be done?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I found extra drill "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " in my wall after the installation."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The installers left "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " in my wall. How do we fix this?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Why are there extra "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " in my wall from the installation?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The installation team drilled unnecessary "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": ". How do we fix this?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "There are unwanted drill "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " in my wall after the install. What now?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The installers made extra "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " in my wall. Can we resolve this?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "There are unwanted "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " in my wall from the installation."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The installers drilled "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " in my wall that weren't required."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Unnecessary "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " were made in my wall by the installation team."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "They drilled extra "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " during installation that weren't needed."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The installation team drilled unnecessary "
+    }, {
+      "text": "holes",
+      "parameterId": "matching_support_entity_hole"
+    }, {
+      "text": " in my wall."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

@@ -1,0 +1,26 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "Can I install a "
+    }, {
+      "text": "ICON2",
+      "parameterId": "necoa_unit_water_purifier"
+    }, {
+      "text": " myself?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "How do I install the water purifier?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Is there a guide for installing the water purifier myself?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

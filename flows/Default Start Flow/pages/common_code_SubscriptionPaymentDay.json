@@ -1,0 +1,32 @@
+{
+  "name": "2eefb01d-d10b-430d-b45f-18f32b918743",
+  "displayName": "common_code_SubscriptionPaymentDay",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "common_code_SubscriptionPaymentDay",
+    "tag": "common code"
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "set global variable",
+    "name": "e3855ddd-a3e0-4b99-864a-399f9e02568d"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "set global variable",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "common_code_SubscriptionPaymentDay",
+        "value": {
+        
+        }
+      } ]
+    },
+    "name": "ddaa9301-40f7-4780-88b7-bbcc2a4c7357"
+  } ]
+}

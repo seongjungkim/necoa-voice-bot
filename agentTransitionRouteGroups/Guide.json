@@ -1,0 +1,18 @@
+{
+  "name": "bc57dafe-faaa-4e6a-97de-f40854701c3a",
+  "displayName": "Guide",
+  "transitionRoutes": [ {
+    "intent": "common.chatbot_guide",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I'm here to assist you with everything $session.params.current_store. Whether you need help ordering a $session.params.current_product, learning how to use your device, or checking your account details, I've got you covered. Just let me know what you need help with, and I'll take care of the rest!", "I'm $session.params.current_store Chatbot. I can assist you with checking your orders, viewing rental status, answering FAQs, and submitting service requests. For further assistance, I can connect you to a representative.", "I'm $session.params.current_store Chatbot. I can help you with order status, rental details, FAQs, and service requests. If you need extra help, I can connect you to a customer service rep.", "I'm $session.params.current_store Chatbot. I can help with checking orders, rental status, FAQs, and service inquiries. If you need further help, I'll connect you with a representative.", "I'm the $session.params.current_store Chatbot. I can assist with order tracking, rental info, FAQs, and service requests. If you need more assistance, I can transfer you to a customer service representative.", "I'm $session.params.current_store Chatbot. I can help you check your orders, view rental details, find FAQs, and submit service requests. For more help, I can connect you to a customer service agent.", "I'm the $session.params.current_store Chatbot. I can assist with order checks, rental status, FAQs, and service requests. Need more help? I can connect you to a representative." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "guide"
+    },
+    "name": "3071a95d-cb82-476f-97fb-4dda07896bdd"
+  } ]
+}

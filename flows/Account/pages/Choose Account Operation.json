@@ -1,0 +1,22 @@
+{
+  "name": "f8a8069d-aac9-45a1-83d5-7dbbc35abb0d",
+  "displayName": "Choose Account Operation",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.operation = null OR $session.params.operation = \"Manage Account\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Manage Account",
+    "name": "5167aa3b-1023-4688-a796-999a1ab8e911"
+  }, {
+    "condition": "$session.params.operation_complete = true OR $session.params.operation != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "e51b1ca6-7086-4e40-abfc-c093effef945"
+  } ]
+}

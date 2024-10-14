@@ -1,0 +1,58 @@
+{
+  "name": "79c3c953-30d2-4183-b984-5756eba9573f",
+  "displayName": "Welcome Message",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003eHello!\u003c/speak\u003e", "\u003cspeak\u003eHi!\u003c/speak\u003e", "\u003cspeak\u003eHi there!\u003c/speak\u003e", "\u003cspeak\u003eHey!\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    }, {
+      "text": {
+        "text": [ "\u003cspeak\u003eThis is the Necoa Assistant Bot. How can I help you today?\u003c/speak\u003e", "\u003cspeak\u003eI'm the Necoa Assistant Bot. What can I do for you today?\u003c/speak\u003e", "\u003cspeak\u003eYou're speaking with the Necoa Assistant Bot. How can I assist you today?\u003c/speak\u003e", "\u003cspeak\u003eI'm the Necoa Assistant Bot. What can I help you with today?\u003c/speak\u003e", "\u003cspeak\u003eI'm the Necoa Assistant Bot. How can I assist you right now?\u003c/speak\u003e", "\u003cspeak\u003eThis is Necoa's Assistant Bot. How can I make your day easier?\u003c/speak\u003e", "\u003cspeak\u003eI'm Necoa's Assistant Bot. What can I do for you today?\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "webhook": "Chatbot Fulfillment",
+    "tag": "welcome",
+    "setParameterActions": [ {
+      "parameter": "hasVisited",
+      "value": true
+    }, {
+      "parameter": "current_store",
+      "value": "NECOA"
+    }, {
+      "parameter": "store_product",
+      "value": [ "water purifier" ]
+    }, {
+      "parameter": "size_product",
+      "value": 1
+    }, {
+      "parameter": "sessionId",
+      "value": ""
+    }, {
+      "parameter": "startDate",
+      "value": "$sys.func.FORMAT_DATE($sys.func.ADD_DATE($sys.func.NOW(), -3, \"YEARS\"),\"yyyy-MM-dd\", \"en\")"
+    }, {
+      "parameter": "endDate",
+      "value": "$sys.func.FORMAT_DATE($sys.func.NOW(),\"yyyy-MM-dd\", \"en\")"
+    }, {
+      "parameter": "current_product",
+      "value": null
+    }, {
+      "parameter": "cnsl_type",
+      "value": ""
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Start Page",
+    "name": "1f64f79f-ed9f-4444-9871-98cb134e6751"
+  } ]
+}

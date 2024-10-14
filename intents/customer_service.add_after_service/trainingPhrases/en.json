@@ -1,0 +1,27 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "need repair "
+    }, {
+      "text": "ICON2",
+      "parameterId": "necoa_unit_water_purifier"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "repair my "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I need to request maintenance or repair for my water purifier."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

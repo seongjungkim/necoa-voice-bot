@@ -1,0 +1,11 @@
+{
+  "entities": [ {
+    "value": "@sys.email",
+    "synonyms": [ "@sys.email" ],
+    "languageCode": "en"
+  }, {
+    "value": "@components_email_collection_local_part @components_email_collection_at_sign @components_email_collection_domain",
+    "synonyms": [ "@components_email_collection_local_part @components_email_collection_at_sign @components_email_collection_domain" ],
+    "languageCode": "en"
+  } ]
+}

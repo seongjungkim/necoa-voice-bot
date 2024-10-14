@@ -1,0 +1,67 @@
+{
+  "name": "0edd3507-e18b-4098-a37a-0f59788e0791",
+  "tags": [ "#account", "#agent" ],
+  "displayName": "Account - Error - Agent Redirect",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "hi"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "Main Menu",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eHi there!\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eThis is the Necoa Assistant Bot. How can I help you today?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "I keep getting an error while updating my personal information."
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "account.error"
+      },
+      "currentPage": {
+        "name": "\u003e confirm agent connect",
+        "flow": "Agent Connection"
+      },
+      "textResponses": [ {
+        "text": [ "It seems there's a problem. Can I transfer you to a representative for assistance?" ]
+      } ],
+      "currentFlow": {
+        "name": "Agent Connection"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1718681099,
+    "nanos": 491481000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

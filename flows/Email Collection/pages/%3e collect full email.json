@@ -1,0 +1,161 @@
+{
+  "name": "c89032c1-8400-4c45-8fc0-fdb1d1c0eded",
+  "displayName": "\u003e collect full email",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "What is your email? Please tell us your email." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.last_prompt",
+      "value": "What is your email? Please tell us your email."
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "components_email_collection_full_email",
+    "condition": "$session.params.local-part != null AND $session.params.domain != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_full_email.local-part",
+        "value": "$session.params.local-part"
+      }, {
+        "parameter": "$flow.user_provided_full_email.domain",
+        "value": "$session.params.doamin"
+      }, {
+        "parameter": "local-part",
+        "value": null
+      }, {
+        "parameter": "domain",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e confirm full email",
+    "name": "f26d5dea-a199-499c-b9da-d45198c15189"
+  }, {
+    "intent": "components_email_collection_full_email",
+    "condition": "$session.params.user_provided_full_email != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_full_email",
+        "value": "$session.params.user_provided_full_email"
+      }, {
+        "parameter": "user_provided_full_email",
+        "value": null
+      } ]
+    },
+    "targetPage": "split full email",
+    "name": "0c068922-6dbc-4f4f-a3b3-1f2f2d87f0d8"
+  }, {
+    "intent": "components_email_collection_full_email",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that right. Let's start capturing the email again." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "initial start page",
+    "name": "95cfd1f6-328f-4a66-9be5-41b68b6ac7b3"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "22055ec2-c63b-4516-b3ad-8d8babdeb4b3"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "8ca0185a-4ebe-4de1-928e-dbd11746bb71"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "06fdd159-b8ff-44b7-8f0d-ea52e9794e07"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Say that one more time?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "ebdf4ffd-3c6d-4713-be3d-41cb4b791718"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Say that one more time?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "a85f5fa8-8cf6-4670-b224-7ecaaee4b073"
+  }, {
+    "targetPage": "initial start page",
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "It seems we're having trouble recognizing your email. Let's try entering it part by part.", "Sorry about that! Let’s break down your email into smaller parts to get it right.", "Looks like we're having a bit of trouble with your email. We'll enter it piece by piece instead.", "Oops! We couldn't get your email. Let’s do it step by step to make sure it's correct.", "We’re having a little trouble with your email. Let's try entering it one part at a time." ]
+        },
+        "languageCode": "en"
+      } ],
+      "advancedSettings": {
+        "playbackInterruptionSettings": {
+        
+        }
+      }
+    },
+    "name": "8ed9bbbe-0cbc-4dae-a4a9-a676f424709c"
+  }, {
+    "targetPage": "initial start page",
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "It seems we're having trouble recognizing your email. Let's try entering it part by part.", "Sorry about that! Let’s break down your email into smaller parts to get it right.", "Looks like we're having a bit of trouble with your email. We'll enter it piece by piece instead.", "Oops! We couldn't get your email. Let’s do it step by step to make sure it's correct.", "We’re having a little trouble with your email. Let's try entering it one part at a time." ]
+        },
+        "languageCode": "en"
+      } ],
+      "advancedSettings": {
+        "playbackInterruptionSettings": {
+        
+        }
+      }
+    },
+    "name": "38becf64-a659-4b85-8964-b5653b9b1749"
+  } ]
+}

@@ -1,0 +1,105 @@
+{
+  "name": "c42b7e19-65bd-4d3b-8107-6d582f865d45",
+  "displayName": "Account",
+  "transitionRoutes": [ {
+    "intent": "small_talk.agent_hand_off",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Agent Connection",
+    "name": "243be1bb-7d22-48de-acbc-b495a3f6195e"
+  }, {
+    "intent": "small_talk.start_over",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      } ]
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "4e42583d-6988-495e-b0ef-0119cd7e8447"
+  }, {
+    "intent": "small_talk.wait",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sure, just let me know when you're ready.", "Okay, I can wait. Let me know when you're ready.", "No problem! Just speak up when you're ready." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "43cfb33b-8c1f-41ea-85e1-e2006090229f"
+  }, {
+    "intent": "small_talk.ready",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Okay!", "No problem.", "Alright.", "Great!" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "ab1fdb7a-9a58-4136-b872-d46b868ec9bf"
+  }, {
+    "intent": "small_talk.still_there",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I'm still here!", "I'm here!", "Don't worry, I'm here.", "Don't worry, I'm still here." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "f9b6e3d4-a978-491b-badf-2e5b2e4192df"
+  }, {
+    "condition": "$session.params.operation != \"Update Account Address\" AND $session.params.operation != \"Update Account Email\" AND $session.params.operation != \"Update Account Phone\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Check Visiter Verification",
+    "name": "272cbd3b-e10b-41b6-92a4-fd592521ffad"
+  }, {
+    "condition": "$session.params.operation = \"Update Account Address\" OR $session.params.operation = \"Update Account Email\" OR $session.params.operation = \"Update Account Phone\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Only Edit Account Detail on Web",
+    "name": "61ef7a45-c6f7-435c-bd41-3022bcb07624"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "9f8f442f-39ef-43fe-bb02-5fcb1d08e4cc"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "6e4e49b2-84ef-45ad-a24e-91525884daac"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC",
+    "multiIntentSettings": {
+    
+    }
+  },
+  "advancedSettings": {
+    "enabled": true
+  }
+}

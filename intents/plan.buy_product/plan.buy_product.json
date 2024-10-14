@@ -1,0 +1,10 @@
+{
+  "name": "0843a962-70d3-4810-aeba-d79cc166449f",
+  "displayName": "plan.buy_product",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 10
+}

@@ -1,0 +1,49 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "I had a fire incident with my "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My purifier nearly started a fire. This is unacceptable."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "There were sparks coming from my purifier. This is dangerous."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": " caught fire in my kitchen!"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My purifier sparked and almost started a fire in my home."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The purifier sparked and almost started a fire in my home."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

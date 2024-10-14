@@ -1,0 +1,6 @@
+{
+  "name": "e41d63b2-5804-4c0d-9b4d-8aea74a9cd38",
+  "displayName": "customer_service.cancel_after_service",
+  "priority": 500000,
+  "numTrainingPhrases": 1
+}

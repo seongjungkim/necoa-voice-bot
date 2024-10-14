@@ -1,0 +1,67 @@
+{
+  "name": "eb9d5a6b-220b-4a1e-8b55-04492ddc0556",
+  "tags": [ "#plan", "#agent" ],
+  "displayName": "Plan - Error - Agent Redirect",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "hi"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "Main Menu",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eHi there!\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eI'm the Necoa Assistant Bot. What can I help you with today?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Why am I receiving an error message when trying to add items to my cart?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "plan.error"
+      },
+      "currentPage": {
+        "name": "\u003e confirm agent connect",
+        "flow": "Agent Connection"
+      },
+      "textResponses": [ {
+        "text": [ "Want help from a live agent? Respond 'yes' to connect." ]
+      } ],
+      "currentFlow": {
+        "name": "Agent Connection"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1718667420,
+    "nanos": 31632000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

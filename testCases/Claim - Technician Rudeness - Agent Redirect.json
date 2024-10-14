@@ -1,0 +1,67 @@
+{
+  "name": "2b0eadda-5cde-43b0-9a1d-1203db29d9bb",
+  "tags": [ "#claim", "#agent" ],
+  "displayName": "Claim - Technician Rudeness - Agent Redirect",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "hi"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "Main Menu",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eHi there!\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eThis is the Necoa Assistant Bot. How can I help you today?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "The technician was rude to me."
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "claim.technician_rudeness"
+      },
+      "currentPage": {
+        "name": "\u003e confirm agent connect",
+        "flow": "Agent Connection"
+      },
+      "textResponses": [ {
+        "text": [ "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'." ]
+      } ],
+      "currentFlow": {
+        "name": "Agent Connection"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1718681028,
+    "nanos": 655686000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

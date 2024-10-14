@@ -1,0 +1,23 @@
+{
+  "name": "583f3785-b928-4ea6-b26c-4d83d69e647e",
+  "displayName": "technician_service_areas_branch",
+  "genericWebService": {
+    "uri": "https://fulfillment-dot-necoa-aicc-dev.uc.r.appspot.com/fulfillment/cx/webhook_flex/necoa/en_US/technician_service_areas_branch",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"sessionId\": \"$session.params.sessionId\",\n  \"zipCode\": \"$flow.technician_service_areas_branch_zipcode\"\n}",
+    "parameterMapping": [ {
+      "key": "$flow.api_http_status",
+      "value": "$.code"
+    }, {
+      "key": "$flow.api_response",
+      "value": "$.data"
+    }, {
+      "key": "technician_service_areas_branch",
+      "value": "$.data"
+    } ]
+  },
+  "timeout": {
+    "seconds": 7
+  }
+}

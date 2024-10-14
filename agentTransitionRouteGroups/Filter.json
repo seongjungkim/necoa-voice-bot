@@ -1,0 +1,113 @@
+{
+  "name": "ea9886a9-a00d-4aad-abbb-e9795e030a58",
+  "displayName": "Filter",
+  "transitionRoutes": [ {
+    "intent": "filter.issue_after_replacement",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "If you're having trouble after replacing the filter, would you like to connect with our customer service for assistance?", "It seems there's an issue with your water purifier after the filter change. Would you like me to connect you to a service representative for help?", "For any problems after replacing the filter, it's best to get assistance from our technicians. Shall I connect you to a customer service agent?", "If your water purifier isn't working properly after the filter replacement, would you like me to connect you to a customer service representative for a repair request?", "Should you encounter any issues after changing the filter, would you like to get in touch with our support team? I'll transfer you to a representative right away.", "Experiencing problems after the filter change? Shall I connect you to our customer service for a repair request?", "If the water purifier is not functioning correctly after the filter replacement, would you like me to connect you to a customer service agent for further assistance?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "agent",
+      "setParameterActions": [ {
+        "parameter": "reset",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "ad350b0f-2032-48da-99d0-3f88a709b393"
+  }, {
+    "intent": "filter.delivery_delay",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "It looks like there's an issue with the delivery of your filter set. Would you like me to connect you to a customer service representative to resolve this for you?", "We're sorry for the delay/error in your filter set delivery. Shall I transfer you to a customer service agent to assist you further?", "If there's a problem with the delivery of your filter set, our customer service can help. Would you like me to connect you to a representative right away?", "Apologies for the inconvenience with your filter set delivery. Would you like me to transfer you to a customer service representative for assistance?", "It seems there's a delay with your filter set delivery. Shall I connect you to customer support to sort this out?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "agent",
+      "setParameterActions": [ {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "6df0a09a-2584-4aaa-9743-ef6c4e26463d"
+  }, {
+    "intent": "filter.delivery_loss_report",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "If your filter set delivery is lost, would you like me to connect you to a customer service representative for assistance?", "We're sorry to hear about the lost delivery of your filter set. Would you like me to transfer you to a customer service agent to help resolve this issue?", "A lost delivery of your filter set needs attention from our support team. Shall I connect you to a customer service representative right now?", "For the lost delivery of your filter set, would you like me to connect you to a customer service agent who can assist you further?", "It appears your filter set delivery is lost. Would you like me to transfer you to a customer service representative to help with this matter?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "agent"
+    },
+    "targetFlow": "Agent Connection",
+    "name": "e4a91fd2-af68-455f-97e2-a597c352abea"
+  }, {
+    "intent": "filter.delivery_address_check",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "The feature you're asking about is not supported at the moment.", "Currently, the feature you inquired about isn't available.", "The functionality you requested is not supported right now.", "I'm sorry, but the feature you're looking for is not supported.", "Unfortunately, the feature you asked about isn't available.", "The service you inquired about is currently unsupported.", "I'm sorry, but we don't support that feature at this time.", "The functionality you requested isn't available right now.", "I'm sorry, but the feature you're asking for isn't supported.", "I'm sorry, but the feature you're asking for isn't supported." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default"
+    },
+    "name": "580b9355-c145-4cec-bd92-6f8fbfe25f87"
+  }, {
+    "intent": "filter.delivery_status_check",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "The feature you're asking about is not supported at the moment.", "Currently, the feature you inquired about isn't available.", "The functionality you requested is not supported right now.", "I'm sorry, but the feature you're looking for is not supported.", "Unfortunately, the feature you asked about isn't available.", "The service you inquired about is currently unsupported.", "I'm sorry, but we don't support that feature at this time.", "The functionality you requested isn't available right now.", "I'm sorry, but the feature you're asking for isn't supported.", "I'm sorry, but the feature you're asking for isn't supported." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default"
+    },
+    "targetFlow": "Agent Connection",
+    "name": "67198b7f-c94f-4890-b32d-e6e2f11d44b2"
+  }, {
+    "intent": "filter.delivery_address_change",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "The feature you're asking about is not supported at the moment.", "Currently, the feature you inquired about isn't available.", "The functionality you requested is not supported right now.", "I'm sorry, but the feature you're looking for is not supported.", "Unfortunately, the feature you asked about isn't available.", "The service you inquired about is currently unsupported.", "I'm sorry, but we don't support that feature at this time.", "The functionality you requested isn't available right now.", "I'm sorry, but the feature you're asking for isn't supported.", "Unfortunately, the feature you mentioned is not available." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default"
+    },
+    "targetFlow": "Agent Connection",
+    "name": "4f1b6378-48b3-4f45-8e64-5b93e3847786"
+  }, {
+    "intent": "filter.damage_replacement",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "It looks like the filter or product was damaged during replacement. Let me transfer you to a representative for immediate assistance.", "If you've damaged the filter or purifier while replacing it, please connect with our customer service. I'll transfer you to a representative now.", "For issues involving damage during filter replacement, it's best to get assistance from our technicians. Please hold while I connect you to a service representative.", "It seems there was damage to your water purifier during the filter change. I'll connect you to a customer service representative to help with the repair.", "If the filter or purifier was damaged during replacement, please let me connect you to a customer service representative for a repair request.", "Encountering damage after changing the filter? I'll connect you to our customer service for immediate assistance. Please wait a moment.", "For any damage caused during the filter replacement, it's important to contact our support team. I'll transfer you to a representative right away.", "It looks like there was damage during the filter replacement. Let me connect you to a customer service agent for further assistance.", "If you've encountered damage to the filter or purifier during replacement, please get in touch with our support team. I'll transfer you to a representative now.", "For problems involving damage to the filter or purifier during replacement, let me connect you to our customer service representative for help." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default"
+    },
+    "targetFlow": "Agent Connection",
+    "name": "dc1657e0-9b66-4ba1-81c5-b38e029ff4e0"
+  } ]
+}

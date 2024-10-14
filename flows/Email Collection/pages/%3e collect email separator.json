@@ -1,0 +1,139 @@
+{
+  "name": "23d4f973-b6b3-4a50-a468-a5bb96e0e42b",
+  "displayName": "\u003e collect email separator",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please tell us what's next: a dot, underscore, plus sign, or hyphen." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.last_prompt",
+      "value": "Please tell us what's next: a dot, underscore, plus sign, or hyphen."
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "components_email_collection_email_spelling_separator",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.email_separator",
+        "value": "$intent.params.spelling_separator.original"
+      }, {
+        "parameter": "$flow.spelling_separator",
+        "value": "$session.params.spelling_separator"
+      }, {
+        "parameter": "spelling_separator",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e confirm email separator",
+    "name": "a00a00b9-a527-4fb5-9f81-27fb8b54b272"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "f8bef452-fd44-4212-b0f1-835988169d64"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "fd9fd891-4d5c-49ab-8c10-d8ade2be0bb5"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "74a40d89-567f-47fb-b808-8eb4617ca181"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren't able to hear you. Please tell us what's next: a dot, underscore, plus sign, or hyphen." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "eea15083-2d38-4370-a8a8-c764265f1fb6"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "9e4c478e-207f-4dce-a459-f43e505f3a90"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "a005d1fa-196e-4066-ba93-be5822faba27"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Please tell us what's next: a dot, underscore, plus sign, or hyphen." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "63274f2f-9f92-41d9-9f06-6a33b111f792"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. Please tell us what's next: a dot, underscore, plus sign, or hyphen." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "136e57ad-b549-4a84-bcf6-fe4a3c32c369"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "be3975b2-8f82-4806-a08e-90ef1f764365"
+  } ]
+}

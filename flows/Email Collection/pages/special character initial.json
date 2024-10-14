@@ -1,0 +1,34 @@
+{
+  "name": "d16e5656-9822-4989-baeb-f3c4ada66a9f",
+  "displayName": "special character initial",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.spelling_email != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.verify_email",
+        "value": "$flow.spelling_email"
+      } ]
+    },
+    "targetPage": "\u003e collect next part of email",
+    "name": "c580dd19-c783-4b60-b17d-d9b76cff8668"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.spell_out_email",
+        "value": null
+      }, {
+        "parameter": "$flow.alternative_email",
+        "value": null
+      } ]
+    },
+    "targetPage": "special characters part decider",
+    "name": "0aeb2626-6f14-4c7b-bada-cb56b77e04fe"
+  } ]
+}

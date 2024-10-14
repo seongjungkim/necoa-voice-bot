@@ -1,0 +1,59 @@
+{
+  "name": "b61afde4-400b-4f80-8e6b-d83f4d4cbe31",
+  "displayName": "Coming Soon Flow",
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Oops! This function isn't currently supported.", "We're working on it! This feature will be available in the future.", "Hang tight! This feature isn't available right now, but it's on the way.", "We're sorry, but this function is currently unavailable.", "Thanks for asking! This feature isn't available right now, but check back soon.", "This feature is coming soon! Stay tuned.", "Thank you for your interest, but this feature isn't offered at the moment.", "Sorry, but this option isn't available just yet.", "This feature isn't supported at the moment. Thanks for your patience!" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "coming soon",
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      }, {
+        "parameter": "is_returning",
+        "value": false
+      }, {
+        "parameter": "reset",
+        "value": true
+      }, {
+        "parameter": "operation",
+        "value": null
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "b1f42ca3-e2c0-4bb0-b3be-35629ec3d58b"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "6f1a7ba6-ebb7-4f00-8244-ce3300180668"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "1feef279-2ebf-42c3-9900-8f6d91f074a5"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  }
+}

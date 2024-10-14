@@ -1,0 +1,149 @@
+{
+  "name": "4896e7db-cf42-4278-99a2-35fd06fa5801",
+  "displayName": "Email Collection",
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_waiting_room",
+    "condition": "$flow.waiting_room_counter \u003c 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.waiting_room_counter",
+        "value": "$sys.func.ADD($flow.waiting_room_counter,1)"
+      } ]
+    },
+    "name": "2a8c00c1-2db4-4d49-9570-466331cc92c9"
+  }, {
+    "intent": "prebuilt_components_waiting_room",
+    "condition": "$flow.waiting_room_counter = 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "72f4e4bc-b2d9-4b35-9a21-ebb686807ad1"
+  }, {
+    "intent": "prebuilt_components_replay",
+    "condition": "$flow.replay_counter = 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, I'm having difficulty understanding your response." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "37746308-6b19-45f9-8ed8-17b9eb5ac4ba"
+  }, {
+    "intent": "prebuilt_components_replay",
+    "condition": "$flow.replay_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sure, let me repeat it." ]
+        },
+        "languageCode": "en"
+      }, {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.replay_counter",
+        "value": "$sys.func.ADD($flow.replay_counter,1)"
+      } ]
+    },
+    "name": "7c5828c7-3bd7-4c1e-abe1-33f6a8a8ac9d"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.is_select_initial_path",
+        "value": true
+      }, {
+        "parameter": "$flow.collect_part",
+        "value": "local part"
+      }, {
+        "parameter": "$flow.collect_local_part",
+        "value": null
+      }, {
+        "parameter": "$flow.collect_domain",
+        "value": null
+      }, {
+        "parameter": "$flow.spelling_email",
+        "value": null
+      }, {
+        "parameter": "collect_email",
+        "value": null
+      }, {
+        "parameter": "spelling_separator",
+        "value": null
+      }, {
+        "parameter": "$flow.email_separator_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.incorrect_local_part_part_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.incorrect_domain_part_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.incorrect_local_part_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.incorrect_domain_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.incorrect_next_part_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, we are having difficulty understanding your response."
+      }, {
+        "parameter": "$flow.local_part_spell_out_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.domain_spell_out_counter",
+        "value": 0
+      }, {
+        "parameter": "$flow.local_part_part_spell_out_counter",
+        "value": 0
+      } ]
+    },
+    "targetPage": "\u003e collect full email",
+    "name": "771b006b-352f-4be8-89d6-6ffe1cf1be35"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "5a8613f8-25b5-43a3-a873-fb315fd3c0f5"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "17b1ca88-9789-4b1a-97a7-a020204da9fe"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC",
+    "multiIntentSettings": {
+    
+    }
+  },
+  "advancedSettings": {
+    "enabled": true
+  }
+}

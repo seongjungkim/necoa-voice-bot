@@ -1,0 +1,10 @@
+{
+  "name": "c87fd391-f8e5-4463-8c92-c8240bd57144",
+  "displayName": "claim.request_pl_claim",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 5
+}

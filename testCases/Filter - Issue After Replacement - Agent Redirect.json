@@ -1,0 +1,67 @@
+{
+  "name": "5d7c167a-8299-4511-b5d8-18373c21218b",
+  "tags": [ "#filter", "#agent" ],
+  "displayName": "Filter - Issue After Replacement - Agent Redirect",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "hi"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "Main Menu",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eHi there!\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eThis is Necoa's Assistant Bot. How can I make your day easier?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "After installing the new filter, the purifier is not dispensing any water."
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "filter.issue_after_replacement"
+      },
+      "currentPage": {
+        "name": "\u003e confirm agent connect",
+        "flow": "Agent Connection"
+      },
+      "textResponses": [ {
+        "text": [ "Should you encounter any issues after changing the filter, would you like to get in touch with our support team? I'll transfer you to a representative right away." ]
+      } ],
+      "currentFlow": {
+        "name": "Agent Connection"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1718682754,
+    "nanos": 179999000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

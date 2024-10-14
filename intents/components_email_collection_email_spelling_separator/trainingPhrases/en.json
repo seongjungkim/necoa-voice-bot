@@ -1,0 +1,75 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "my ",
+      "auto": true
+    }, {
+      "text": "email",
+      "auto": true
+    }, {
+      "text": " ",
+      "auto": true
+    }, {
+      "text": "have",
+      "auto": true
+    }, {
+      "text": " a ",
+      "auto": true
+    }, {
+      "text": "dot",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "hyphen",
+      "parameterId": "spelling_separator"
+    }, {
+      "text": " in my local part of email"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "that will be "
+    }, {
+      "text": "underscore",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "dot",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "dash",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "a "
+    }, {
+      "text": "hyphen",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My email includes a "
+    }, {
+      "text": "dash",
+      "parameterId": "spelling_separator"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

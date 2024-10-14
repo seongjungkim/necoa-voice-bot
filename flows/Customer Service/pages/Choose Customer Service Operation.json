@@ -1,0 +1,48 @@
+{
+  "name": "6818d5e5-1bf4-425c-959a-fe14ea9a48a4",
+  "displayName": "Choose Customer Service Operation",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.operation = NULL",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "How can I assist you with our customer service?", "What kind of customer service do you need help with?", "Please let me know how I can assist you with your service request.", "What specific customer service can I help you with today?", "How can I support you with your customer service needs?", "Could you tell me more about the customer service assistance you require?", "What type of customer service are you looking for assistance with?", "Please specify the customer service you need help with." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Manage Customer Service",
+    "name": "191a751a-d9c2-4237-be2e-cd838529ea88"
+  }, {
+    "condition": "$session.params.operation = \"Add Reinstall\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "TODO: \u003e collect reinstall",
+    "name": "4a1d78bb-f7f1-4d80-8980-4995643342d0"
+  }, {
+    "condition": "$session.params.operation = \"Add Uninstall\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "TODO: \u003e collect uninstall",
+    "name": "d6739286-bb0b-4935-b777-945a334c468b"
+  }, {
+    "condition": "$session.params.operation = \"Add Install\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "TODO: \u003e collect install",
+    "name": "de409675-2e85-49f3-b042-2679282a5860"
+  }, {
+    "condition": "$session.params.operation_complete = true OR $session.params.operation != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "8944f28c-99b1-40d0-ad4f-afe07bafdd6e"
+  } ]
+}

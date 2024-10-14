@@ -1,0 +1,79 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "Why can't you guys install the "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": " in my area?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "What's preventing the installation from happening at my place?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I was informed that installation isn't possible here. What's the reason?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Why is the technician unable to set up the purifier at my home?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The installation was denied at my address. Can you explain why?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I don't understand why the product can't be installed in my house."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Why is the installation not possible at my location?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The technician said they can't install the purifier here. What's the problem?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I was told the installation can't be done at my place. Why is that?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Why can't the technician install the product at my home?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Why can't you install the "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": " where I want? Are you selling purifiers that can't be installed? I need this installation done promptly."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

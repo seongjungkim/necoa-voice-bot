@@ -1,0 +1,126 @@
+{
+  "name": "9f33b77b-2edc-4a48-ae03-d340136e2a93",
+  "displayName": "# technician service areas branch",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "technician_service_areas_branch",
+    "tag": "abc"
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.api_http_status = \"SUCCESS\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eYour area is serviceable. Our technician from $flow.response_name in $flow.response_city will install it. Contact them at \u003csay-as interpret-as='telephone' google:style='zero-as-zero'\u003e$flow.response_phone\u003c/say-as\u003e.\u003c/speak\u003e", "\u003cspeak\u003eWe can service your location. Installation will be handled by $flow.response_name in $flow.response_city. Phone number: \u003csay-as interpret-as='telephone' google:style='zero-as-zero'\u003e$flow.response_phone\u003c/say-as\u003e.\u003c/speak\u003e", "\u003cspeak\u003eWe can install the purifier. $flow.response_name in $flow.response_city will handle it. You can reach them at \u003csay-as interpret-as='telephone' google:style='zero-as-zero'\u003e$flow.response_phone\u003c/say-as\u003e.\u003c/speak\u003e", "\u003cspeak\u003eYour location is serviceable. Installation by $flow.response_name in $flow.response_city. For questions, call \u003csay-as interpret-as='telephone' google:style='zero-as-zero'\u003e$flow.response_phone\u003c/say-as\u003e.\u003c/speak\u003e", "\u003cspeak\u003eWe can install at your address. $flow.response_name in $flow.response_city will handle it. Contact them at \u003csay-as interpret-as='telephone' google:style='zero-as-zero'\u003e$flow.response_phone\u003c/say-as\u003e.\u003c/speak\u003e", "\u003cspeak\u003eYour area is covered. Installation from $flow.response_name in $flow.response_city. Call \u003csay-as interpret-as='telephone' google:style='zero-as-zero'\u003e$flow.response_phone\u003c/say-as\u003e for details.\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default",
+      "setParameterActions": [ {
+        "parameter": "confirmed_zipcode",
+        "value": "$session.params.zipcode"
+      }, {
+        "parameter": "operation_complete",
+        "value": true
+      }, {
+        "parameter": "is_returning",
+        "value": true
+      }, {
+        "parameter": "$flow.response_address",
+        "value": "$sys.func.GET_FIELD($session.params.technician_service_areas_branch, \"address\")"
+      }, {
+        "parameter": "$flow.response_name",
+        "value": "$sys.func.GET_FIELD($session.params.technician_service_areas_branch,\"name\")"
+      }, {
+        "parameter": "$flow.response_address1",
+        "value": "$sys.func.TO_TEXT($sys.func.GET_FIELD($flow.response_address, \"address1\"))"
+      }, {
+        "parameter": "$flow.response_city",
+        "value": "$sys.func.TO_TEXT($sys.func.GET_FIELD($flow.response_address, \"city\"))"
+      }, {
+        "parameter": "$flow.response_state",
+        "value": "$sys.func.TO_TEXT($sys.func.GET_FIELD($flow.response_address, \"state\"))"
+      }, {
+        "parameter": "$flow.response_zipCode",
+        "value": "$sys.func.TO_TEXT($sys.func.GET_FIELD($flow.response_address, \"zipCode\"))"
+      }, {
+        "parameter": "$flow.response_phone_origin",
+        "value": "$sys.func.TO_TEXT($sys.func.GET_FIELD($session.params.technician_service_areas_branch, \"phone\"))"
+      }, {
+        "parameter": "$flow.full_address",
+        "value": "$sys.func.JOIN(\", \", $sys.func.APPEND(null, \"$flow.response_address1\", \"$flow.response_city\",\"$flow.response_state\",\"$flow.response_zipCode\"))"
+      }, {
+        "parameter": "$flow.response_phone_format",
+        "value": "$sys.func.TO_PHONE_NUMBER($flow.response_phone_origin, \"US\")"
+      }, {
+        "parameter": "$flow.response_phone",
+        "value": "$sys.func.CONCATENATE(\"+\",$sys.func.GET_FIELD($flow.response_phone_format, \"country-code\"),\"-\",$sys.func.GET_FIELD($flow.response_phone_format, \"area-code\"),\"-\",$sys.func.MID($sys.func.GET_FIELD($flow.response_phone_format, \"number\"),1,3),\"-\",$sys.func.MID($sys.func.GET_FIELD($flow.response_phone_format, \"number\"),4,4))"
+      }, {
+        "parameter": "$flow.branch_description",
+        "value": "$sys.func.CONCATENATE(\"Address: \",$flow.full_address,\"\\nPhone: \",$flow.response_phone)"
+      } ],
+      "advancedSettings": {
+        "playbackInterruptionSettings": {
+        
+        }
+      }
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "bd8aff39-3bdb-4f3b-a354-baa3cfcada50"
+  }, {
+    "condition": "$flow.api_http_status = \"NOT_FOUND\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Currently, we don't offer services in your area.", "We're not available in your location right now.", "This area is not yet covered by our services.", "Sorry, we're not in your area at the moment.", "Unfortunately, we don't service your area yet." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default",
+      "setParameterActions": [ {
+        "parameter": "confirmed_zipcode",
+        "value": null
+      }, {
+        "parameter": "operation_complete",
+        "value": true
+      }, {
+        "parameter": "is_returning",
+        "value": true
+      } ],
+      "advancedSettings": {
+        "playbackInterruptionSettings": {
+        
+        }
+      }
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "4c532b09-8341-467a-9781-428fe313419f"
+  } ],
+  "eventHandlers": [ {
+    "targetFlow": "Agent Connection",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I'm sorry, there's an error. Would you like to connect to a representative?", "Apologies, something went wrong. Can I connect you to a representative?", "Sorry, an error occurred. Would you like to speak with a representative?", "I apologize, there was an issue. Would you like to be connected to a representative?", "I'm sorry, there's a problem. Do you want to talk to a representative?", "Sorry about that, we hit an error. Should I connect you to a representative?", "Apologies, we encountered an error. Would you like to talk to a representative?", "I'm sorry, there's been an error. Would you like to connect with a representative?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      }, {
+        "parameter": "reset",
+        "value": true
+      } ]
+    },
+    "name": "c49ba378-ab2f-466a-8d74-e6e0dc3dbec1"
+  } ]
+}

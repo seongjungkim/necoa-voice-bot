@@ -1,0 +1,17 @@
+{
+  "name": "ab58da32-a4df-4b86-b0e2-264149fd7d39",
+  "displayName": "common_code_SubscriptionPaymentDay",
+  "genericWebService": {
+    "uri": "https://fulfillment-dot-necoa-aicc-dev.uc.r.appspot.com/fulfillment/cx/webhook_flex/necoa/en_US/common_code",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"isAllNotation\": false,\n  \"commonCodeIds\": \"SubscriptionPaymentDay\"\n}",
+    "parameterMapping": [ {
+      "key": "common_code_SubscriptionPaymentDay",
+      "value": "$.data.commonCodes[0]"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "entities": [ {
+    "value": ":-",
+    "synonyms": [ "dash", "hi phen", "hyphen", "hyphenated", "-" ],
+    "languageCode": "en"
+  }, {
+    "value": ":_",
+    "synonyms": [ "_", "low dash", "low line", "under score", "underscore" ],
+    "languageCode": "en"
+  }, {
+    "value": ":.",
+    "synonyms": [ ".", "dot", "full stop", "period", "point" ],
+    "languageCode": "en"
+  }, {
+    "value": ":+",
+    "synonyms": [ "+", "plus", "plus sign", "positive" ],
+    "languageCode": "en"
+  } ]
+}

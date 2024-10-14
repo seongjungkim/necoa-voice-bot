@@ -1,0 +1,19 @@
+{
+  "name": "24f7a941-dd19-44bd-959b-490ca8091d87",
+  "displayName": "claim.contract",
+  "parameters": [ {
+    "id": "card_expiration_month",
+    "entityType": "@card_expiration_month"
+  }, {
+    "id": "card_expiration_date1",
+    "entityType": "@card_expiration_date"
+  }, {
+    "id": "card_expiration_date",
+    "entityType": "@card_expiration_date"
+  }, {
+    "id": "card_expiration_month1",
+    "entityType": "@card_expiration_month"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 6
+}

@@ -1,0 +1,26 @@
+{
+  "name": "cffb1dee-1023-4e61-bf82-1fb7acfc1a7a",
+  "displayName": "end success",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Thank you, $flow.user_provided_full_email" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "email_collection_full_email",
+        "value": "$sys.func.CONCATENATE($flow.user_provided_local_part,\"@\",$flow.user_provided_domain)"
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "8577a38e-ebf5-4a3e-b5de-4feb43f044bb"
+  } ]
+}

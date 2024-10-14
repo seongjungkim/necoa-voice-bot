@@ -1,0 +1,20 @@
+{
+  "name": "97404bd9-de0e-443d-a9b8-ce83c2fec67f",
+  "displayName": "order_items_detail_search_unmasked",
+  "genericWebService": {
+    "uri": "https://fulfillment-dot-necoa-aicc-dev.uc.r.appspot.com/fulfillment/cx/webhook_flex/necoa/en_US/order_items_detail_search_unmasked",
+    "requestHeaders": [ {
+      "key": "$flow.api_response",
+      "value": "$.data"
+    }, {
+      "key": "current_order",
+      "value": "$.data"
+    } ],
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"sessionId\": \"$session.params.sessionId\",\n  \"orderId\": \"$flow.order_items_detail_search_orderId\",\n  \"orderItemId\": \"$flow.order_items_detail_search_orderItemId\"\n}"
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

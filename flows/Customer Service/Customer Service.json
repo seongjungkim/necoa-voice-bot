@@ -1,0 +1,108 @@
+{
+  "name": "1961e5fa-39d9-4a6b-92b9-74b860185a73",
+  "displayName": "Customer Service",
+  "transitionRoutes": [ {
+    "intent": "small_talk.agent_hand_off",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Agent Connection",
+    "name": "8adec5bd-6935-4107-a18a-c22e0ebe3413"
+  }, {
+    "intent": "small_talk.start_over",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      } ]
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "9207837e-ca41-4a61-9559-2be415837346"
+  }, {
+    "intent": "small_talk.wait",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sure, just let me know when you're ready.", "Okay, I can wait. Let me know when you're ready.", "No problem! Just speak up when you're ready." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "c485580f-4892-40d6-a754-9a2ac8f8153e"
+  }, {
+    "intent": "small_talk.ready",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Okay!", "No problem.", "Alright.", "Great!" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "65689c2b-0830-4366-aa42-bfc9551befe1"
+  }, {
+    "intent": "small_talk.still_there",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I'm still here!", "I'm here!", "Don't worry, I'm here.", "Don't worry, I'm still here." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "526d34c2-4f39-4796-8e14-11ad97ae4d8f"
+  }, {
+    "condition": "$session.params.operation = \"Add After Service\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Order Lookup",
+    "name": "ec3f07ab-8e23-4d8a-bcf6-ef6c73bd1d56"
+  }, {
+    "condition": "$session.params.operation = \"Add Reinsatll\" OR $session.params.operation = \"Add Install\" OR $session.params.operation = \"Add Uninstall\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "choose_item",
+        "value": true
+      } ]
+    },
+    "targetPage": "Order Lookup",
+    "name": "214bb2a1-f5ca-4aa9-9f47-d41d7da29eb2"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "53183221-8fb0-4bf5-ae7f-dbe2a5ff4c76"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "2801f26d-c12e-448d-958a-e9e17a6fbbee"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC",
+    "multiIntentSettings": {
+    
+    }
+  },
+  "advancedSettings": {
+    "enabled": true
+  }
+}

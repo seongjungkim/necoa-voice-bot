@@ -1,0 +1,10 @@
+{
+  "name": "8747c4da-1ce4-4296-b067-893316140f0c",
+  "displayName": "claim.fire",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 6
+}

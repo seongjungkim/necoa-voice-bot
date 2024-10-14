@@ -1,0 +1,125 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "After installing the new filter, the purifier is not dispensing any water."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I changed the filter and the water won't flow anymore."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "There's a problem with the "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": " after I replaced the filter."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I put in a new filter and now there's no water."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": " isn't working after I changed the filter."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "After I changed the filter, the purifier won't dispense water."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The purifier stopped working after I replaced the filter."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I installed a new filter and the water stopped flowing."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "No water is coming out of my purifier after filter replacement."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I replaced the filter and now the water won't come out."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": " isn't dispensing any water after I changed the filter."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I put in a new filter and the purifier stopped dispensing water."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "There's no water flow after I installed the new filter."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "After replacing the filter, the "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": " isn't working."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I changed the filter and now no water is coming out."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I damaged the purifier during replacement. What should I do?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I damaged the filter during replacement. What should I do?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

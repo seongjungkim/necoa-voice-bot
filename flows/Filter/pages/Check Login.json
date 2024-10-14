@@ -1,0 +1,31 @@
+{
+  "name": "b6d25cf9-fcc8-493f-bdd4-0bf7c164a272",
+  "displayName": "Check Login",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.is_logged_in = false OR $session.params.is_logged_in = NULL",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "It looks like you're not logged in. Please log in to access this service. If you don't have an account, please sign up.", "To access this feature, please log in to your account. If you're not a member yet, we encourage you to sign up.", "You need to be logged in to use this service. Please log in, or if you don't have an account, you can create one.", "Currently, you're not logged in. Log in to access this service. Not a member? Please sign up.", "Please log in to your account to use this feature. If you aren't registered yet, please sign up.", "To use this service, you need to log in. If you haven't signed up yet, please register.", "We couldn't find your login details. Please log in to access this service. If you don't have an account, please sign up.", "You need to log in to access this feature. If you don't have an account, you can quickly sign up.", "For access to this service, please log in to your account. If you're not registered, please sign up.", "Please log in to use this feature. If you don't have an account, please sign up." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      } ]
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "7590fa39-fd58-4afc-ab68-d9e79ed6781e"
+  }, {
+    "condition": "$session.params.is_logged_in = true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Order Lookup",
+    "name": "91d9ba18-344a-4518-b920-136a7bbc94ed"
+  } ]
+}

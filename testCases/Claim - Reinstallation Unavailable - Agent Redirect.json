@@ -1,0 +1,67 @@
+{
+  "name": "3163d6d0-354b-48a8-84d7-a1e3c9e94a03",
+  "tags": [ "#claim", "#agent" ],
+  "displayName": "Claim - Reinstallation Unavailable - Agent Redirect",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "hi"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "Main Menu",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eHi there!\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eThis is the Necoa Assistant Bot. How can I help you today?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Why is the move service not available for my new address?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "claim.reinstallation_unavailable"
+      },
+      "currentPage": {
+        "name": "\u003e confirm agent connect",
+        "flow": "Agent Connection"
+      },
+      "textResponses": [ {
+        "text": [ "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed." ]
+      } ],
+      "currentFlow": {
+        "name": "Agent Connection"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1718680377,
+    "nanos": 927481000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

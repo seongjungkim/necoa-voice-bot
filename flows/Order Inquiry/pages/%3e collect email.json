@@ -1,0 +1,48 @@
+{
+  "name": "6a1d7912-51cc-429e-8e70-8fd2d27f1e39",
+  "displayName": "\u003e collect email",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.email_collection_full_email = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Email Collection",
+    "name": "750845a8-1bc9-4f9b-acb0-ce6ec4e25d5c"
+  }, {
+    "condition": "$session.params.email_collection_full_email != null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "collect_email",
+        "value": "$session.params.email_collection_full_email"
+      }, {
+        "parameter": "email_collection_full_email",
+        "value": null
+      }, {
+        "parameter": "$flow.order_search_email",
+        "value": "$session.params.collect_email"
+      }, {
+        "parameter": "email",
+        "value": "$flow.order_search_email"
+      }, {
+        "parameter": "current_user_email",
+        "value": "$flow.order_search_email"
+      } ]
+    },
+    "targetPage": "# order search",
+    "name": "5cf087d6-96d1-4c99-abd8-bda8797078fe"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "event": "flow.failed",
+    "triggerFulfillment": {
+    
+    },
+    "name": "5b341087-f185-4cff-ab0e-d197c6443bd5"
+  } ]
+}

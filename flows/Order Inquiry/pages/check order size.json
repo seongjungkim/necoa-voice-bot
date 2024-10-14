@@ -1,0 +1,65 @@
+{
+  "name": "178a8159-9aba-438f-99fa-565e500b269e",
+  "displayName": "check order size",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.order_size = 0",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "No orders available. Verify your order number or register your product.", "No orders found. Please check your order number or register your product.", "Order not found. Please verify the number or register your product.", "No orders listed. Confirm your order number or register your product.", "No orders detected. Recheck your order number or ensure product registration." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default",
+      "setParameterActions": [ {
+        "parameter": "current_order",
+        "value": null
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "fc7de679-e6e6-40f9-a5e7-1fd9c4bb567f"
+  }, {
+    "condition": "$session.params.order_size = 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "current_order",
+        "value": "$sys.func.GET($session.params.user_order_items, 0)"
+      }, {
+        "parameter": "$flow.orderId",
+        "value": "$sys.func.GET_FIELD($session.params.current_order, \"orderId\")"
+      }, {
+        "parameter": "$flow.orderItemId",
+        "value": "$sys.func.GET_FIELD($session.params.current_order, \"orderItemId\")"
+      }, {
+        "parameter": "current_order_id",
+        "value": "$flow.orderId"
+      }, {
+        "parameter": "current_order_item_id",
+        "value": "$flow.orderItemId"
+      } ]
+    },
+    "targetPage": "\u003e confirm auto select order",
+    "name": "1632049d-0397-445b-95e9-d428a2279425"
+  }, {
+    "condition": "$session.params.order_size \u003e= 2 AND $session.params.choose_item = true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "#\u003e product search non member",
+    "name": "3347c648-2c95-42db-8317-62702675d348"
+  }, {
+    "condition": "$session.params.order_size \u003e= 2 AND ($session.params.choose_item = false OR $session.params.choose_item = NULL)",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end success",
+    "name": "3a0b02ec-6673-46fa-9141-6517950cd2b7"
+  } ]
+}

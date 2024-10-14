@@ -1,0 +1,51 @@
+{
+  "name": "8e2b90c5-c365-4cad-a704-0a891884650d",
+  "displayName": "Coway User Authentication",
+  "transitionRoutes": [ {
+    "intent": "small_talk.agent_hand_off",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Agent Connection",
+    "name": "bdb0821b-28ff-4c08-8937-e3e798c513ce"
+  }, {
+    "intent": "account.no_account",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "로그인이 필요합니다." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "3ded797d-19d0-4753-ba5f-a71133d149f5"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "378a5585-4a0f-4de6-932f-8302f4ec618f"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "f019221a-7c87-4220-9ece-beadfea34ae4"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  }
+}

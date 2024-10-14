@@ -1,0 +1,35 @@
+{
+  "name": "5edc026c-37c9-4b27-8fef-6f4d82b51d2d",
+  "displayName": "Check Visiter Verification",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.is_logged_in = false OR $session.params.is_logged_in = null",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "allow_guest_login",
+        "value": false
+      } ]
+    },
+    "targetFlow": "Coway User Authentication",
+    "name": "670fe53f-b71d-4ab1-aa68-df34bc02d2cd"
+  }, {
+    "condition": "$session.params.reset = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "reset",
+        "value": null
+      } ]
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "96ac8f33-1e36-4396-8a44-edf9c2450370"
+  }, {
+    "condition": "$session.params.is_logged_in = true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Choose Account Operation",
+    "name": "759b6b7c-a9fd-41a0-869c-731d64740bd1"
+  } ]
+}

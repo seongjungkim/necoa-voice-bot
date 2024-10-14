@@ -1,0 +1,10 @@
+{
+  "name": "e0a3d974-0921-4321-80b3-39fd3d0dff95",
+  "displayName": "contract.change_active_rental",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 15
+}

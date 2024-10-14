@@ -1,0 +1,16 @@
+{
+  "name": "67802d25-2d5c-48f7-94d4-49f81ac93dfd",
+  "displayName": "components_email_collection_full_email",
+  "parameters": [ {
+    "id": "user_provided_full_email",
+    "entityType": "@sys.email"
+  }, {
+    "id": "local-part",
+    "entityType": "@components_email_collection_local_part"
+  }, {
+    "id": "domain",
+    "entityType": "@components_email_collection_domain"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 8
+}

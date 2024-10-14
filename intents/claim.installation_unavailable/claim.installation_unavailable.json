@@ -1,0 +1,10 @@
+{
+  "name": "31b06ff6-5edd-4422-b367-eef0e835c042",
+  "displayName": "claim.installation_unavailable",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 11
+}

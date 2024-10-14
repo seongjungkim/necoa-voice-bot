@@ -1,0 +1,21 @@
+{
+  "name": "6276655c-5e37-414d-ab60-28764ead5196",
+  "displayName": "Parameter Cleanup",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "choose_item",
+        "value": null
+      }, {
+        "parameter": "zipcode",
+        "value": null
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "bcf78394-ed7a-4cb2-88b7-75cb44a234e5"
+  } ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "5a761cc3-b091-4666-bb8b-df7b6f1ad477",
+  "displayName": "filter.delivery_delay",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 11
+}

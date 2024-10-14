@@ -1,0 +1,10 @@
+{
+  "name": "17fd5b50-df8c-4cf6-8a58-592144c3d373",
+  "displayName": "customer_service.add_installation",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 1
+}

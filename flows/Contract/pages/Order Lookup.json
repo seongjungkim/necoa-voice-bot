@@ -1,0 +1,62 @@
+{
+  "name": "a044e7fc-431a-4d4e-9c9d-67b31112ab60",
+  "displayName": "Order Lookup",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.has_order_data = null OR $session.params.has_order_data = false",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Order Inquiry",
+    "name": "f9ea7373-2bcf-4a54-894d-d8f4b8b06a4e"
+  }, {
+    "condition": "$session.params.has_order_data = true AND $session.params.order_size \u003e 0",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Choose Contract Operation",
+    "name": "be1224e2-a680-4e5b-b3ed-3a9fef833ee3"
+  }, {
+    "condition": "$session.params.has_order_data = true AND $session.params.order_size = 0",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "It looks like you don't have any products ordered at the moment.", "Currently, there are no registered products under your account.", "I couldn't find any products associated with your account right now.", "It seems you haven't placed any orders with us yet.", "There are no products registered to your account at this time.", "You currently don't have any orders on record.", "I checked but found no products ordered from your account.", "Your account shows no current orders for products.", "As of now, there are no registered products in your account.", "You don't have any products listed in your order history." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      } ]
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "3d6a475d-14c8-46f9-a153-d2b62f8d21e9"
+  }, {
+    "condition": "$session.params.reset = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "reset",
+        "value": null
+      } ]
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "20f99f2a-3256-442d-b395-b83296133639"
+  } ],
+  "eventHandlers": [ {
+    "targetFlow": "Agent Connection",
+    "event": "flow.failed",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "reset",
+        "value": true
+      } ]
+    },
+    "name": "1eff290b-9817-43b7-8f5d-590ff1789a91"
+  } ]
+}

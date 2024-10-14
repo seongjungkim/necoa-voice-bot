@@ -1,0 +1,6 @@
+{
+  "name": "c01ab000-14df-4072-94ff-898805258c47",
+  "displayName": "filter.delivery_status_check",
+  "priority": 500000,
+  "numTrainingPhrases": 7
+}

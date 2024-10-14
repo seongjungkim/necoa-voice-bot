@@ -1,0 +1,58 @@
+{
+  "name": "2eddbc91-2f92-4f06-b732-aaf5b889585f",
+  "displayName": "\u003e collect zipcode",
+  "form": {
+    "parameters": [ {
+      "displayName": "zipcode",
+      "required": true,
+      "entityType": "@sys.zip-code",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Please say your zipcode or enter the five digits followed by the pound key.", "Tell me your zipcode or type the five digits and press the pound key.", "You can say your zipcode or enter the five digits, then press the pound key.", "Please provide your zipcode or enter the five digits and hit the pound key.", "Say your zipcode or key in the five digits and press pound.", "Please tell me your zipcode or type it in followed by the pound key.", "Say your zipcode or enter the five digits and press the pound key." ]
+            },
+            "languageCode": "en"
+          } ],
+          "webhook": "Chatbot Fulfillment",
+          "tag": "default"
+        }
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "finishDigit": "#",
+          "useSystemEntityRule": false,
+          "interdigitTimeoutDuration": {
+            "seconds": 5
+          },
+          "endpointingTimeoutDuration": {
+            "seconds": 9
+          }
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = FINAL",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003eGot it! You entered zipcode \u003csay-as interpret-as='verbatim'\u003e$session.params.zipcode\u003c/say-as\u003e.\u003c/speak\u003e", "\u003cspeak\u003eThanks! Your zipcode \u003csay-as interpret-as='verbatim'\u003e$session.params.zipcode\u003c/say-as\u003e is received.\u003c/speak\u003e", "\u003cspeak\u003eAlright! Zipcode \u003csay-as interpret-as='verbatim'\u003e$session.params.zipcode\u003c/say-as\u003e has been entered.\u003c/speak\u003e", "\u003cspeak\u003eGreat! We've got your zipcode \u003csay-as interpret-as='verbatim'\u003e$session.params.zipcode\u003c/say-as\u003e.\u003c/speak\u003e", "\u003cspeak\u003eThanks! We have your zipcode as \u003csay-as interpret-as='verbatim'\u003e$session.params.zipcode\u003c/say-as\u003e.\u003c/speak\u003e", "\u003cspeak\u003eZipcode \u003csay-as interpret-as='verbatim'\u003e$session.params.zipcode\u003c/say-as\u003e is noted. Thanks!\u003c/speak\u003e", "\u003cspeak\u003ePerfect! Your zipcode \u003csay-as interpret-as='verbatim'\u003e$session.params.zipcode\u003c/say-as\u003e is recorded.\u003c/speak\u003e", "\u003cspeak\u003eGot your zipcode \u003csay-as interpret-as='verbatim'\u003e$session.params.zipcode\u003c/say-as\u003e. Thanks!\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default",
+      "setParameterActions": [ {
+        "parameter": "$flow.technician_service_areas_branch_zipcode",
+        "value": "$session.params.zipcode"
+      } ]
+    },
+    "targetPage": "# technician service areas branch",
+    "name": "e2c65550-1a29-4351-904b-431b473be949"
+  } ]
+}

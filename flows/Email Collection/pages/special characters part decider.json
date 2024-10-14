@@ -1,0 +1,27 @@
+{
+  "name": "ede64328-ab73-4507-bd02-87895b524801",
+  "displayName": "special characters part decider",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.user_provided_local_part != NULL AND $flow.user_provided_domain = NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.collect_part",
+        "value": "domain"
+      } ]
+    },
+    "name": "7fe946b4-5f31-4747-ae2d-71cb1daf5cb0"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect first part of email",
+    "name": "0a0030f0-78c7-4c23-9f5c-75b2d6efa45f"
+  } ]
+}

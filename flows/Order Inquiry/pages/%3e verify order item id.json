@@ -1,0 +1,50 @@
+{
+  "name": "0bd4d730-6f65-4e09-8bf1-18cf59428caa",
+  "displayName": "\u003e verify order item id",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "current_order",
+        "value": ""
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "b0bf590a-d12a-4bd4-b9e3-1d58ff0d088e"
+  }, {
+    "condition": "false AND $flow.replay_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "The serial number you provided doesn't match any of our records. Please try again.", "It looks like there's no product with that serial number in our system. Please verify and enter the serial number again.", "We couldn't find a product with that serial number. Could you double-check and try again?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.replay_counter",
+        "value": "$sys.func.ADD($flow.replay_counter,1)"
+      } ]
+    },
+    "targetPage": "\u003e select order",
+    "name": "f49f4b96-745a-4223-aa53-2ab02870b701"
+  }, {
+    "condition": "false AND $flow.replay_counter = 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Unfortunately, we’re unable to locate your product with the provided serial numbers. Would you like me to connect you with a customer service representative for more help?", "We still can't find a product with that serial number. It might be best to connect with a customer service agent for further assistance. Would you like to proceed with that?", "It seems like there might be an issue with the serial number you're entering. We’re having trouble finding your product. Would you like to be connected to a customer service representative?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "reset",
+        "value": true
+      } ]
+    },
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "name": "dc6588fb-d779-4aac-89fd-b1d498d14131"
+  } ]
+}

@@ -1,0 +1,113 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "Can I get a summary of my "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": " rental terms?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Where can I find my "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": " rental contract info?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I want to review my "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": " contract."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Can you provide the details of my current "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": " rental agreement?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "What's the status of my "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": " rental contract?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Can you show me my "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": " rental details?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "How can I view my "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": " rental contract?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I'd like to see my "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": " contract information."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "What are the terms of my "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": " rental agreement?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Can I check the details of my "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": " rental contract?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "9f56bf9e-4698-43b5-95d1-39e52530577c",
+  "displayName": "claim.service_denial",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 5
+}

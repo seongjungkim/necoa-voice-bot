@@ -1,0 +1,33 @@
+{
+  "name": "8167e7ca-31cb-46ad-aefb-c0d6d43cce21",
+  "displayName": "# order search",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "webhook": "order_search_guest",
+      "tag": "abc"
+    },
+    "targetPage": "# customers search email",
+    "name": "c55041a3-48f3-42b4-a81c-cb24525ba2e0"
+  } ],
+  "eventHandlers": [ {
+    "targetFlow": "Agent Connection",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "There's a glitch with our server right now. If you require assistance, a support agent can help!", "We're having trouble fetching your order details. Need help? Just ask to speak with our support team!", "Server issues are affecting order access. Need to speak to our support team? Let us know!", "Currently facing issues retrieving your order. Want us to connect you with support?", "Oops! We can't access your order info at the moment. If you need a hand, our support team is here." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "name": "f59aaa58-3016-45ea-8b25-81f07de865e6"
+  } ]
+}

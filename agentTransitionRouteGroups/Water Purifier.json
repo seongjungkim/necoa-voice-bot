@@ -1,0 +1,18 @@
+{
+  "name": "5b8616e7-5694-42a2-ae77-dc967970911c",
+  "displayName": "Water Purifier",
+  "transitionRoutes": [ {
+    "intent": "product.water_purifier.installation_guide",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "For your safety and to ensure proper installation, water purifiers must be installed by our service technicians. Please request a service for installation.", "Our water purifiers require professional installation. Please schedule a service appointment to have it installed by a technician.", "To ensure correct setup, our water purifiers must be installed by an authorized technician. Please contact customer service to schedule an installation.", "For optimal performance and safety, water purifiers should be installed by our service professionals. Please submit a service request for installation.", "Unfortunately, self-installation is not allowed for our water purifiers. Please schedule a service visit for proper installation.", "Self-installation isn't permitted for our water purifiers. Please contact us to schedule a service visit for installation." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default"
+    },
+    "name": "9c5fcef9-7c4f-404e-8282-fabcff5894e9"
+  } ]
+}

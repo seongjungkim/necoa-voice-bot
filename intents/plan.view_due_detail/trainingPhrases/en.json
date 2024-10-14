@@ -1,0 +1,9 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "When is my next bill due? I need to know the payment due date."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

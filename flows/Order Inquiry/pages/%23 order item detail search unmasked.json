@@ -1,0 +1,47 @@
+{
+  "name": "d0b8dd6c-b16b-4e9c-8dc2-c85e6dbde6fc",
+  "displayName": "# order item detail search unmasked",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "order_items_detail_search_unmasked",
+    "tag": "abc",
+    "setParameterActions": [ {
+      "parameter": "$flow.order_items_detail_search_orderId",
+      "value": "$flow.orderId"
+    }, {
+      "parameter": "$flow.order_items_detail_search_orderItemId",
+      "value": "$flow.orderItemId"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.current_order != null",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We've found the information for the order you selected, Order Number: $sys.func.GET_FIELD($session.params.current_order, \"channelOrderId\").", "Here's the information regarding your selected Order Number: $sys.func.GET_FIELD($session.params.current_order, \"channelOrderItemId\").", "I've retrieved the details for your Order Number: $sys.func.GET_FIELD($session.params.current_order, \"channelOrderItemId\").", "Details for your chosen Order Number: $sys.func.GET_FIELD($session.params.current_order, \"channelOrderItemId\") have been located.", "I've located the information for the Order Number: $sys.func.GET_FIELD($session.params.current_order, \"channelOrderItemId\") you specified." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default"
+    },
+    "targetPage": "end success",
+    "name": "1bc005b1-7888-4d0c-bb7e-dc787050fa3f"
+  }, {
+    "condition": "$session.params.current_order = null OR $session.params.current_order = \"\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I'm sorry, but I couldn't retrieve your product information.", "Apologies, but I wasn't able to get your product details.", "Sorry, I couldn't fetch the information for your product.", "I'm afraid I couldn't retrieve the details for your product. Please try again.", "Unfortunately, I couldn't access your product information. Sorry about that!", "I apologize, but I'm unable to get the details for your product right now.", "My apologies, I couldn't pull up your product information. Please try again.", "I'm sorry, but there was an issue retrieving your product details.", "Sorry about that, but I couldn't get the information for your product." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default"
+    },
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "name": "75562193-b7a3-4108-9941-fe821cbdd830"
+  } ]
+}

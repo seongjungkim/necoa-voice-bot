@@ -1,0 +1,165 @@
+{
+  "name": "5016976c-21a7-4147-b15a-3fdc33e7632a",
+  "displayName": "Plan",
+  "transitionRoutes": [ {
+    "intent": "small_talk.agent_hand_off",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Agent Connection",
+    "name": "e305a7f2-8566-44af-b6cc-6fad000ace98"
+  }, {
+    "intent": "small_talk.start_over",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      } ]
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "79ec8713-490c-4648-84be-e4bc84602bb5"
+  }, {
+    "intent": "small_talk.wait",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sure, just let me know when you're ready.", "Okay, I can wait. Let me know when you're ready.", "No problem! Just speak up when you're ready." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "6403b397-4899-43e2-a417-fbd369c597f5"
+  }, {
+    "intent": "small_talk.ready",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Okay!", "No problem.", "Alright.", "Great!" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "53a9cfd5-dba7-4bcc-bcc9-6af14f32bd99"
+  }, {
+    "intent": "small_talk.still_there",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I'm still here!", "I'm here!", "Don't worry, I'm here.", "Don't worry, I'm still here." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "be706dd5-6d0d-4288-aa6e-e265cd682e50"
+  }, {
+    "condition": "$session.params.operation = \"Check Order Ship Status\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I can help you with that.", "Sure, no problem.", "I'll be happy to help!", "Happy to assist!", "I can definitely look into that." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "choose_item",
+        "value": true
+      } ]
+    },
+    "targetPage": "Choose Plan Operation",
+    "name": "58ad5b14-4264-4f38-b199-7a5636f0a87b"
+  }, {
+    "condition": "$session.params.operation = \"Change Order\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I can help you with that. You can only change delivery-related details.", "Sure, no problem. Only delivery-related changes are allowed.", "I'll be happy to help! We can only modify delivery details.", "Happy to assist! You can update delivery-related information.", "I can definitely look into that. Only delivery-related adjustments are possible." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "choose_item",
+        "value": true
+      } ]
+    },
+    "targetPage": "Order Lookup",
+    "name": "a0c8e5b5-a3be-4c08-b5ad-e82b0c7cd6b7"
+  }, {
+    "condition": "$session.params.operation = \"Service Area\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect zipcode",
+    "name": "c841b0c6-86b6-4c73-922c-da5cbec81a7c"
+  }, {
+    "condition": "$session.params.operation = \"Retal Overdue\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "choose_item",
+        "value": true
+      } ]
+    },
+    "targetPage": "Order Lookup",
+    "name": "16d56d1d-43b6-4479-bd20-aa8e4177c0c3"
+  }, {
+    "condition": "$session.params.operation = \"Buy Product\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "You can buy our products on the Necoa website or through a live agent. Connect to a live agent?", "Visit the Necoa website or speak to a live agent to purchase. Connect you to a live agent?", "Order on the Necoa website or talk to a live agent. Should I connect you?", "Purchase via the Necoa website or with a live agent. Connect to a live agent?", "Use the Necoa website or contact a live agent to buy. Connect you to a live agent?", "Buy from the Necoa website or through a live agent. Connect to a live agent?", "To order, visit the Necoa website or speak to a live agent. Connect you to a live agent?", "Order on the Necoa site or through a live agent. Connect to a live agent?", "Buy on the Necoa website or talk to a live agent. Should I connect you?", "Purchase on the Necoa site or via a live agent. Connect you to a live agent?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      }, {
+        "parameter": "cnsl_type",
+        "value": "판매_주문___제품주문__제품_주문_안내_및_구매_링크_발송"
+      }, {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "36151f17-17ea-4b0e-8501-a0726a2eff78"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b860f920-ae69-4f08-b25f-05928be17604"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "54c08afa-c67a-4ca5-9df8-39239e089cae"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC",
+    "multiIntentSettings": {
+    
+    }
+  },
+  "advancedSettings": {
+    "enabled": true
+  }
+}

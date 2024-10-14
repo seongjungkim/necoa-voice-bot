@@ -1,0 +1,74 @@
+{
+  "name": "ceaf08ae-4154-4f22-abbf-323d403baf90",
+  "displayName": "Lost Order Number",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "The order number should be a 8 digit number at the top of your confirmation email. Let me know if you are able to find it.", "You should see a 8 digit number at the top of your order confirmation email. Were you able to find it?", "There should be a 8 digit number in the top of your order confirmation email. Did you find it?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "small_talk.confirmation.no",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We'll need to find your order number before I can help.", "I'll need your order number before I can help you." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "b19e0679-3252-4020-86c4-01b4a17b3edf"
+  }, {
+    "intent": "small_talk.confirmation.yes",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Great!", "Okay!", "Perfect!" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect order number",
+    "name": "1b52a527-dfc0-446e-b0b5-f6994d5c4322"
+  }, {
+    "intent": "order.found_order_number",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Perfect!", "Great!", "Okay!" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "\u003e collect order number",
+    "name": "6dd14098-c59a-4965-8748-7c821dd70f53"
+  }, {
+    "intent": "order.cant_find_number",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We'll need to find your order number before I can help.", "I'll need your order number before I can help you." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "4d826924-28d5-4b6c-83f4-4e7a137b1a97"
+  }, {
+    "intent": "order.extract.order_number_collection",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "collect_channel_order_number",
+        "value": "$intent.params.code_channel_order_number"
+      } ]
+    },
+    "targetPage": "\u003e collect order number",
+    "name": "e15b4dd0-35a3-4b9d-b6c5-32fe159e502f"
+  } ]
+}

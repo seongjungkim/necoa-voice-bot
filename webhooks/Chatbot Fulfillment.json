@@ -1,0 +1,11 @@
+{
+  "name": "c8366c4d-ca38-4bc7-81ae-373a57ee8223",
+  "displayName": "Chatbot Fulfillment",
+  "genericWebService": {
+    "uri": "https://fulfillment-dot-necoa-aicc-dev.uc.r.appspot.com/fulfillment/cx/webhook/necoa/en_US/none",
+    "webhookType": "STANDARD"
+  },
+  "timeout": {
+    "seconds": 20
+  }
+}

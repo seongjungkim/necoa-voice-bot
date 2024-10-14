@@ -1,0 +1,17 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "massage chair",
+      "parameterId": "service_product"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

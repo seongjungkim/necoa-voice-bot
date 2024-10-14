@@ -1,0 +1,15 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "test case 1"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "wanda59@yahoo.com"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

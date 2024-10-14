@@ -1,0 +1,24 @@
+{
+  "name": "47ed3019-94ea-4218-bb9a-e90f036281a6",
+  "displayName": "\u003e select order",
+  "form": {
+    "parameters": [ {
+      "displayName": "serial_number",
+      "required": true,
+      "entityType": "@code_serial_number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e verify order item id",
+    "name": "415098c5-b6a4-4405-88b6-61030b1d5512"
+  } ]
+}

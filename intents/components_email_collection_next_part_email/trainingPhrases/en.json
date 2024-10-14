@@ -1,0 +1,102 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "jack18",
+      "parameterId": "verify_local_part_part"
+    }, {
+      "text": " ",
+      "auto": true
+    }, {
+      "text": "would"
+    }, {
+      "text": " be my ",
+      "auto": true
+    }, {
+      "text": "next"
+    }, {
+      "text": " ",
+      "auto": true
+    }, {
+      "text": "part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "the",
+      "auto": true
+    }, {
+      "text": " "
+    }, {
+      "text": "next",
+      "auto": true
+    }, {
+      "text": " "
+    }, {
+      "text": "part",
+      "auto": true
+    }, {
+      "text": " is "
+    }, {
+      "text": "joe",
+      "parameterId": "verify_local_part_part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "kaul",
+      "parameterId": "verify_local_part_part"
+    }, {
+      "text": " is my ",
+      "auto": true
+    }, {
+      "text": "next",
+      "auto": true
+    }, {
+      "text": " ",
+      "auto": true
+    }, {
+      "text": "part",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "leel",
+      "parameterId": "verify_local_part_part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "juli",
+      "parameterId": "verify_local_part_part"
+    }, {
+      "text": " is the succeeding portion of my email"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "joe",
+      "parameterId": "verify_local_part_part"
+    }, {
+      "text": " this is next part of my local part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Continuing my email, "
+    }, {
+      "text": "jacky",
+      "parameterId": "verify_local_part_part"
+    }, {
+      "text": " is the subsequent part."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

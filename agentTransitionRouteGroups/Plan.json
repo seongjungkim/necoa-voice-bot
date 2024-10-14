@@ -1,0 +1,114 @@
+{
+  "name": "a0404892-a9d6-44dd-a0ea-75470d3c001e",
+  "displayName": "Plan",
+  "transitionRoutes": [ {
+    "intent": "plan.check_order_ship_status",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "Check Order Ship Status"
+      } ]
+    },
+    "name": "cd183b5e-30c6-495a-96da-85051333895c"
+  }, {
+    "intent": "plan.error",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Agent Connection",
+    "name": "16d8fee9-be97-481c-91b0-d21f04a4a4a1"
+  }, {
+    "intent": "plan.cancellation_request",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "e57b3b53-40bb-4d97-b0e2-8d20848bb366"
+  }, {
+    "intent": "plan.change_request_delivery",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "Change Order"
+      } ]
+    },
+    "name": "ce3870c1-5a46-4d0f-8d32-cef79e475f53"
+  }, {
+    "intent": "plan.change_request_contract",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Unfortunately, we can't modify this part of the order. You will need to cancel your current order and place a new one.", "I'm sorry, but changing that detail isn't possible. Please cancel your existing order and make a new one.", "To change that part of your order, you'll need to cancel it and reorder. Let me help you with the cancellation.", "We can't adjust that aspect of the order. You'll need to cancel and place a new order.", "To modify those details, you must cancel your current order and submit a new one.", "I'm afraid that change requires canceling your current order and creating a new one. Would you like to proceed with the cancellation?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default",
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      } ]
+    },
+    "name": "e8954bb3-50fc-477b-9fce-e5bd4babe434"
+  }, {
+    "intent": "plan.service_area",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "Service Area"
+      } ]
+    },
+    "name": "57adf9ef-96c1-4139-aea9-0a8d3914b34e"
+  }, {
+    "intent": "plan.rental_overdue",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "Rental Overdue"
+      } ]
+    },
+    "name": "8e95835a-55e2-49f8-9793-35501a841786"
+  }, {
+    "intent": "plan.promotions",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "We're sorry, but there are no promotions at the moment.", "Unfortunately, we don't have any promotions running right now.", "There aren't any promotions available at this time.", "Currently, we don't have any active promotions.", "No promotions are available right now, but please check back later!" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "no service",
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      } ]
+    },
+    "name": "8429986d-0926-4919-988f-b778b559cb5f"
+  }, {
+    "intent": "order_inquiry.other_product",
+    "condition": "$session.params.has_order_data = true AND $session.params.order_size \u003e 1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sure, let's check out a different product.", "Alright, let's look at another purifier.", "No problem, we'll switch to a different product.", "Got it, let's start with a different purifier.", "Okay, let's find info on another product.", "Let's change to a different purifier now.", "Sure thing, let's switch to another product.", "Alright, we'll check out a new purifier.", "Okay, let's look up a different product for you.", "Okay, let's look up a different product for you." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "switch order",
+      "setParameterActions": [ {
+        "parameter": "has_order_data",
+        "value": null
+      }, {
+        "parameter": "choose_item",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Order Inquiry",
+    "name": "eeec6a14-8469-4cf7-ae27-372c39fe8522"
+  } ]
+}

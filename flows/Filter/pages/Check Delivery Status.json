@@ -1,0 +1,26 @@
+{
+  "name": "8131ce1d-805e-44cc-90e3-1629a9be35d7",
+  "displayName": "Check Delivery Status",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$session.param.current_order" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      } ]
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "4ff7447f-056d-451b-8ea1-df133b86fe60"
+  } ]
+}

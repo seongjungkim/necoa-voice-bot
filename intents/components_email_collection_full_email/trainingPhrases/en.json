@@ -1,0 +1,77 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "tae.park at coway dot com",
+      "parameterId": "user_provided_full_email"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "tae.park@coway.com",
+      "parameterId": "user_provided_full_email"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my email is "
+    }, {
+      "text": "trpark@tpcg.co.kr",
+      "parameterId": "user_provided_full_email"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my "
+    }, {
+      "text": "email",
+      "auto": true
+    }, {
+      "text": " is "
+    }, {
+      "text": "emily at yahoo dot com",
+      "parameterId": "user_provided_full_email",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "happy at gmail dot com",
+      "parameterId": "user_provided_full_email",
+      "auto": true
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "sdf7575@naver.com",
+      "parameterId": "user_provided_full_email"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "john@google.com",
+      "parameterId": "user_provided_full_email"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "my local part is "
+    }, {
+      "text": "john",
+      "parameterId": "local-part"
+    }, {
+      "text": " and my domain is "
+    }, {
+      "text": "google.com",
+      "parameterId": "domain"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

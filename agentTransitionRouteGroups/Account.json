@@ -1,0 +1,67 @@
+{
+  "name": "97641311-cf6f-4d12-a843-7bc57b56f9dc",
+  "displayName": "Account",
+  "transitionRoutes": [ {
+    "intent": "account.update_address",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "Update Account Address"
+      } ]
+    },
+    "name": "67673225-6ef0-4d52-be4a-0822810813ce"
+  }, {
+    "intent": "account.update_email",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "Update Account Email"
+      } ]
+    },
+    "name": "06b90bf8-d170-4587-9f73-6725e01257fe"
+  }, {
+    "intent": "account.update_phone",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "Update Account Phone"
+      } ]
+    },
+    "name": "729a90f9-136d-44a2-8e7b-de54d9897694"
+  }, {
+    "intent": "account.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "It looks like there's an issue. Would you like to be connected to a representative for assistance?", "I'm sorry, something went wrong. Can I connect you to a customer service agent to help you out?", "There seems to be an error. Would you like me to transfer you to a support representative?", "Oops, there was an error. Would you like to speak with a representative for further assistance?", "Something went wrong. Do you want me to connect you with a customer service agent to resolve this issue?", "I'm having trouble with that. Would you like to be connected to a customer service representative?", "There was an issue processing your request. Do you want to speak with a representative for help?", "I apologize, but there was an error. Would you like to be connected to a representative for help?", "It seems there's a problem. Can I transfer you to a representative for assistance?", "Sorry, an error occurred. Would you like me to put you through to a customer service agent?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "agent",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      }, {
+        "parameter": "reset",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "379fc0df-29b6-4c4e-87c7-2870d2a8a0c1"
+  }, {
+    "intent": "account.view_account",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I'm sorry, but the voice bot can't assist with your request.", "Unfortunately, the voice bot isn't able to help with that request.", "The voice bot can't handle your request at the moment. Sorry about that!", "For this request, I'm unable to assist through the voice bot. Please contact our customer service.", "The voice bot can't support your request right now. Please reach out to our support team.", "Sorry, but the voice bot can't process your request. Our customer service team can help!", "I can't assist with this request via the voice bot. Please contact customer service for further assistance.", "This request can't be completed through the voice bot. Please get in touch with our support team.", "The voice bot isn't equipped to handle your request. Our customer service team is here to help!", "I'm unable to process your request through the voice bot. Please contact our support team for assistance." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "cd339aa0-0a7b-4eba-9866-fb893b26a5fe"
+  } ]
+}

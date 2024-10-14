@@ -1,0 +1,47 @@
+{
+  "name": "6d6635fe-db59-465f-ade5-263af57235d1",
+  "displayName": "\u003e set product",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "hasVisited",
+      "value": true
+    }, {
+      "parameter": "current_store",
+      "value": "NECOA"
+    }, {
+      "parameter": "store_product",
+      "value": [ "water purifier" ]
+    }, {
+      "parameter": "size_product",
+      "value": "$sys.func.COUNT($session.params.store_product)"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.size_product = 0",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "name": "36e40714-0cff-4ab1-a14c-5f676313b453"
+  }, {
+    "condition": "$session.params.size_product = 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "current_product",
+        "value": "$sys.func.GET($session.params.store_product, 0)"
+      } ]
+    },
+    "targetPage": "Welcome Message",
+    "name": "e8f31355-5d45-43d8-a247-827aa09909ce"
+  }, {
+    "condition": "$session.params.size_product \u003e= 2",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e select product",
+    "name": "7adf286c-af20-4c7c-9b89-df2a74c7ab90"
+  } ]
+}

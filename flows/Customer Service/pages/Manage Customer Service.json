@@ -1,0 +1,18 @@
+{
+  "name": "c1f60493-4cab-4a3c-8b8d-0faf0228bc65",
+  "displayName": "Manage Customer Service",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "customer_service.add_relocation",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "Add Reinstall"
+      } ]
+    },
+    "targetPage": "Choose Customer Service Operation",
+    "name": "8132a671-24d5-4414-9935-8b8e7ef2b562"
+  } ]
+}

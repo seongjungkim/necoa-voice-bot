@@ -1,0 +1,31 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "orderId: "
+    }, {
+      "text": "INS-mall001-9221656254",
+      "parameterId": "code_order_number"
+    }, {
+      "text": ", orderItemId: "
+    }, {
+      "text": "INS-mall001-9221656254-9221656254-1",
+      "parameterId": "code_order_item_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "orderId : "
+    }, {
+      "text": "INS-mall001-1281118909",
+      "parameterId": "code_order_number"
+    }, {
+      "text": ", orderItemId : "
+    }, {
+      "text": "INS-mall001-1281118909-1281118909-1",
+      "parameterId": "code_order_item_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

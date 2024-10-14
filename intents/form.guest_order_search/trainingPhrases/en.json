@@ -1,0 +1,17 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "order number: "
+    }, {
+      "text": "INS-mall001-9221656254",
+      "parameterId": "order_number"
+    }, {
+      "text": " email: "
+    }, {
+      "text": "emily.johnson@example.com",
+      "parameterId": "email"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

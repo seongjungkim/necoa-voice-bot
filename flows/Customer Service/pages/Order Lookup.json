@@ -1,0 +1,43 @@
+{
+  "name": "df35946b-47cb-4e38-bcc1-add3724ce50c",
+  "displayName": "Order Lookup",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.has_order_data = true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Choose Customer Service Operation",
+    "name": "0cb4c426-8ac9-463f-9a14-e7edcbc57b59"
+  }, {
+    "condition": "$session.params.has_order_data = null OR $session.params.has_order_data = false",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Order Inquiry",
+    "name": "43ddd189-7c43-4bf2-8868-80dff004e401"
+  }, {
+    "condition": "$session.params.reset = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "reset",
+        "value": null
+      } ]
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "f05534e9-f69f-44d3-a701-47a47c84659c"
+  } ],
+  "eventHandlers": [ {
+    "targetFlow": "Agent Connection",
+    "event": "flow.failed",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "reset",
+        "value": true
+      } ]
+    },
+    "name": "722398d0-cd35-4bdb-98dc-12a4689e89d2"
+  } ]
+}

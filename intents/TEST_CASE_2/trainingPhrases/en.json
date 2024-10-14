@@ -1,0 +1,10 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "jane.doe@example.com",
+      "parameterId": "email"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "6eee2eeb-eb60-4bf1-9b4e-9616ad67e11c",
+  "displayName": "filter.during_replacement_damage",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-head",
+    "value": "sys-head"
+  } ],
+  "description": "User reports damage to the product or filter during the self-replacement process.",
+  "numTrainingPhrases": 2
+}

@@ -1,0 +1,10 @@
+{
+  "name": "0a4eadf7-4d6e-4ec4-b13c-cb739e77f622",
+  "displayName": "customer_service.view_relocation",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 2
+}

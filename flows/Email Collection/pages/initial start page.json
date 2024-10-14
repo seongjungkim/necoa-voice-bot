@@ -1,0 +1,55 @@
+{
+  "name": "db705f41-8016-4a79-8c35-646ed8b979bb",
+  "displayName": "initial start page",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.is_select_initial_path = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Before capturing your email, could you please help us confirm whether you have any hyphens, dot, underscore or plus sign in your email?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.last_prompt",
+        "value": "Before capturing your email, could you please help us confirm whether you have any hyphens, dot, underscore or plus sign in your email?"
+      } ],
+      "advancedSettings": {
+        "playbackInterruptionSettings": {
+        
+        }
+      }
+    },
+    "targetPage": "\u003e confirm special character",
+    "name": "48f33b07-2ae6-4604-b53e-722e1858cda7"
+  }, {
+    "condition": "$flow.collect_local_part = \"local part\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_local_part",
+        "value": "$flow.verify_local_part"
+      } ]
+    },
+    "targetPage": "\u003e collect domain",
+    "name": "7e2cf3c8-dc99-4e38-a935-9c82ccca7fb6"
+  }, {
+    "condition": "$flow.collect_domain = \"domain\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_domain",
+        "value": "$flow.verify_email_part"
+      }, {
+        "parameter": "$flow.user_provided_full_email",
+        "value": "$sys.func.CONCATENATE($flow.user_provided_local_part,\"@\",$flow.user_provided_domain)"
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "48ad3c63-7094-4043-8e7e-370984905962"
+  } ]
+}

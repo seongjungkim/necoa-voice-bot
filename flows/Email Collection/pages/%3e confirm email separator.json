@@ -1,0 +1,93 @@
+{
+  "name": "1fa29b15-19ba-46d6-af02-9dbb8e62efba",
+  "displayName": "\u003e confirm email separator",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\"$flow.email_separator\". Did we capture the email separator after the first part of your $flow.collect_part correctly?" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.verify_local_part_part",
+      "value": null
+    }, {
+      "parameter": "$flow.last_prompt",
+      "value": "\"$flow.email_separator\". Did we capture the email separator after the first part of your $flow.collect_part correctly?"
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.verify_local_part",
+        "value": "$sys.func.CONCATENATE($flow.verify_local_part, $sys.func.SUBSTITUTE($flow.spelling_separator, \":\", \"\"))"
+      } ]
+    },
+    "targetPage": "\u003e collect next part of email",
+    "name": "7a293bfe-5e61-4a54-ae8e-6d487d31bab6"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.email_separator_counter \u003c 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.email_separator_counter",
+        "value": "$sys.func.ADD($flow.email_separator_counter,1)"
+      } ]
+    },
+    "targetPage": "\u003e collect email separator",
+    "name": "124b3fdf-b9bc-4c2c-9706-609924a6932c"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.email_separator_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, we've tried too many times and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "b0e6d235-4a22-4c58-8b68-a6410d9c5752"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "61af5c03-7fba-4a2a-8781-ef00e2c81a74"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "76571fb0-cc2f-4e51-930d-6b1be2efcc9f"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "30f47b49-813c-4588-a143-32732162ddf6"
+  } ]
+}

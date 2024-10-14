@@ -1,0 +1,38 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "My service requests are denied, and I can't use my purifier."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I'm not getting any help with my broken purifier."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My purifier isn't working, and I'm being denied service."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I've been asking for service, but my requests are being denied."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": " has been malfunctioning for days, and I've been unable to drink proper water. Yet, my requests for after-service keep getting denied. I'm really upset about this."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

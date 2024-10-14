@@ -1,0 +1,10 @@
+{
+  "name": "9c4677db-3e24-4932-8bba-add4cbf28376",
+  "displayName": "contract.view_remaining_rental_fee",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 7
+}

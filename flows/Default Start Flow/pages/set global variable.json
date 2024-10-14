@@ -1,0 +1,69 @@
+{
+  "name": "95242faa-e8fc-4875-802d-0b7ac6272a7b",
+  "displayName": "set global variable",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "hasVisited",
+      "value": true
+    }, {
+      "parameter": "current_store",
+      "value": "NECOA"
+    }, {
+      "parameter": "store_product",
+      "value": [ "water purifier" ]
+    }, {
+      "parameter": "size_product",
+      "value": "$sys.func.COUNT($session.params.store_product)"
+    }, {
+      "parameter": "sessionId",
+      "value": ""
+    }, {
+      "parameter": "startDate",
+      "value": "$sys.func.FORMAT_DATE($sys.func.ADD_DATE($sys.func.NOW(), -3, \"YEARS\"),\"yyyy-MM-dd\", \"en\")"
+    }, {
+      "parameter": "endDate",
+      "value": "$sys.func.FORMAT_DATE($sys.func.NOW(),\"yyyy-MM-dd\", \"en\")"
+    }, {
+      "parameter": "cnsl_type",
+      "value": ""
+    }, {
+      "parameter": "current_product",
+      "value": null
+    }, {
+      "parameter": "environment",
+      "value": "dev"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.common_code_OrderItemStatus = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "common_code_OrderItemStatus",
+    "name": "dce16a1d-1079-414e-9000-5b89e3e0fca5"
+  }, {
+    "condition": "$session.params.common_code_DurationInMonths = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "common_code_DurationInMonths",
+    "name": "28f08566-8ffe-44d1-a4b7-aff4b7d4fa9a"
+  }, {
+    "condition": "$session.params.common_code_SubscriptionPaymentDay = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "common_code_SubscriptionPaymentDay",
+    "name": "18df3c36-6c32-4bfd-82d4-7ac9f54971c7"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e set product",
+    "name": "b0367c82-1606-4435-8ccf-f63a83d3b909"
+  } ]
+}

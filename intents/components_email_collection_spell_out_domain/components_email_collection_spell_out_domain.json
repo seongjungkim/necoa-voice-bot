@@ -1,0 +1,10 @@
+{
+  "name": "898d5c9f-23d7-4112-a4a9-97e137819686",
+  "displayName": "components_email_collection_spell_out_domain",
+  "parameters": [ {
+    "id": "spell_out_domain",
+    "entityType": "@sys.any"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 5
+}

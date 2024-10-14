@@ -1,0 +1,50 @@
+{
+  "name": "4356d139-9e07-4f86-ac36-61a5f740dd7d",
+  "displayName": "TODO: \u003e collect install",
+  "form": {
+    "parameters": [ {
+      "displayName": "install_date",
+      "required": true,
+      "entityType": "@sys.date",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "install_address",
+      "required": true,
+      "entityType": "@sys.address",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "phone",
+      "required": true,
+      "entityType": "@sys.phone-number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "설치일, 설치 장소를 말씀해주세요." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = FINAL",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e request install",
+    "name": "8bc11909-5d0c-44c8-8846-60aa8789c62c"
+  } ]
+}

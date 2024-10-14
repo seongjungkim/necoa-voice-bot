@@ -1,0 +1,69 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "g o o g l e dot c o m",
+      "parameterId": "spell_out_domain"
+    }, {
+      "text": " is my "
+    }, {
+      "text": "email"
+    }, {
+      "text": " "
+    }, {
+      "text": "domain"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "N a v e r dot c o m",
+      "parameterId": "spell_out_domain"
+    }, {
+      "text": " is my domain"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The",
+      "auto": true
+    }, {
+      "text": " "
+    }, {
+      "text": "correct",
+      "auto": true
+    }, {
+      "text": " "
+    }, {
+      "text": "spelling",
+      "auto": true
+    }, {
+      "text": " of my "
+    }, {
+      "text": "domain"
+    }, {
+      "text": " is "
+    }, {
+      "text": "T P C G dot C O dot K R",
+      "parameterId": "spell_out_domain"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "y a h o o dot com",
+      "parameterId": "spell_out_domain"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "g m a i l dot c o m",
+      "parameterId": "spell_out_domain"
+    }, {
+      "text": " is the spelling for domain of email"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

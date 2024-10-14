@@ -1,0 +1,6 @@
+{
+  "name": "a6b91195-a436-4c88-9afe-1fa2f0b26a24",
+  "displayName": "plan.check_order_ship_status",
+  "priority": 500000,
+  "numTrainingPhrases": 50
+}

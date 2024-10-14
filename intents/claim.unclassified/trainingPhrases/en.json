@@ -1,0 +1,44 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "I received a used purifier instead of a new "
+    }, {
+      "text": "one",
+      "parameterId": "card_expiration_date"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "They're claiming my purchased purifier was a rental and want it back."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I was on a monthly plan but now they're saying it was a rental and want it back."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I thought I bought this purifier, but they're saying it was rented and taking it away."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Why are they taking back my purifier? I was paying for it monthly."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I've been paying good money for this water purifier, and now I'm told it was a rental and they're taking it back? I bought this on a monthly installment plan. Give me back my purifier immediately."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

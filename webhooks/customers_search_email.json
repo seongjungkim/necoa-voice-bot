@@ -1,0 +1,23 @@
+{
+  "name": "db2783af-e279-4acb-a4a1-90dd90c9bfc4",
+  "displayName": "customers_search_email",
+  "genericWebService": {
+    "uri": "https://fulfillment-dot-necoa-aicc-dev.uc.r.appspot.com/fulfillment/cx/webhook_flex/necoa/en_US/customers_search",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"sessionId\": \"$session.params.sessionId\",\n  \"email\": \"$flow.customers_search_email\"\n}",
+    "parameterMapping": [ {
+      "key": "$flow.api_response",
+      "value": "$.data"
+    }, {
+      "key": "customerId",
+      "value": "$.data.items[0].customerId"
+    }, {
+      "key": "login_user",
+      "value": "$.data.items[0]"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

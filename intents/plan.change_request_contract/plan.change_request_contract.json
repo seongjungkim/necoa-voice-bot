@@ -1,0 +1,10 @@
+{
+  "name": "2c74aed6-f4f9-481e-84c0-6c8cd688b250",
+  "displayName": "plan.change_request_contract",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-head",
+    "value": "sys-head"
+  } ],
+  "numTrainingPhrases": 9
+}

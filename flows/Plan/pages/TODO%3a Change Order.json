@@ -1,0 +1,48 @@
+{
+  "name": "54d40137-c9f9-4bbd-ab67-4c49805f2a9e",
+  "displayName": "TODO: Change Order",
+  "form": {
+    "parameters": [ {
+      "displayName": "change_address",
+      "required": true,
+      "entityType": "@sys.address",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "change_date",
+      "required": true,
+      "entityType": "@sys.date",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "주문 정보는 다음과 같습니다. \n$session.params.current_order\n변경하고 싶은 배송일자와 주소를 입력해주세요." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = FINAL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.params.change_address",
+        "value": "$page.params.change_address"
+      }, {
+        "parameter": "$flow.params.change_date",
+        "value": "$page.params.change_date"
+      } ]
+    },
+    "targetPage": "\u003e verify form",
+    "name": "06db6581-ee39-4cac-af7e-ae42326cbede"
+  } ],
+  "description": "form 형태로 어떻게 입력 받을지 고민해봐야 함"
+}

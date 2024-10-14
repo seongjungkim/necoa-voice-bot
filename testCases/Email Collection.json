@@ -1,0 +1,412 @@
+{
+  "name": "1a335d61-c114-439f-a4d3-e44a3fac4be6",
+  "tags": [ "#email", "#collection" ],
+  "displayName": "Email Collection",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "hi"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "Main Menu",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eHello!\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eI'm the Necoa Assistant Bot. How can I assist you right now?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Can you show me my payment details?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "contract.view_payment"
+      },
+      "currentPage": {
+        "name": "\u003e collect order number",
+        "flow": "Order Inquiry"
+      },
+      "textResponses": [ {
+        "text": [ "I can definitely look into that." ]
+      }, {
+        "text": [ "\u003cspeak\u003eTell me your order number or type it in, then hit the \u003csay-as interpret-as=\"characters\"\u003e#\u003c/say-as\u003e key.\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Order Inquiry"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "9221656254"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "\u003e collect full email",
+        "flow": "Email Collection"
+      },
+      "textResponses": [ {
+        "text": [ "What is your email? Please tell us your email." ]
+      } ],
+      "currentFlow": {
+        "name": "Email Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "amfei aeofim aefi"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "\u003e collect full email",
+        "flow": "Email Collection"
+      },
+      "textResponses": [ {
+        "text": [ "Say that one more time?" ]
+      } ],
+      "currentFlow": {
+        "name": "Email Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "aefaef aef aef "
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "\u003e confirm special character",
+        "flow": "Email Collection"
+      },
+      "textResponses": [ {
+        "text": [ "It seems we're having trouble recognizing your email. Let's try entering it part by part." ]
+      }, {
+        "text": [ "Before capturing your email, could you please help us confirm whether you have any hyphens, dot, underscore or plus sign in your email?" ]
+      } ],
+      "currentFlow": {
+        "name": "Email Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "prebuilt_components_confirmation_yes"
+      },
+      "currentPage": {
+        "name": "\u003e collect first part of email",
+        "flow": "Email Collection"
+      },
+      "textResponses": [ {
+        "text": [ "Please tell us the first part of your local part before any special characters." ]
+      } ],
+      "currentFlow": {
+        "name": "Email Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "emily"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "\u003e confirm first part of email",
+        "flow": "Email Collection"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cprosody rate='slow'\u003e   \u003csay-as interpret-as='verbatim'\u003e     emily   \u003c/say-as\u003e \u003c/prosody\u003e. Did we spell the first part correctly?" ]
+      } ],
+      "currentFlow": {
+        "name": "Email Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "prebuilt_components_confirmation_yes"
+      },
+      "currentPage": {
+        "name": "\u003e collect email separator",
+        "flow": "Email Collection"
+      },
+      "textResponses": [ {
+        "text": [ "Please tell us what's next: a dot, underscore, plus sign, or hyphen." ]
+      } ],
+      "currentFlow": {
+        "name": "Email Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "dot"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "components_email_collection_email_spelling_separator"
+      },
+      "currentPage": {
+        "name": "\u003e confirm email separator",
+        "flow": "Email Collection"
+      },
+      "textResponses": [ {
+        "text": [ "\"dot\". Did we capture the email separator after the first part of your local part correctly?" ]
+      } ],
+      "currentFlow": {
+        "name": "Email Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "prebuilt_components_confirmation_yes"
+      },
+      "currentPage": {
+        "name": "\u003e collect next part of email",
+        "flow": "Email Collection"
+      },
+      "textResponses": [ {
+        "text": [ "Please spell out the next part of your local part, after the dot. Say only the letters, for example J-O-H-N." ]
+      } ],
+      "currentFlow": {
+        "name": "Email Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "J O H N S O N"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "components_email_collection_next_part_email"
+      },
+      "currentPage": {
+        "name": "\u003e confirm second part after email separator",
+        "flow": "Email Collection"
+      },
+      "textResponses": [ {
+        "text": [ "JOHNSON. Tell us if that's wrong, if that's the end, or, what's next: a dot, underscore, plus sign, or hyphen." ]
+      } ],
+      "currentFlow": {
+        "name": "Email Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "end"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "prebuilt_components_confirmation_done"
+      },
+      "currentPage": {
+        "name": "\u003e collect domain",
+        "flow": "Email Collection"
+      },
+      "textResponses": [ {
+        "text": [ "What is a domain of your email address?" ]
+      } ],
+      "currentFlow": {
+        "name": "Email Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "example.com"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "\u003e confirm domain",
+        "flow": "Email Collection"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cprosody rate='slow'\u003e   \u003csay-as interpret-as='verbatim'\u003e     me\u003c/say-as\u003e\u003csub alias='dot'\u003e.\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003ecom   \u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your domain of email correctly?" ]
+      } ],
+      "currentFlow": {
+        "name": "Email Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "no"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "prebuilt_components_confirmation_no"
+      },
+      "currentPage": {
+        "name": "\u003e collect spelling domain",
+        "flow": "Email Collection"
+      },
+      "textResponses": [ {
+        "text": [ "Please spell out your domain of email." ]
+      } ],
+      "currentFlow": {
+        "name": "Email Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "e x a m p l e dot c o m"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "components_email_collection_spell_out_domain"
+      },
+      "currentPage": {
+        "name": "\u003e confirm domain",
+        "flow": "Email Collection"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cprosody rate='slow'\u003e   \u003csay-as interpret-as='verbatim'\u003e     example\u003c/say-as\u003e\u003csub alias='dot'\u003e.\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003ecom   \u003c/say-as\u003e \u003c/prosody\u003e. Did we spell your domain of email correctly?" ]
+      } ],
+      "currentFlow": {
+        "name": "Email Collection"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "yes"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "prebuilt_components_confirmation_yes"
+      },
+      "currentPage": {
+        "name": "Main Menu",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "Thank you, emily.johnson@example.com" ]
+      }, {
+        "text": [ "No orders detected. Recheck your order number or ensure product registration." ]
+      }, {
+        "text": [ "You don't have any products listed in your order history." ]
+      }, {
+        "text": [ "What else can I help you with?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1719464384,
+    "nanos": 170674000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

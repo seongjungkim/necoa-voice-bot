@@ -1,0 +1,10 @@
+{
+  "name": "02f1d240-99e9-4cd7-8bb4-c5830a324080",
+  "displayName": "contract.view_payment",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 10
+}

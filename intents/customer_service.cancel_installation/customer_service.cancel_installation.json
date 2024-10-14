@@ -1,0 +1,10 @@
+{
+  "name": "75d07b3d-5e0d-4d12-acc3-5faf3e1eb449",
+  "displayName": "customer_service.cancel_installation",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 1
+}

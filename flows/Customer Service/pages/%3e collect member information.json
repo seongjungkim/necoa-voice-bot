@@ -1,0 +1,16 @@
+{
+  "name": "89a79df1-98bc-4314-bb23-7f120b0b1283",
+  "displayName": "\u003e collect member information",
+  "form": {
+    "parameters": [ {
+      "displayName": "phone",
+      "required": true,
+      "entityType": "@sys.phone-number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  }
+}

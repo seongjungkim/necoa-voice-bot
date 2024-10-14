@@ -1,0 +1,96 @@
+{
+  "name": "243f1155-42fe-4f82-bc02-60e1570fb971",
+  "displayName": "\u003e collect payment",
+  "form": {
+    "parameters": [ {
+      "displayName": "card_number",
+      "required": true,
+      "entityType": "@card_number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "cvv",
+      "required": true,
+      "entityType": "@cvv",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "expiration_date",
+      "required": true,
+      "entityType": "@card_expiration_date",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "email",
+      "required": true,
+      "entityType": "@sys.email",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "first_name",
+      "required": true,
+      "entityType": "@common_first_name",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "last_name",
+      "required": true,
+      "entityType": "@common_last_name",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "phone",
+      "required": true,
+      "entityType": "@sys.phone-number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "zipcode",
+      "required": true,
+      "entityType": "@sys.zip-code",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "address",
+      "required": true,
+      "entityType": "@sys.address",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = FINAL",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "TODO: \u003e update new payment",
+    "name": "f613d839-44c5-496e-add5-397f45afff95"
+  } ]
+}

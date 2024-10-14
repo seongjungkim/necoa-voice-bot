@@ -1,0 +1,118 @@
+{
+  "name": "ca81cc8f-05a5-4ee2-b15d-3edb7bdea53c",
+  "displayName": "\u003e confirm local part",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003e$flow.user_provided_local_part_ssml. Did we spell your local part of email correctly?\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    }, {
+      "parameter": "$flow.user_provided_local_part_ssml",
+      "value": "\u003cprosody rate='slow'\u003e   \u003csay-as interpret-as='verbatim'\u003e     $sys.func.SUBSTITUTE(       $sys.func.SUBSTITUTE(         $sys.func.SUBSTITUTE(           $sys.func.SUBSTITUTE(             $sys.func.SUBSTITUTE(               $sys.func.SUBSTITUTE(                 $sys.func.JOIN(\". \", $sys.func.SPLIT($flow.user_provided_local_part, \"\")),                 \"_\\\\.\", \"\u003c/say-as\u003e\u003csub alias='underscore'\u003e_\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003e\"               ),               \"-\\\\.\", \"\u003c/say-as\u003e\u003csub alias='hyphen'\u003e-\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003e\"             ),             \"\\\\.\\\\.\", \"\u003c/say-as\u003e\u003csub alias='dot'\u003e.\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003e\"           ),           \"\\\\+\\\\.\", \"\u003c/say-as\u003e\u003csub alias='plus sign'\u003e+\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003e\"         ),         \"'\u003e'\u003c\", \"\u003c/say-as\u003e\u003csub alias='apostrophe'\u003e'\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003e\"       ),       \"\\\"\\\"\u003e\", \"\u003c/say-as\u003e\u003csub alias='space'\u003e' '\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003e\"     )   \u003c/say-as\u003e \u003c/prosody\u003e"
+    }, {
+      "parameter": "$flow.last_prompt",
+      "value": "\u003cspeak\u003e$flow.user_provided_local_part_ssml. Did we spell your local part correctly?\u003c/speak\u003e"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect domain",
+    "name": "c5f3440c-5035-475d-bf1c-097980141bbf"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "d830b1b7-2a33-4b53-b0b2-ed7a2af84ca5"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.incorrect_local_part_counter = 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, we've tried too many times and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "c7a86d2b-a743-4058-b301-b0526fc53f01"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.incorrect_local_part_counter \u003c 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_local_part",
+        "value": null
+      }, {
+        "parameter": "$flow.incorrect_local_part_counter",
+        "value": "$sys.func.ADD($flow.incorrect_local_part_counter,1)"
+      } ]
+    },
+    "targetPage": "\u003e collect spelling local part",
+    "name": "35f13f77-91c5-4906-8c1f-368a33e46278"
+  }, {
+    "intent": "components_email_collection_confirmation_no",
+    "condition": "$flow.incorrect_local_part_counter = 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, we've tried too many times and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "b7e2a06c-1d89-4389-8e27-0a8dff69fdb3"
+  }, {
+    "intent": "components_email_collection_confirmation_no",
+    "condition": "$flow.incorrect_local_part_counter \u003c 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_local_part",
+        "value": null
+      }, {
+        "parameter": "$flow.incorrect_local_part_counter",
+        "value": "$sys.func.ADD($flow.incorrect_local_part_counter,1)"
+      } ]
+    },
+    "targetPage": "\u003e collect spelling local part",
+    "name": "b7ea38a5-7e6b-4e72-a5c9-dc0c1ea479ec"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "90dd8fcf-453d-49db-a74b-9c35af64e24f"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "e5a312bd-d47f-4a1e-a18c-f6a5551f9d5c"
+  } ]
+}

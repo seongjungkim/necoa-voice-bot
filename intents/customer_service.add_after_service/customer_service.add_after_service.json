@@ -1,0 +1,13 @@
+{
+  "name": "1cc5fda7-1d0a-4d96-acff-51b1d040ef7c",
+  "displayName": "customer_service.add_after_service",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  }, {
+    "id": "necoa_unit_water_purifier",
+    "entityType": "@necoa_unit_water_purifier"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 3
+}

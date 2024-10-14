@@ -1,0 +1,29 @@
+{
+  "name": "942dd154-aaf2-4608-9641-2442325571ff",
+  "displayName": "contract detail purchase customer",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Model: $flow.current_model_title\nSerial Number: $flow.current_serial_number\n\nStatus: $flow.current_order_status_label\nPrice: $flow.current_order_price_currency $flow.current_order_price_itemPrice\nRegistration Price: $flow.current_order_price_currency $flow.current_order_price_registrationPrice\nTAX: $flow.current_order_price_currency $flow.current_order_price_tax\nDiscount Price: $flow.current_order_price_currency $flow.current_order_price_discountPrice\nTotal Price: $flow.current_order_price_currency $flow.current_order_price_totalPrice" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default",
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      }, {
+        "parameter": "is_returning",
+        "value": true
+      } ]
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "6aaaf1ad-e32a-407c-9b4d-baacf2803957"
+  } ]
+}

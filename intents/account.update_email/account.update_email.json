@@ -1,0 +1,6 @@
+{
+  "name": "a6ce4049-43e4-4ddb-8806-cbe0db02c317",
+  "displayName": "account.update_email",
+  "priority": 500000,
+  "numTrainingPhrases": 15
+}

@@ -1,0 +1,10 @@
+{
+  "name": "8abd19cf-bcae-4b8c-8feb-df2f9ac29432",
+  "displayName": "contract.view_cancellation_fee",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 7
+}

@@ -1,0 +1,10 @@
+{
+  "name": "f98828a0-c4aa-4c62-87b9-07d0bb58a421",
+  "displayName": "components_email_collection_spell_out_local_part",
+  "parameters": [ {
+    "id": "spell_out_local_part",
+    "entityType": "@sys.any"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 7
+}

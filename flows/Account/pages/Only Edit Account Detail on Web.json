@@ -1,0 +1,26 @@
+{
+  "name": "c560dd69-ce98-4428-9e6e-7106914baa82",
+  "displayName": "Only Edit Account Detail on Web",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please visit My Page to update your personal information.", "You must use My Page to make changes to your personal information.", "By logging into your My Page account, you can update your personal information.", "To change your personal information: Please visit My Page." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      } ]
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "155ca283-12c5-426a-8a23-6a2fd844ea01"
+  } ]
+}

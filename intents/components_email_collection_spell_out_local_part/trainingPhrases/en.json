@@ -1,0 +1,79 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "h a p p y 1 9",
+      "parameterId": "spell_out_local_part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "t a e r o k",
+      "parameterId": "spell_out_local_part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "james1993",
+      "parameterId": "spell_out_local_part"
+    }, {
+      "text": " is my local part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "ann",
+      "parameterId": "spell_out_local_part"
+    }, {
+      "text": " is my local part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "john "
+    }, {
+      "text": "J O H N",
+      "parameterId": "spell_out_local_part"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My "
+    }, {
+      "text": "local",
+      "auto": true
+    }, {
+      "text": " "
+    }, {
+      "text": "part",
+      "auto": true
+    }, {
+      "text": " is "
+    }, {
+      "text": "spelled",
+      "auto": true
+    }, {
+      "text": " as "
+    }, {
+      "text": "S a r a h",
+      "parameterId": "spell_out_local_part"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "t r a p o t",
+      "parameterId": "spell_out_local_part"
+    }, {
+      "text": " is the spelling for local part of email"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

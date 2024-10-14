@@ -1,0 +1,10 @@
+{
+  "name": "e9cc8af8-2232-4627-922d-1f8ed28d7bff",
+  "displayName": "form.zipcode",
+  "parameters": [ {
+    "id": "zipcode",
+    "entityType": "@sys.zip-code"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 3
+}

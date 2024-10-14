@@ -1,0 +1,80 @@
+{
+  "name": "7abc5f52-fc37-4093-a3d5-252382a637ab",
+  "displayName": "\u003e confirm agent connect",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "small_talk.confirmation.yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Agent Redirect",
+    "name": "62fdc207-caed-435c-a2b0-2c8fb56bf7f5"
+  }, {
+    "intent": "small_talk.confirmation.no",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "The connection to a live agent has been canceled.", "Live agent connection canceled.", "I've canceled the connection to a live agent.", "The live agent connection is canceled.", "Connection to a live agent canceled.", "The request for a live agent has been canceled.", "Live agent connection is now canceled.", "The connection to a live agent is now canceled.", "Canceled the live agent connection.", "Live agent connection has been canceled." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default",
+      "setParameterActions": [ {
+        "parameter": "reset",
+        "value": true
+      } ]
+    },
+    "targetPage": "END_FLOW_WITH_CANCELLATION",
+    "name": "12e6583a-a43a-4ba7-9e8d-90230b962dd9"
+  }, {
+    "intent": "small_talk.agent_hand_off",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Agent Redirect",
+    "name": "8e0b3ffe-30d5-426e-8a6c-1d26c3fb9acf"
+  }, {
+    "intent": "small_talk.agent_connection.confirmation.yes",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Agent Redirect",
+    "name": "595d6e3c-7151-4520-81ee-8685e694e3df"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I just need to know, would you like to talk to a representative? Yes or No?", "Can you tell me if you want to talk to a support agent? Yes or No?", "I just need to confirm, would you like to be transferred to a representative? Yes or No?", "Just to be sure, do you need a connection to a human agent? Yes or No?", "Please confirm, do you want to speak to a live agent? Yes or No?", "Could you please confirm if you want to speak to a live agent? Yes or No?", "Do you need me to connect you with a human agent? Yes or No?", "Just checking, do you want to be connected to a support agent? Yes or No?", "Quick question, should I transfer you to a representative? Yes or No?", "Can you let me know if you’d like to talk to an agent? Yes or No?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "d53e688f-51bf-4400-81a3-3bcdea4dab3e"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I just need to know, would you like to talk to a representative? Yes or No?", "Can you tell me if you want to talk to a support agent? Yes or No?", "I just need to confirm, would you like to be transferred to a representative? Yes or No?", "Just checking, do you want to be connected to a support agent? Yes or No?", "Quick question, should I transfer you to a representative? Yes or No?", "Could you please confirm if you want to speak to a live agent? Yes or No?", "Do you need me to connect you with a human agent? Yes or No?", "Can you let me know if you’d like to talk to an agent? Yes or No?", "Please confirm, do you want to speak to a live agent? Yes or No?", "Just to be sure, do you need a connection to a human agent? Yes or No?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b00eed91-7237-4ab9-b1bc-71555563db19"
+  }, {
+    "targetPage": "END_FLOW_WITH_CANCELLATION",
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+    
+    },
+    "name": "276da5b6-11ce-4c30-badb-1e8c40327feb"
+  } ]
+}

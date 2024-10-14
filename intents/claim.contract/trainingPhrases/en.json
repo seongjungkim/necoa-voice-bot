@@ -1,0 +1,69 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "Why is my contract showing "
+    }, {
+      "text": "7",
+      "parameterId": "card_expiration_date"
+    }, {
+      "text": " years? I signed up for a "
+    }, {
+      "text": "5",
+      "parameterId": "card_expiration_date1"
+    }, {
+      "text": "-year contract."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "There's a mistake with the contract duration I agreed to."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Why is my contract showing "
+    }, {
+      "text": "3",
+      "parameterId": "card_expiration_date"
+    }, {
+      "text": " years instead of "
+    }, {
+      "text": "2",
+      "parameterId": "card_expiration_date1"
+    }, {
+      "text": "?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The contract length is wrong on my account."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My contract terms are incorrect. It should be "
+    }, {
+      "text": "2",
+      "parameterId": "card_expiration_month"
+    }, {
+      "text": " years, not "
+    }, {
+      "text": "3",
+      "parameterId": "card_expiration_month1"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I signed up for a 2-year contract, but now it's showing as a 3-year contract. I'm very confused and upset by this."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

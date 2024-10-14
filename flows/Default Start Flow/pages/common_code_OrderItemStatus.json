@@ -1,0 +1,32 @@
+{
+  "name": "e6c7c936-ad17-4656-97cf-13b1c351fc82",
+  "displayName": "common_code_OrderItemStatus",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "common_code_OrderItemStatus",
+    "tag": "common code"
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "set global variable",
+    "name": "5677df94-f1b0-4298-a434-a557846f6e8b"
+  } ],
+  "eventHandlers": [ {
+    "targetPage": "set global variable",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "common_code_OrderItemStatus",
+        "value": {
+        
+        }
+      } ]
+    },
+    "name": "4b1b2eee-72a1-4c46-a23b-72230d1d8935"
+  } ]
+}

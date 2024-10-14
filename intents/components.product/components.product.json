@@ -1,0 +1,10 @@
+{
+  "name": "2025b2c6-cb8c-4717-b6ae-4edc6fa2943f",
+  "displayName": "components.product",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 2
+}

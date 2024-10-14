@@ -1,0 +1,13 @@
+{
+  "name": "da5f8fe8-058f-43ab-b036-df35fc54120a",
+  "displayName": "form.select_order",
+  "parameters": [ {
+    "id": "code_order_number",
+    "entityType": "@code_order_number"
+  }, {
+    "id": "code_order_item_number",
+    "entityType": "@code_order_item_number"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 2
+}

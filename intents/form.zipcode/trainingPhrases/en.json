@@ -1,0 +1,24 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "86354",
+      "parameterId": "zipcode"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "23453",
+      "parameterId": "zipcode"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "77003",
+      "parameterId": "zipcode"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

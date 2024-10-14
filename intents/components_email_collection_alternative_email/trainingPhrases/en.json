@@ -1,0 +1,19 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "my local part of email would be "
+    }, {
+      "text": "jones",
+      "parameterId": "alternative_email"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "J O H N",
+      "parameterId": "alternative_email"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

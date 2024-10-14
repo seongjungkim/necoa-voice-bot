@@ -1,0 +1,10 @@
+{
+  "name": "1ec8cd31-95af-417e-9c20-95ab71a9e4c7",
+  "displayName": "claim.order",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 5
+}

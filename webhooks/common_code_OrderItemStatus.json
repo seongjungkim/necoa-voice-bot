@@ -1,0 +1,17 @@
+{
+  "name": "84958487-3823-4e30-82a1-ba2ac2e39ca4",
+  "displayName": "common_code_OrderItemStatus",
+  "genericWebService": {
+    "uri": "https://fulfillment-dot-necoa-aicc-dev.uc.r.appspot.com/fulfillment/cx/webhook_flex/necoa/en_US/common_code",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"isAllNotation\": false,\n  \"commonCodeIds\": \"OrderItemStatus\"\n}",
+    "parameterMapping": [ {
+      "key": "common_code_OrderItemStatus",
+      "value": "$.data.commonCodes[0]"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

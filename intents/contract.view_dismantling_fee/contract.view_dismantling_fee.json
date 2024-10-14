@@ -1,0 +1,10 @@
+{
+  "name": "0f8be3a5-cdb8-4c91-bc6b-d44709e49677",
+  "displayName": "contract.view_dismantling_fee",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 7
+}

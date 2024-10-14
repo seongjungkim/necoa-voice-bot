@@ -1,0 +1,25 @@
+{
+  "name": "01fd5026-d074-4948-a115-28decf4d29e6",
+  "displayName": "confirm message",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Need to speak with someone? Reply 'yes' to connect with a representative.", "Should we put you through to a specialist? Type 'yes' if so.", "Want help from a live agent? Respond 'yes' to connect.", "Would you like to talk to our support team? Just say 'connect'.", "Can we connect you to a representative now? Please reply 'yes' or 'no'." ]
+      },
+      "languageCode": "en"
+    } ],
+    "webhook": "Chatbot Fulfillment",
+    "tag": "agent"
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e confirm agent connect",
+    "name": "31050971-1030-4606-84ed-c91b592dc42b"
+  } ]
+}

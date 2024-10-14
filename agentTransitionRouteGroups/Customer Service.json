@@ -1,0 +1,66 @@
+{
+  "name": "384ea8c2-40e7-4de0-bc46-4f04263cf915",
+  "displayName": "Customer Service",
+  "transitionRoutes": [ {
+    "intent": "customer_service.contract_cancellation",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "To discuss the cancellation of your contract and any associated penalties.", "Cancelling your contract early may involve penalties. Let me connect you to a customer service agent who can provide detailed information.", "For details about cancelling your contract and any potential fees.", "Contract cancellation policies can vary. Let me transfer you to a customer service agent who can explain any penalties or fees involved.", "To get accurate information about contract cancellation and possible penalties.", "Discussing contract cancellations and any applicable fees is best done with a customer service representative." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "agent",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "8359fd06-2727-4177-858b-9d0e317668e6"
+  }, {
+    "intent": "customer_service.add_after_service",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "Add After Service"
+      } ]
+    },
+    "name": "715ef423-f939-48a2-85e9-f1bfd0da9c7e"
+  }, {
+    "intent": "customer_service.add_relocation",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "Add Reinstallation"
+      } ]
+    },
+    "name": "c69612d9-8119-4db3-b92e-bcb18cb54c07"
+  }, {
+    "intent": "customer_service.add_installation",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "Add Install"
+      } ]
+    },
+    "name": "9b53861f-f34f-4ed1-a60f-d877b31e09f5"
+  }, {
+    "intent": "customer_service.update_relocation",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "Update Relocation"
+      } ]
+    },
+    "name": "495de2c3-18bb-43a2-822f-aaf9f54172ec"
+  }, {
+    "intent": "customer_service.view_installation",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Coming Soon Flow",
+    "name": "01e7b87b-9dab-43c6-b61d-61934886611e"
+  } ]
+}

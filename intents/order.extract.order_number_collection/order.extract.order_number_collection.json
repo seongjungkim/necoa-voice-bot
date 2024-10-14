@@ -1,0 +1,10 @@
+{
+  "name": "37eef47c-542b-40d6-99e8-caca6a0bbc0d",
+  "displayName": "order.extract.order_number_collection",
+  "parameters": [ {
+    "id": "code_channel_order_number",
+    "entityType": "@code_channel_order_number"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 52
+}

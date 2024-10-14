@@ -1,0 +1,164 @@
+{
+  "name": "43966f71-a70e-4e24-b561-f09134ae348b",
+  "displayName": "\u003e collect spelling domain",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please spell out your domain of email." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.last_prompt",
+      "value": "Please spell out your domain of email."
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "components_email_collection_spell_out_domain",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_domain",
+        "value": "$sys.func.SUBSTITUTE(   $sys.func.SUBSTITUTE(     $session.params.spell_out_domain,     \"dot\", \"\\.\"   ),   \"[^a-zA-Z.]\", \"\" )"
+      }, {
+        "parameter": "spell_out_domain",
+        "value": null
+      } ]
+    },
+    "name": "89207507-5e09-4a08-b29a-5aca240e9725"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "d8f8114b-3d43-4878-a0ed-529bcac86339"
+  }, {
+    "condition": "$flow.domain_spell_out_counter = 2 AND $flow.user_provided_domain = \"\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "2041a50d-1f43-451e-9760-2af0b7816caa"
+  }, {
+    "condition": "$flow.user_provided_domain = \"\" AND $flow.domain_spell_out_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Please spell your email domain." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.domain_spell_out_counter",
+        "value": "$sys.func.ADD($flow.domain_spell_out_counter,1)"
+      } ]
+    },
+    "name": "01e13d43-c852-4eb3-86e5-4cc00f3bd974"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "b8cf5906-1150-4802-9958-620d4dd76267"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "1094db2f-7023-4b55-b7e5-32844073a26b"
+  }, {
+    "condition": "$flow.user_provided_domain != null AND $flow.user_provided_domain != \"\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e confirm domain",
+    "name": "011259b9-d4c3-49a6-81fa-0a8fde4df119"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren't able to hear you. Please spell your email domain." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "d6eff02e-1b50-471d-b675-fc599d766845"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "015b3825-5926-4401-9557-516b68f74e96"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "b24392cd-5779-45a7-9e5d-9705c1f79f69"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Please spell your email domain." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "287400cb-315a-437a-8f24-3989139af5c3"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. Please spell your email domain." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "d2bc7e6c-222c-467c-a9c3-a3f05a341e30"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "e6bb8365-3f0f-4eb7-8443-cda1fc7f8eb2"
+  } ]
+}

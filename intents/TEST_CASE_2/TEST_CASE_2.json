@@ -1,0 +1,10 @@
+{
+  "name": "fd868152-0131-40d1-be26-ecb869cd84ce",
+  "displayName": "TEST_CASE_2",
+  "parameters": [ {
+    "id": "email",
+    "entityType": "@sys.email"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 1
+}

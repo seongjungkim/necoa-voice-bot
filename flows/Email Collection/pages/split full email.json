@@ -1,0 +1,37 @@
+{
+  "name": "c77d7cf5-e427-4531-a48e-a4d1942106bc",
+  "displayName": "split full email",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.full_email_separate",
+      "value": "$sys.func.SUBSTITUTE($flow.user_provided_full_email, \"@\", \"/\")"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.user_provided_full_email != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.split_full_email",
+        "value": "$sys.func.SPLIT($sys.func.TO_TEXT($flow.full_email_separate), \"/\")"
+      } ]
+    },
+    "targetPage": "format full email",
+    "name": "d4f199d4-b785-485d-9b55-495862d8b644"
+  }, {
+    "condition": "$flow.user_provided_full_email.local-part != NULL AND $flow.user_provided_full_email.domain != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.format_local_part",
+        "value": "$flow.user_provided_full_email.local-part"
+      }, {
+        "parameter": "$flow.format_domain",
+        "value": "$flow.user_provided_full_email.domain"
+      } ]
+    },
+    "targetPage": "\u003e confirm full email",
+    "name": "01aed49e-5b7a-4728-b59b-722e838453d4"
+  } ]
+}

@@ -1,0 +1,15 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "list test"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "test list"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

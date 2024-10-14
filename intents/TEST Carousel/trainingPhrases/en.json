@@ -1,0 +1,15 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "TEST new line"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "TEST carousel"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

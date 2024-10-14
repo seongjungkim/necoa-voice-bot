@@ -1,0 +1,64 @@
+{
+  "name": "97833776-11f3-4fbe-bc1b-60e932d21cc2",
+  "displayName": "\u003e collect order number",
+  "form": {
+    "parameters": [ {
+      "displayName": "collect_channel_order_number",
+      "required": true,
+      "entityType": "@code_channel_order_number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "\u003cspeak\u003ePlease say or enter your order number, then press the pound key.\u003c/speak\u003e", "\u003cspeak\u003eCould you provide your order number? You can say it or type it in and press pound.\u003c/speak\u003e", "\u003cspeak\u003eTell me your order number or type it in, then hit the pound key.\u003c/speak\u003e", "\u003cspeak\u003eI need your order number. Please speak it or use the keypad and press pound.\u003c/speak\u003e", "\u003cspeak\u003eSay your order number or type it in and press the pound key, please.\u003c/speak\u003e" ]
+            },
+            "languageCode": "en"
+          } ],
+          "webhook": "Chatbot Fulfillment",
+          "tag": "parameter"
+        }
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "finishDigit": "#",
+          "useSystemEntityRule": false,
+          "interdigitTimeoutDuration": {
+            "seconds": 7
+          },
+          "endpointingTimeoutDuration": {
+            "seconds": 7
+          }
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "order.no_order_number",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Lost Order Number",
+    "name": "d20b3f4d-4bcd-469a-8767-13edec89c56b"
+  }, {
+    "intent": "small_talk.agent_hand_off",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Agent Connection",
+    "name": "dae91716-c18b-42ec-b8ed-4cbcc8f2704c"
+  }, {
+    "condition": "$page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.order_search_channel_order_id",
+        "value": "$session.params.collect_channel_order_number"
+      } ]
+    },
+    "targetPage": "\u003e collect email",
+    "name": "1bbcd43f-4865-48ca-8568-f5f0997a06cf"
+  } ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "5b7c1c6c-1a2b-4964-8005-417f9c5fe23e",
+  "displayName": "end failure",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$flow.failure_msg" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "END_FLOW_WITH_FAILURE",
+    "name": "25a0a8d7-8146-4d2d-b5bb-e00f3011c51d"
+  } ],
+  "description": "실패로 인한 flow 종료처리"
+}

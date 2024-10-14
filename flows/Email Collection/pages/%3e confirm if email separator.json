@@ -1,0 +1,25 @@
+{
+  "name": "0d1b527d-9168-41da-b934-c0202f842e6e",
+  "displayName": "\u003e confirm if email separator",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.spelling_separator != NULL",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e confirm email separator",
+    "name": "9572058a-7040-4468-9e2b-3e7ebbe0de2c"
+  }, {
+    "condition": "$flow.spelling_separator = NULL",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect email separator",
+    "name": "42f0d549-af50-4fea-9b3e-3b2a8d8bdc35"
+  } ]
+}

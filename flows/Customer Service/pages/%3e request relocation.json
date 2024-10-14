@@ -1,0 +1,18 @@
+{
+  "name": "4a9525f1-9a16-4c27-a34d-07ec37069da4",
+  "displayName": "\u003e request relocation",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      } ]
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "79c191c3-cdf4-4414-85a1-53f2b06f9d8a"
+  } ]
+}

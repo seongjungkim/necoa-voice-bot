@@ -1,0 +1,46 @@
+{
+  "name": "17b3e146-9a80-4566-81c6-9ed87c01aaf8",
+  "displayName": "\u003e select product",
+  "form": {
+    "parameters": [ {
+      "displayName": "service_product",
+      "required": true,
+      "entityType": "@service_product",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "1. water purifier" ]
+            },
+            "languageCode": "en"
+          } ]
+        }
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "useSystemEntityRule": false,
+          "interdigitTimeoutDuration": {
+            "seconds": 5
+          },
+          "endpointingTimeoutDuration": {
+            "seconds": 5
+          }
+        }
+      }
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = \"FINAL\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "OK! You select $session.params.current_product" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "Start Page",
+    "name": "cb2722d3-7bfd-4895-8ad4-18abb53df069"
+  } ]
+}

@@ -1,0 +1,446 @@
+{
+  "name": "c004e0ad-71e9-48f1-bb67-812c6627fd15",
+  "displayName": "#\u003e product search non member",
+  "form": {
+    "parameters": [ {
+      "displayName": "selected_product",
+      "required": true,
+      "entityType": "@sys.ordinal",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "webhook": "Chatbot Fulfillment",
+          "tag": "default",
+          "conditionalCases": [ {
+            "cases": [ {
+              "condition": "$session.params.order_size = 2",
+              "caseContent": [ {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cspeak\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e1\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[0].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[0].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e2\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[1].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[1].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003c/speak\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              } ]
+            }, {
+              "condition": "$session.params.order_size = 3",
+              "caseContent": [ {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cspeak\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e1\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[0].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[0].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e2\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[1].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[1].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e3\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[2].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[2].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003c/speak\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              } ]
+            }, {
+              "condition": "$session.params.order_size = 4",
+              "caseContent": [ {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cspeak\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e1\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[0].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[0].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e2\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[1].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[1].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e3\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[2].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[2].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e4\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[3].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[3].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003c/speak\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              } ]
+            }, {
+              "condition": "$session.params.order_size = 5",
+              "caseContent": [ {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cspeak\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e1\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[0].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[0].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e2\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[1].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[1].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e3\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[2].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[2].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e4\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[3].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[3].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e5\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[4].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[4].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003c/speak\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              } ]
+            }, {
+              "caseContent": [ {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cspeak\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e1\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[0].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[0].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e2\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[1].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[1].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e3\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[2].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[2].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e4\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[3].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[3].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e5\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[4].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[4].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003cbreak time=\"0.5s\"/\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003csay-as interpret-as=\"ordinal\"\u003e6\u003c/say-as\u003e. Order Number: \u003csay-as interpret-as=\"digits\"\u003e$session.params.user_order_items[5].channelOrderItemId\u003c/say-as\u003e, Product: $session.params.user_order_items[5].material.materialName" ]
+                  },
+                  "languageCode": "en"
+                }
+              }, {
+                "message": {
+                  "text": {
+                    "text": [ "\u003c/speak\u003e" ]
+                  },
+                  "languageCode": "en"
+                }
+              } ]
+            } ]
+          } ]
+        }
+      },
+      "advancedSettings": {
+        "dtmfSettings": {
+          "enabled": true,
+          "maxDigits": 1,
+          "useSystemEntityRule": false,
+          "interdigitTimeoutDuration": {
+            "seconds": 5
+          },
+          "endpointingTimeoutDuration": {
+            "seconds": 5
+          }
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "To choose a product, press the number on your keypad.", "Press the corresponding number on your keypad.", "Press the number on your keypad for the product you want to check.", "Please press the number on your keypad to select a product.", "To proceed, press the corresponding number on your keypad for the product you want.", "Press the keypad number for the product you wish to view.", "Select a product by pressing the number on your keypad.", "Please choose a product by pressing its number on your keypad." ]
+      },
+      "languageCode": "en"
+    } ],
+    "webhook": "Chatbot Fulfillment",
+    "tag": "default",
+    "setParameterActions": [ {
+      "parameter": "customerId",
+      "value": "$sys.func.GET_FIELD($session.params.login_user, \"customerId\")"
+    }, {
+      "parameter": "orderItemStatus",
+      "value": ""
+    }, {
+      "parameter": "orderId",
+      "value": ""
+    }, {
+      "parameter": "orderItemId",
+      "value": ""
+    }, {
+      "parameter": "channelOrderId",
+      "value": "$flow.order_search_channel_order_id"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = \"FINAL\" AND $session.params.selected_product \u003c= $session.params.order_size",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "current_order",
+        "value": "$sys.func.GET($session.params.user_order_items, $session.params.selected_product)"
+      }, {
+        "parameter": "$flow.orderId",
+        "value": "$sys.func.GET_FIELD($session.params.current_order, \"orderId\")"
+      }, {
+        "parameter": "$flow.orderItemId",
+        "value": "$sys.func.GET_FIELD($session.params.current_order, \"orderItemId\")"
+      }, {
+        "parameter": "current_order_id",
+        "value": "$flow.orderId"
+      }, {
+        "parameter": "current_order_item_id",
+        "value": "$flow.orderItemId"
+      } ]
+    },
+    "targetPage": "# order item detail search unmasked",
+    "name": "4d680185-6956-4b56-b734-1effff4352fb"
+  } ]
+}

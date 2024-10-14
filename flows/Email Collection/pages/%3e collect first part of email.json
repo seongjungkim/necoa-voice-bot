@@ -1,0 +1,97 @@
+{
+  "name": "27371889-289b-4201-ae57-d5bceb6e633a",
+  "displayName": "\u003e collect first part of email",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.verify_local_part",
+      "required": true,
+      "entityType": "@components_email_collection_local_part",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "Please tell us the first part of your $flow.collect_part before any special characters." ]
+            },
+            "languageCode": "en"
+          } ],
+          "setParameterActions": [ {
+            "parameter": "$flow.last_prompt",
+            "value": "Please tell us the first part of your $flow.collect_part before any special characters."
+          }, {
+            "parameter": "$flow.waiting_room_counter",
+            "value": 0
+          } ]
+        },
+        "repromptEventHandlers": [ {
+          "targetPage": "\u003e collect alternate local part",
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we didn't get that. What is your email local part?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "62d2613d-221d-41fa-ad09-ed25e062eb5e"
+        }, {
+          "targetPage": "\u003e collect spelling local part",
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+          
+          },
+          "name": "75d78f4c-52bc-44df-851e-a836049e5060"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "482a3742-4fff-48f1-967c-75791c322399"
+  }, {
+    "condition": "$page.params.status = FINAL AND $flow.verify_local_part != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.verify_local_part",
+        "value": "$sys.func.SUBSTITUTE($flow.verify_local_part, \"[^a-zA-Z0-9]\", \"\")"
+      } ]
+    },
+    "targetPage": "\u003e confirm first part of email",
+    "name": "03bd2c5b-c071-42bf-ba50-6e0b34952cfd"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "e689dd6f-487a-4236-bf30-5484dff6cdb7"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "703f0461-53cb-4d9d-b4f4-3a270ebffd8d"
+  } ]
+}

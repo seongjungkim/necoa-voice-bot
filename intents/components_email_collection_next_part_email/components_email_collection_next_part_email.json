@@ -1,0 +1,10 @@
+{
+  "name": "969a0942-f727-4e5a-88ff-72baccbcac72",
+  "displayName": "components_email_collection_next_part_email",
+  "parameters": [ {
+    "id": "verify_local_part_part",
+    "entityType": "@sys.any"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 7
+}

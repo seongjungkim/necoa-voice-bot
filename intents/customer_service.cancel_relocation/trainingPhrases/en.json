@@ -1,0 +1,25 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "I want to cancel my request for "
+    }, {
+      "text": "reinstallation",
+      "parameterId": "common_first_name"
+    }, {
+      "text": "."
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I've decided not to move my "
+    }, {
+      "text": "water purifier",
+      "parameterId": "service_product"
+    }, {
+      "text": ". How can I cancel the relocation?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "5515e4ab-3d86-4dc7-a85d-4236fce64ba6",
+  "displayName": "customer_service.add_relocation",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 6
+}

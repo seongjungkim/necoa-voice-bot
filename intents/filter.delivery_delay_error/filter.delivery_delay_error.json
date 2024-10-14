@@ -1,0 +1,11 @@
+{
+  "name": "a1dd51f7-fcfb-4810-b365-ae32643901c6",
+  "displayName": "filter.delivery_delay_error",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-head",
+    "value": "sys-head"
+  } ],
+  "description": "User reports a delay or error in the delivery of their self-managed filter set.\n",
+  "numTrainingPhrases": 2
+}

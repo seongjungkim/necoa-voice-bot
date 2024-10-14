@@ -1,0 +1,10 @@
+{
+  "name": "b1fcf53b-f654-4038-8f13-fc7455b05584",
+  "displayName": "claim.unclassified",
+  "parameters": [ {
+    "id": "card_expiration_date",
+    "entityType": "@card_expiration_date"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 6
+}

@@ -1,0 +1,70 @@
+{
+  "name": "03c81eb7-5b5b-4ec0-b808-f118777db3a9",
+  "displayName": "Manage Plan",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "What would you like me to do with your plan?", "How can I help you with your plan?", "I'm ready to help you with your plan. What do you need?", "How can I assist you with your plan? ", "How would you like me to assist you with your plan?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "plan.check_order_ship_status",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "Check Order Ship Status"
+      } ]
+    },
+    "targetPage": "Choose Plan Operation",
+    "name": "637a7ecf-3764-4995-89ba-b1f7593a171c"
+  }, {
+    "intent": "plan.change_request_delivery",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "Change Order"
+      } ]
+    },
+    "targetPage": "Choose Plan Operation",
+    "name": "87203fc4-cafb-4cac-adac-13ad38406c4a"
+  }, {
+    "intent": "plan.rental_overdue",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "Rental Overdue"
+      } ]
+    },
+    "targetPage": "Choose Plan Operation",
+    "name": "ffb71312-ba2b-491e-8506-32259e59976c"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, I didn’t catch that. How can I help you with your plan?", "I didn't catch that. What would you like me to do with your plan?", "I didn’t get that. I'm ready to help you with your plan. What do you need?", "I did not catch that, is there anyway that I can help you with your plan? " ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "ee88042f-2ec6-4831-98ba-49d4256d18a5"
+  }, {
+    "targetFlow": "Agent Connection",
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Looks like I'm having trouble understanding the request.", "Sorry, I am having trouble understanding you. ", "My apologies, it doesn't look like I can help with that.", "Sorry, I didn’t get that." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "9be4dd78-b19d-432f-baf2-761545d3c0f0"
+  } ]
+}

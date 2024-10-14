@@ -1,0 +1,36 @@
+{
+  "name": "af1680d5-137c-4d46-8a48-304308b2fb1b",
+  "displayName": "Agent Redirect",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.agent_connect_msg = NULL",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Please hold while I transfer you to one of our representatives.", "Let me transfer you to an agent.", "Please wait a moment while I transfer you to one of our agents.", "I'll transfer you to one of our representatives.", "Please wait while I transfer you to one of our customer support specialists.", "Let me transfer you to a specialist." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default"
+    },
+    "targetPage": "\u003e set zendesk ticket field",
+    "name": "2e3e4504-018a-4f9b-b43b-efedd4f8c6fd"
+  }, {
+    "condition": "$session.params.agent_connect_msg != NULL",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$session.params.agent_connect_msg" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default"
+    },
+    "targetPage": "\u003e set zendesk ticket field",
+    "name": "24b3194c-5d49-41c5-bebd-a59f68e1adb9"
+  } ]
+}

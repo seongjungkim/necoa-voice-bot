@@ -1,0 +1,21 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "How can I access my lease agreement for water purifier?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Is there a specific section on the website where I can find my lease agreement?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Can you guide me through the steps to view or download my lease agreement?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

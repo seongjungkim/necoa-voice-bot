@@ -1,0 +1,50 @@
+{
+  "name": "d1f3dbfd-ef1b-441e-b6e6-851d34ea0c56",
+  "displayName": "TODO: \u003e collect uninstall",
+  "form": {
+    "parameters": [ {
+      "displayName": "uninstall_booking_date",
+      "required": true,
+      "entityType": "@sys.date",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "uninstall_address",
+      "required": true,
+      "entityType": "@sys.address",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    }, {
+      "displayName": "phone",
+      "required": true,
+      "entityType": "@sys.phone-number",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+        
+        }
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "해체일, 해체 장소를 알려주세요." ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$page.params.status = FINAL",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e request uninstall",
+    "name": "1dc30b0c-85ed-44de-a414-0a2d87d2a0ed"
+  } ]
+}

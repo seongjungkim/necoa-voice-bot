@@ -1,0 +1,74 @@
+{
+  "name": "74c4095d-1536-4ba5-8504-c3b8833dc982",
+  "displayName": "\u003e collect next part of email",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please spell out the next part of your $flow.collect_part, after the $flow.email_separator. Say only the letters, for example J-O-H-N." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.last_prompt",
+      "value": "Please spell out the next part of your $flow.collect_part, after the $flow.email_separator. Say only the letters, for example J-O-H-N."
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "components_email_collection_next_part_email",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.verify_local_part_part",
+        "value": "$sys.func.SUBSTITUTE($session.params.verify_local_part_part, \"[^a-zA-Z0-9]\", \"\")"
+      }, {
+        "parameter": "$flow.verifying_local_part",
+        "value": false
+      }, {
+        "parameter": "verify_local_part_part",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e confirm second part after email separator",
+    "name": "ead6fcf2-ea5c-48b2-a392-cdb26afc7654"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "2d287e77-c073-426a-a969-7f98cd1d988a"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "48cc0f27-37bf-4cda-afa5-1a50ae1fd8a4"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "f8034e90-9f63-4666-8236-83b0412148b4"
+  } ]
+}

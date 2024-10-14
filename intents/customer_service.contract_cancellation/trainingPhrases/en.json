@@ -1,0 +1,33 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "Are there any circumstances where the penalty for contract cancellation may be waived or reduced?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "How is the penalty for contract cancellation calculated?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Can you provide details about the cancellation fees or penalties associated with ending my contract early?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Are there penalties for cancelling my contract early?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "What is the process for cancelling my contract before it terminates?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

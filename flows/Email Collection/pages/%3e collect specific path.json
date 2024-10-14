@@ -1,0 +1,101 @@
+{
+  "name": "2c00f12a-8a1e-4dc4-b71e-42ad32f1a038",
+  "displayName": "\u003e collect specific path",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "de0384b0-ea5c-4786-9026-969862f86f4c"
+  }, {
+    "condition": "$flow.spelling_separator = \"\\:-\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.email_separator",
+        "value": "hyphen"
+      }, {
+        "parameter": "spelling_separator",
+        "value": null
+      } ]
+    },
+    "name": "a2182f80-8d05-4d56-b615-bcb6ed9b3ecf"
+  }, {
+    "condition": "$flow.spelling_separator = \"\\:\\.\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.email_separator",
+        "value": "dot"
+      }, {
+        "parameter": "spelling_separator",
+        "value": null
+      } ]
+    },
+    "name": "fa2fdceb-1508-4a5d-bb9b-626627259897"
+  }, {
+    "condition": "$flow.spelling_separator = \"\\:_\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.email_separator",
+        "value": "underscore"
+      }, {
+        "parameter": "spelling_separator",
+        "value": null
+      } ]
+    },
+    "name": "4aeb184e-ab14-4155-91e5-f2ea8ec3d2e8"
+  }, {
+    "condition": "$flow.spelling_separator = \"\\:\\+\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.email_separator",
+        "value": "plus sign"
+      }, {
+        "parameter": "spelling_separator",
+        "value": null
+      } ]
+    },
+    "name": "3615f941-8c56-41ad-bd6f-368787d68ee1"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "collect_email",
+        "value": null
+      } ]
+    },
+    "targetPage": "refining special characters parameters",
+    "name": "a65eb164-858b-4288-b463-0e39fa3b9c9a"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "256d1904-3bb9-40a1-b880-ec0fbb4fc0f9"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "ae893d01-657f-4c9b-acab-dacc404d44fd"
+  } ]
+}

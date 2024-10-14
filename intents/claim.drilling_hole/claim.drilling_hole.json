@@ -1,0 +1,10 @@
+{
+  "name": "eb153ca7-8256-490d-acc9-1ed1e1d7af99",
+  "displayName": "claim.drilling_hole",
+  "parameters": [ {
+    "id": "matching_support_entity_hole",
+    "entityType": "@matching_support_entity_hole"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 25
+}

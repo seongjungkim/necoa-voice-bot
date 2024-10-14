@@ -1,0 +1,24 @@
+{
+  "name": "6b3a6869-2b23-4814-b086-1a37911c5148",
+  "displayName": "\u003e set zendesk ticket field",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "liveAgentHandoff": {
+          "metadata": {
+            "cnsl_type": "$session.params.cnsl_type"
+          }
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default"
+    },
+    "targetPage": "End Session",
+    "name": "eac36a5f-8360-4a54-8c96-b0c4beba2d7f"
+  } ]
+}

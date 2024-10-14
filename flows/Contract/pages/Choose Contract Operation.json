@@ -1,0 +1,53 @@
+{
+  "name": "8125b081-10f9-49a2-aa25-f60dd1138a70",
+  "displayName": "Choose Contract Operation",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.operation = NULL",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e Manage Contract",
+    "name": "40bdf8ff-250c-4f93-977e-d96ea7952554"
+  }, {
+    "condition": "$session.params.operation = \"Lease Agreement Access\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "contract detail",
+    "name": "f8c910b0-7058-4414-92cb-ea0904d54042"
+  }, {
+    "condition": "$session.params.operation = \"View Payment\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "contract detail",
+    "name": "b38b22a7-042d-4a3b-a020-f79243aa6f32"
+  }, {
+    "condition": "$session.params.operation = \"View Contract\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "contract detail",
+    "name": "51c9d949-c94e-4b9d-90ad-4c1990091415"
+  }, {
+    "condition": "$session.params.operation = \"View Order Detail\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "order detail",
+    "name": "12076326-0e38-4df2-a144-3f54c4e920f4"
+  }, {
+    "condition": "$session.params.operation_complete = true OR $session.params.operation != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "273b66a5-a166-45d4-ae5b-167f8c34a73e"
+  } ]
+}

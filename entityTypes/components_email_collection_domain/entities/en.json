@@ -1,0 +1,407 @@
+{
+  "entities": [ {
+    "value": "rediffmail.com",
+    "synonyms": [ "r e d i f f m a i l dot c o m", "rediffmail dot com", "rediffmail.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "hotmail.com",
+    "synonyms": [ "h o t m a i l dot c o m", "hotmail dot com", "hotmail.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "live.co.uk",
+    "synonyms": [ "l i v e dot c o dot u k", "live dot co dot uk", "live.co.uk" ],
+    "languageCode": "en"
+  }, {
+    "value": "frontiernet.net",
+    "synonyms": [ "f r o n t i e r n e t dot n e t", "frontiernet dot net", "frontiernet.net" ],
+    "languageCode": "en"
+  }, {
+    "value": "bigpond.net.au",
+    "synonyms": [ "b i g p o n d dot n e t dot a u", "bigpond dot net dot au", "bigpond.net.au" ],
+    "languageCode": "en"
+  }, {
+    "value": "home.nl",
+    "synonyms": [ "h o m e dot n l", "home dot nl", "home.nl" ],
+    "languageCode": "en"
+  }, {
+    "value": "windstream.net",
+    "synonyms": [ "w i n d s t r e a m dot n e t", "windstream dot net", "windstream.net" ],
+    "languageCode": "en"
+  }, {
+    "value": "live.com",
+    "synonyms": [ "l i v e dot c o m", "live dot com", "live.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "neuf.fr",
+    "synonyms": [ "n e u f dot f r", "neuf dot fr", "neuf.fr" ],
+    "languageCode": "en"
+  }, {
+    "value": "alice.it",
+    "synonyms": [ "a l i c e dot i t", "alice dot it", "alice.it" ],
+    "languageCode": "en"
+  }, {
+    "value": "facebook.com",
+    "synonyms": [ "f a c e b o o k dot c o m", "facebook dot com", "facebook.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "yahoo.com",
+    "synonyms": [ "y a h o o dot c o m", "yahoo dot com", "yahoo.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "blueyonder.co.uk",
+    "synonyms": [ "b l u e y o n d e r dot c o dot u k", "blueyonder dot co dot uk", "blueyonder.co.uk" ],
+    "languageCode": "en"
+  }, {
+    "value": "cox.net",
+    "synonyms": [ "c o x dot n e t", "cox dot net", "cox.net" ],
+    "languageCode": "en"
+  }, {
+    "value": "aliceadsl.fr",
+    "synonyms": [ "a l i c e a d s l dot f r", "aliceadsl dot fr", "aliceadsl.fr" ],
+    "languageCode": "en"
+  }, {
+    "value": "aim.com",
+    "synonyms": [ "a i m dot c o m", "aim dot com", "aim.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "optusnet.com.au",
+    "synonyms": [ "o p t u s n e t dot c o m dot a u", "optusnet dot com dot au", "optusnet.com.au" ],
+    "languageCode": "en"
+  }, {
+    "value": "yahoo.com.br",
+    "synonyms": [ "y a h o o dot c o m dot b r", "yahoo dot com dot br", "yahoo.com.br" ],
+    "languageCode": "en"
+  }, {
+    "value": "yahoo.com.sg",
+    "synonyms": [ "y a h o o dot c o m dot s g", "yahoo dot com dot sg", "yahoo.com.sg" ],
+    "languageCode": "en"
+  }, {
+    "value": "orange.fr",
+    "synonyms": [ "o r a n g e dot f r", "orange dot fr", "orange.fr" ],
+    "languageCode": "en"
+  }, {
+    "value": "hotmail.de",
+    "synonyms": [ "h o t m a i l dot d e", "hotmail dot de", "hotmail.de" ],
+    "languageCode": "en"
+  }, {
+    "value": "freenet.de",
+    "synonyms": [ "f r e e n e t dot d e", "freenet dot de", "freenet.de" ],
+    "languageCode": "en"
+  }, {
+    "value": "aol.com",
+    "synonyms": [ "a o l dot c o m", "aol dot com", "aol.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "sympatico.ca",
+    "synonyms": [ "s y m p a t i c o dot c a", "sympatico dot ca", "sympatico.ca" ],
+    "languageCode": "en"
+  }, {
+    "value": "arcor.de",
+    "synonyms": [ "a r c o r dot d e", "arcor dot de", "arcor.de" ],
+    "languageCode": "en"
+  }, {
+    "value": "optonline.net",
+    "synonyms": [ "o p t o n l i n e dot n e t", "optonline dot net", "optonline.net" ],
+    "languageCode": "en"
+  }, {
+    "value": "yahoo.fr",
+    "synonyms": [ "y a h o o dot f r", "yahoo dot fr", "yahoo.fr" ],
+    "languageCode": "en"
+  }, {
+    "value": "bellsouth.net",
+    "synonyms": [ "b e l l s o u t h dot n e t", "bellsouth dot net", "bellsouth.net" ],
+    "languageCode": "en"
+  }, {
+    "value": "hotmail.es",
+    "synonyms": [ "h o t m a i l dot e s", "hotmail dot es", "hotmail.es" ],
+    "languageCode": "en"
+  }, {
+    "value": "yahoo.com.ar",
+    "synonyms": [ "y a h o o dot c o m dot a r", "yahoo dot com dot ar", "yahoo.com.ar" ],
+    "languageCode": "en"
+  }, {
+    "value": "tin.it",
+    "synonyms": [ "t i n dot i t", "tin dot it", "tin.it" ],
+    "languageCode": "en"
+  }, {
+    "value": "yahoo.com.au",
+    "synonyms": [ "y a h o o dot c o m dot a u", "yahoo dot com dot au", "yahoo.com.au" ],
+    "languageCode": "en"
+  }, {
+    "value": "gmx.net",
+    "synonyms": [ "g m x dot n e t", "gmx dot net", "gmx.net" ],
+    "languageCode": "en"
+  }, {
+    "value": "bluewin.ch",
+    "synonyms": [ "b l u e w i n dot c h", "bluewin dot ch", "bluewin.ch" ],
+    "languageCode": "en"
+  }, {
+    "value": "live.ca",
+    "synonyms": [ "l i v e dot c a", "live dot ca", "live.ca" ],
+    "languageCode": "en"
+  }, {
+    "value": "mail.ru",
+    "synonyms": [ "m a i l dot r u", "mail dot ru", "mail.ru" ],
+    "languageCode": "en"
+  }, {
+    "value": "verizon.net",
+    "synonyms": [ "v e r i z o n dot n e t", "verizon dot net", "verizon.net" ],
+    "languageCode": "en"
+  }, {
+    "value": "googlemail.com",
+    "synonyms": [ "g o o g l e m a i l dot c o m", "googlemail dot com", "googlemail.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "t-online.de",
+    "synonyms": [ "t - o n l i n e dot d e", "t-online dot de", "t-online.de" ],
+    "languageCode": "en"
+  }, {
+    "value": "yandex.ru",
+    "synonyms": [ "y a n d e x dot r u", "yandex dot ru", "yandex.ru" ],
+    "languageCode": "en"
+  }, {
+    "value": "hotmail.fr",
+    "synonyms": [ "h o t m a i l dot f r", "hotmail dot fr", "hotmail.fr" ],
+    "languageCode": "en"
+  }, {
+    "value": "gmx.de",
+    "synonyms": [ "g m x dot d e", "gmx dot de", "gmx.de" ],
+    "languageCode": "en"
+  }, {
+    "value": "yahoo.es",
+    "synonyms": [ "y a h o o dot e s", "yahoo dot es", "yahoo.es" ],
+    "languageCode": "en"
+  }, {
+    "value": "zonnet.nl",
+    "synonyms": [ "z o n n e t dot n l", "zonnet dot nl", "zonnet.nl" ],
+    "languageCode": "en"
+  }, {
+    "value": "centurytel.net",
+    "synonyms": [ "c e n t u r y t e l dot n e t", "centurytel dot net", "centurytel.net" ],
+    "languageCode": "en"
+  }, {
+    "value": "tiscali.it",
+    "synonyms": [ "t i s c a l i dot i t", "tiscali dot it", "tiscali.it" ],
+    "languageCode": "en"
+  }, {
+    "value": "planet.nl",
+    "synonyms": [ "p l a n e t dot n l", "planet dot nl", "planet.nl" ],
+    "languageCode": "en"
+  }, {
+    "value": "msn.com",
+    "synonyms": [ "m s n dot c o m", "msn dot com", "msn.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "mac.com",
+    "synonyms": [ "m a c dot c o m", "mac dot com", "mac.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "att.net",
+    "synonyms": [ "a t t dot n e t", "att dot net", "att.net" ],
+    "languageCode": "en"
+  }, {
+    "value": "yahoo.co.uk",
+    "synonyms": [ "y a h o o dot c o dot u k", "yahoo dot co dot uk", "yahoo.co.uk" ],
+    "languageCode": "en"
+  }, {
+    "value": "juno.com",
+    "synonyms": [ "j u n o dot c o m", "juno dot com", "juno.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "rambler.ru",
+    "synonyms": [ "r a m b l e r dot r u", "rambler dot ru", "rambler.ru" ],
+    "languageCode": "en"
+  }, {
+    "value": "bol.com.br",
+    "synonyms": [ "b o l dot c o m dot b r", "bol dot com dot br", "bol.com.br" ],
+    "languageCode": "en"
+  }, {
+    "value": "chello.nl",
+    "synonyms": [ "c h e l l o dot n l", "chello dot nl", "chello.nl" ],
+    "languageCode": "en"
+  }, {
+    "value": "yahoo.co.jp",
+    "synonyms": [ "y a h o o dot c o dot j p", "yahoo dot co dot jp", "yahoo.co.jp" ],
+    "languageCode": "en"
+  }, {
+    "value": "me.com",
+    "synonyms": [ "m e dot c o m", "me dot com", "me.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "free.fr",
+    "synonyms": [ "f r e e dot f r", "free dot fr", "free.fr" ],
+    "languageCode": "en"
+  }, {
+    "value": "qq.com",
+    "synonyms": [ "q q dot c o m", "qq dot com", "qq.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "shaw.ca",
+    "synonyms": [ "s h a w dot c a", "shaw dot ca", "shaw.ca" ],
+    "languageCode": "en"
+  }, {
+    "value": "sfr.fr",
+    "synonyms": [ "s f r dot f r", "sfr dot fr", "sfr.fr" ],
+    "languageCode": "en"
+  }, {
+    "value": "web.de",
+    "synonyms": [ "w e b dot d e", "web dot de", "web.de" ],
+    "languageCode": "en"
+  }, {
+    "value": "live.it",
+    "synonyms": [ "l i v e dot i t", "live dot it", "live.it" ],
+    "languageCode": "en"
+  }, {
+    "value": "live.com.au",
+    "synonyms": [ "l i v e dot c o m dot a u", "live dot com dot au", "live.com.au" ],
+    "languageCode": "en"
+  }, {
+    "value": "mail.com",
+    "synonyms": [ "m a i l dot c o m", "mail dot com", "mail.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "comcast.net",
+    "synonyms": [ "c o m c a s t dot n e t", "comcast dot net", "comcast.net" ],
+    "languageCode": "en"
+  }, {
+    "value": "yahoo.de",
+    "synonyms": [ "y a h o o dot d e", "yahoo dot de", "yahoo.de" ],
+    "languageCode": "en"
+  }, {
+    "value": "terra.com.br",
+    "synonyms": [ "t e r r a dot c o m dot b r", "terra dot com dot br", "terra.com.br" ],
+    "languageCode": "en"
+  }, {
+    "value": "ntlworld.com",
+    "synonyms": [ "n t l w o r l d dot c o m", "ntlworld dot com", "ntlworld.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "skynet.be",
+    "synonyms": [ "s k y n e t dot b e", "skynet dot be", "skynet.be" ],
+    "languageCode": "en"
+  }, {
+    "value": "rocketmail.com",
+    "synonyms": [ "r o c k e t m a i l dot c o m", "rocketmail dot com", "rocketmail.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "charter.net",
+    "synonyms": [ "c h a r t e r dot n e t", "charter dot net", "charter.net" ],
+    "languageCode": "en"
+  }, {
+    "value": "yahoo.ca",
+    "synonyms": [ "y a h o o dot c a", "yahoo dot ca", "yahoo.ca" ],
+    "languageCode": "en"
+  }, {
+    "value": "hotmail.it",
+    "synonyms": [ "h o t m a i l dot i t", "hotmail dot it", "hotmail.it" ],
+    "languageCode": "en"
+  }, {
+    "value": "yahoo.com.mx",
+    "synonyms": [ "y a h o o dot c o m dot m x", "yahoo dot com dot mx", "yahoo.com.mx" ],
+    "languageCode": "en"
+  }, {
+    "value": "sbcglobal.net",
+    "synonyms": [ "s b c g l o b a l dot n e t", "sbcglobal dot net", "sbcglobal.net" ],
+    "languageCode": "en"
+  }, {
+    "value": "telenet.be",
+    "synonyms": [ "t e l e n e t dot b e", "telenet dot be", "telenet.be" ],
+    "languageCode": "en"
+  }, {
+    "value": "libero.it",
+    "synonyms": [ "l i b e r o dot i t", "libero dot it", "libero.it" ],
+    "languageCode": "en"
+  }, {
+    "value": "bigpond.com",
+    "synonyms": [ "b i g p o n d dot c o m", "bigpond dot com", "bigpond.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "virgilio.it",
+    "synonyms": [ "v i r g i l i o dot i t", "virgilio dot it", "virgilio.it" ],
+    "languageCode": "en"
+  }, {
+    "value": "hotmail.co.uk",
+    "synonyms": [ "h o t m a i l dot c o dot u k", "hotmail dot co dot uk", "hotmail.co.uk" ],
+    "languageCode": "en"
+  }, {
+    "value": "uol.com.br",
+    "synonyms": [ "u o l dot c o m dot b r", "uol dot com dot br", "uol.com.br" ],
+    "languageCode": "en"
+  }, {
+    "value": "yahoo.in",
+    "synonyms": [ "y a h o o dot i n", "yahoo dot in", "yahoo.in" ],
+    "languageCode": "en"
+  }, {
+    "value": "ymail.com",
+    "synonyms": [ "y m a i l dot c o m", "ymail dot com", "ymail.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "ig.com.br",
+    "synonyms": [ "i g dot c o m dot b r", "ig dot com dot br", "ig.com.br" ],
+    "languageCode": "en"
+  }, {
+    "value": "gmail.com",
+    "synonyms": [ "g m a i l dot c o m", "gmail dot com", "gmail.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "yahoo.it",
+    "synonyms": [ "y a h o o dot i t", "yahoo dot it", "yahoo.it" ],
+    "languageCode": "en"
+  }, {
+    "value": "club-internet.fr",
+    "synonyms": [ "c l u b - i n t e r n e t dot f r", "club-internet dot fr", "club-internet.fr" ],
+    "languageCode": "en"
+  }, {
+    "value": "yahoo.co.in",
+    "synonyms": [ "y a h o o dot c o dot i n", "yahoo dot co dot in", "yahoo.co.in" ],
+    "languageCode": "en"
+  }, {
+    "value": "wanadoo.fr",
+    "synonyms": [ "w a n a d o o dot f r", "wanadoo dot fr", "wanadoo.fr" ],
+    "languageCode": "en"
+  }, {
+    "value": "outlook.com",
+    "synonyms": [ "o u t l o o k dot c o m", "outlook dot com", "outlook.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "live.fr",
+    "synonyms": [ "l i v e dot f r", "live dot fr", "live.fr" ],
+    "languageCode": "en"
+  }, {
+    "value": "sky.com",
+    "synonyms": [ "s k y dot c o m", "sky dot com", "sky.com" ],
+    "languageCode": "en"
+  }, {
+    "value": "hetnet.nl",
+    "synonyms": [ "h e t n e t dot n l", "hetnet dot nl", "hetnet.nl" ],
+    "languageCode": "en"
+  }, {
+    "value": "laposte.net",
+    "synonyms": [ "l a p o s t e dot n e t", "laposte dot net", "laposte.net" ],
+    "languageCode": "en"
+  }, {
+    "value": "earthlink.net",
+    "synonyms": [ "e a r t h l i n k dot n e t", "earthlink dot net", "earthlink.net" ],
+    "languageCode": "en"
+  }, {
+    "value": "live.nl",
+    "synonyms": [ "l i v e dot n l", "live dot nl", "live.nl" ],
+    "languageCode": "en"
+  }, {
+    "value": "yahoo.co.id",
+    "synonyms": [ "y a h o o dot c o dot i d", "yahoo dot co dot id", "yahoo.co.id" ],
+    "languageCode": "en"
+  }, {
+    "value": "tiscali.co.uk",
+    "synonyms": [ "t i s c a l i dot c o dot u k", "tiscali dot co dot uk", "tiscali.co.uk" ],
+    "languageCode": "en"
+  }, {
+    "value": "voila.fr",
+    "synonyms": [ "v o i l a dot f r", "voila dot fr", "voila.fr" ],
+    "languageCode": "en"
+  }, {
+    "value": "coway.com",
+    "synonyms": [ "c o w a y dot c o m", "coway dot com", "coway.com" ],
+    "languageCode": "en"
+  } ]
+}

@@ -1,0 +1,49 @@
+{
+  "name": "006da489-f280-408d-9465-5de71581ad26",
+  "displayName": "Manage Account",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "What would you like me to do with your account?", "How can I help you with your account?", "I'm ready to help you with your account. What do you need?", "How can I assist you with your account?", "How would you like me assist you with your account?" ]
+      },
+      "languageCode": "en"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "account.update_address",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "Update Account Address"
+      } ]
+    },
+    "targetPage": "Choose Account Operation",
+    "name": "263df3d1-7f4c-4b86-b72c-ae898e06aecb"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, I didn’t catch that. How can I help you with your account?", "I didn't catch that. What would you like me to do with your account?", "I didn’t get that. I'm ready to help you with your account. What do you need?", "I did not catch that, is there anyway that I can help you with your account? " ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "da701f80-d3e1-4165-ae34-72e47167a6c4"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry I didn’t catch that. I can help with things like check your account detail. How may I help you today? " ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "e5fbcc97-ffb1-477f-8299-391bac3f6e79"
+  } ]
+}

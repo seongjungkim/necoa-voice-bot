@@ -1,0 +1,131 @@
+{
+  "name": "ea287488-488a-469b-8bc3-36c673689b21",
+  "displayName": "\u003e collect local part",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.user_provided_local_part",
+      "required": true,
+      "entityType": "@components_email_collection_local_part",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What is your local part of email?" ]
+            },
+            "languageCode": "en"
+          } ]
+        },
+        "repromptEventHandlers": [ {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we weren't able to hear you. What is your local part of email?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "72e83f71-f372-495a-b213-8c32ec9b6153"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "eba9c261-edcf-4219-bb7e-3e04b482e6ba"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "retry",
+              "value": "2"
+            } ]
+          },
+          "name": "e528f05d-1631-487c-9545-c00bff225eee"
+        }, {
+          "targetPage": "\u003e collect alternate local part",
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we didn't get that. What is your local part of email?" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "$flow.last_prompt",
+              "value": "Sorry, we didn't get that. What is your local part of email?"
+            } ]
+          },
+          "name": "7e5d6b6a-ab67-49ce-aee3-8036a9b46e88"
+        }, {
+          "targetPage": "\u003e collect spelling local part",
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+          
+          },
+          "name": "dcea1e5b-8d57-40fe-a214-fc5c2c85c3ef"
+        } ]
+      },
+      "convertPhoneticAlphabets": true
+    } ]
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "2de40ea0-a0e8-40af-aa8e-f93c89e9ea54"
+  }, {
+    "condition": "$page.params.status = FINAL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_local_part",
+        "value": "$flow.user_provided_local_part"
+      } ]
+    },
+    "targetPage": "\u003e confirm local part",
+    "name": "316b500c-cc24-485e-b93b-cd61a0384ce0"
+  }, {
+    "condition": "$flow.collect_local_part = \"local part\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "special character initial",
+    "name": "b34b0355-7d4a-42b4-927a-db6940fb2fee"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "59edab40-f218-4780-9311-2fd2f1fbdbff"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "c7c9b403-e5d4-4c3b-af33-8926aea1b498"
+  } ]
+}

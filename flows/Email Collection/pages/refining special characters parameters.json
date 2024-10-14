@@ -1,0 +1,21 @@
+{
+  "name": "3ce1bee0-22e1-4c2b-8532-54b6f66f53a5",
+  "displayName": "refining special characters parameters",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.collect_local_part",
+        "value": "local part"
+      } ]
+    },
+    "targetPage": "\u003e collect local part",
+    "name": "7632b616-e4a8-4107-b9fb-a4611796b2fd"
+  } ]
+}

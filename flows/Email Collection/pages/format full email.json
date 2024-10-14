@@ -1,0 +1,30 @@
+{
+  "name": "57e7bc4d-9466-40ea-a091-a56c8781d9bb",
+  "displayName": "format full email",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.format_local_part",
+      "value": "$sys.func.GET($flow.split_full_email,0)"
+    }, {
+      "parameter": "$flow.format_domain",
+      "value": "$sys.func.GET($flow.split_full_email,1)"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.format_local_part",
+        "value": "$sys.func.SUBSTITUTE($flow.format_local_part, \"[,\\s]+\", \"\")"
+      }, {
+        "parameter": "$flow.format_domain",
+        "value": "$sys.func.SUBSTITUTE($flow.format_domain, \"[,\\s]+\", \"\")"
+      } ]
+    },
+    "targetPage": "\u003e confirm full email",
+    "name": "eceb8710-27dc-49d9-a7ca-e93a8a231e95"
+  } ]
+}

@@ -1,0 +1,9 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "TEST product search"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

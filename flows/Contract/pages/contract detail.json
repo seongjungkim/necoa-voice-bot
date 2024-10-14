@@ -1,0 +1,121 @@
+{
+  "name": "c1d0c80a-47d4-40bb-920d-a20d9b335b7f",
+  "displayName": "contract detail",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.current_order_contract",
+      "value": "$sys.func.GET_FIELD($session.params.current_order, \"contract\")"
+    }, {
+      "parameter": "$flow.condition_current_order_contract",
+      "value": "$sys.func.IF(\"$sys.func.GET_FIELD($session.params.current_order, \\\"contract\\\")=null\", true, false)"
+    }, {
+      "parameter": "$flow.current_order_contract_payment",
+      "value": "$sys.func.GET_FIELD($flow.current_order_contract, \"contractPaymentInfo\")"
+    }, {
+      "parameter": "$flow.current_order_contract_payment_price",
+      "value": "$sys.func.GET_FIELD($flow.current_order_contract_payment, \"price\")"
+    }, {
+      "parameter": "$flow.current_order_contract_payment_price_currency",
+      "value": "$sys.func.GET_FIELD($flow.current_order_contract_payment_price, \"currency\")"
+    }, {
+      "parameter": "$flow.current_order_orderItemStatus",
+      "value": "$sys.func.GET_FIELD($session.params.current_order, \"orderItemStatus\")"
+    }, {
+      "parameter": "$flow.current_order_contract_signedTime",
+      "value": "$sys.func.GET_FIELD($flow.current_order_contract, \"signedTime\")"
+    }, {
+      "parameter": "$flow.current_order_contract_startDate",
+      "value": "$sys.func.GET_FIELD($flow.current_order_contract, \"startDate\")"
+    }, {
+      "parameter": "$flow.current_order_contract_endDate",
+      "value": "$sys.func.GET_FIELD($flow.current_order_contract, \"endDate\")"
+    }, {
+      "parameter": "$flow.current_order_item_type",
+      "value": "$sys.func.GET_FIELD($session.params.current_order, \"orderItemType\")"
+    }, {
+      "parameter": "$flow.current_order_status",
+      "value": "$sys.func.GET_FIELD($session.params.current_order, \"orderItemStatus\")"
+    }, {
+      "parameter": "$flow.current_order_status_condition",
+      "value": "$sys.func.CONCATENATE(\"$.codes[?(@.value=='\",$flow.current_order_status,\"')].notations\")"
+    }, {
+      "parameter": "$flow.current_order_status_label",
+      "value": "$sys.func.GET_FIELD($sys.func.GET($sys.func.GET($sys.func.FILTER(\"$session.params.common_code_OrderItemStatus\", \"$flow.current_order_status_condition\"),0),0),\"label\")"
+    }, {
+      "parameter": "$flow.current_order_contract_durationInMonths",
+      "value": "$sys.func.GET_FIELD($flow.current_order_contract, \"durationInMonths\")"
+    }, {
+      "parameter": "$flow.current_order_contract_durationInMonths_condition",
+      "value": "$sys.func.CONCATENATE(\"$.codes[?(@.value=='\",$flow.current_order_contract_durationInMonths,\"')].notations\")"
+    }, {
+      "parameter": "$flow.current_order_contract_durationInMonths_label",
+      "value": "$sys.func.GET_FIELD($sys.func.GET($sys.func.GET($sys.func.FILTER(\"$session.params.common_code_DurationInMonths\", \"$flow.current_order_contract_durationInMonths_condition\"),0),0),\"label\")"
+    }, {
+      "parameter": "$flow.current_order_contract_subscriptionPaymentDay",
+      "value": "$sys.func.GET_FIELD($flow.current_order_contract_payment, \"subscriptionPaymentDay\")"
+    }, {
+      "parameter": "$flow.current_order_contract_subscriptionPaymentDay_condition",
+      "value": "$sys.func.CONCATENATE(\"$.codes[?(@.value=='\",$flow.current_order_contract_subscriptionPaymentDay,\"')].notations\")"
+    }, {
+      "parameter": "$flow.current_order_contract_subscriptionPaymentDay_label",
+      "value": "$sys.func.GET_FIELD($sys.func.GET($sys.func.GET($sys.func.FILTER(\"$session.params.common_code_SubscriptionPaymentDay\", \"$flow.current_order_contract_subscriptionPaymentDay_condition\"),0),0),\"label\")"
+    }, {
+      "parameter": "$flow.current_order_price_currency",
+      "value": "$sys.func.GET_FIELD($flow.current_order_price, \"currency\")"
+    }, {
+      "parameter": "$flow.current_order_price_registrationPrice",
+      "value": "$sys.func.GET_FIELD($flow.current_order_price, \"registrationPrice\")"
+    }, {
+      "parameter": "$flow.current_order_price_tax",
+      "value": "$sys.func.GET_FIELD($flow.current_order_price, \"tax\")"
+    }, {
+      "parameter": "$flow.current_order_price_discountPrice",
+      "value": "$sys.func.GET_FIELD($flow.current_order_price, \"discountPrice\")"
+    }, {
+      "parameter": "$flow.current_order_price_totalPrice",
+      "value": "$sys.func.GET_FIELD($flow.current_order_price, \"totalPrice\")"
+    }, {
+      "parameter": "$flow.current_order_installationInformation",
+      "value": "$sys.func.GET_FIELD($session.params.current_order, \"installationInformation\")"
+    }, {
+      "parameter": "$flow.current_serial_number",
+      "value": "$sys.func.GET_FIELD($flow.current_order_installationInformation, \"serialNumber\") "
+    }, {
+      "parameter": "$flow.current_order_material",
+      "value": "$sys.func.GET_FIELD($session.params.current_order, \"material\")"
+    }, {
+      "parameter": "$flow.materialModelName",
+      "value": "$sys.func.GET_FIELD($flow.current_order_material, \"materialModelName\")"
+    }, {
+      "parameter": "$flow.materialName",
+      "value": "$sys.func.GET_FIELD($flow.current_order_material, \"materialName\")"
+    }, {
+      "parameter": "$flow.current_model_title",
+      "value": "$sys.func.CONCATENATE($flow.materialName,\" (\",$flow.materialModelName,\")\")"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "$flow.current_order_item_type != \"PURCHASE\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "contract detail retail customer",
+    "name": "599e5b9d-0547-42da-be53-35d0bb6c776c"
+  }, {
+    "condition": "$flow.current_order_item_type = \"PURCHASE\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.current_order_price",
+        "value": "$sys.func.GET_FIELD($session.params.current_order, \"price\")"
+      }, {
+        "parameter": "$flow.current_order_price_itemPrice",
+        "value": "$sys.func.GET_FIELD($flow.current_order_price, \"itemPrice\")"
+      } ]
+    },
+    "targetPage": "contract detail purchase customer",
+    "name": "8bd39984-1bc7-40a5-9a4c-dea9ab984e19"
+  } ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "47bd6cf4-e724-4588-810b-0822a0f87ddd",
+  "displayName": "\u003e request install",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      } ]
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "49c31872-ce41-4806-9631-4ea4f34f2569"
+  } ]
+}

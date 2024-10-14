@@ -1,0 +1,40 @@
+{
+  "name": "69fa23de-f439-46eb-ba44-0e0909efca07",
+  "displayName": "\u003e Manage Contract",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "intent": "small_talk.agent_hand_off",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "reset",
+        "value": true
+      } ]
+    },
+    "name": "e03333fe-e6f9-48ad-8759-9cd72703e873"
+  }, {
+    "intent": "contract.lease_agreement_access_and_reissue",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "Lease Agreement Access"
+      } ]
+    },
+    "targetPage": "Choose Contract Operation",
+    "name": "e326ea5f-d8f6-4b7e-b2c9-a133cd48cb3f"
+  }, {
+    "intent": "contract.view_payment",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "View Payment"
+      } ]
+    },
+    "targetPage": "Choose Contract Operation",
+    "name": "f4648f06-1ee5-40c6-ad35-a33616082152"
+  } ]
+}

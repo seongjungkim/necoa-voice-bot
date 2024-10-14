@@ -1,0 +1,10 @@
+{
+  "name": "267e42e2-5f57-4db5-965c-8d06cb3d52ff",
+  "displayName": "plan.service_area",
+  "priority": 500000,
+  "labels": [ {
+    "key": "sys-head",
+    "value": "sys-head"
+  } ],
+  "numTrainingPhrases": 22
+}

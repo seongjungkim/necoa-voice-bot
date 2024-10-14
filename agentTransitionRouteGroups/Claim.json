@@ -1,0 +1,479 @@
+{
+  "name": "ed5624ac-04bf-41fd-8ae4-d9fd088a0205",
+  "displayName": "Claim",
+  "transitionRoutes": [ {
+    "intent": "claim.fire",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "474691fc-ca16-4de1-ba04-140827d8c107"
+  }, {
+    "intent": "claim.foreign_matter",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "6baf3934-e1b9-44b0-97f0-3487fcbd50f9"
+  }, {
+    "intent": "claim.service_denial",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "37bdb7b5-ab90-40ca-8d1f-061f30c5fdab"
+  }, {
+    "intent": "claim.order",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "49a22f7f-edc9-401f-afe3-d059f4ff2d54"
+  }, {
+    "intent": "claim.contract",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "84accc62-5b6d-494a-894b-96d1ae7fd2d9"
+  }, {
+    "intent": "claim.payment",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "19002163-0723-4961-abb6-81a0f042fa7d"
+  }, {
+    "intent": "claim.cleanup_inadequacy",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "fa39b796-d2f2-4f3d-9e0a-7342bc09df1a"
+  }, {
+    "intent": "claim.drilling_hole",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "d15837b2-da5f-418e-8457-ef32a7336a6e"
+  }, {
+    "intent": "claim.unclassified",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "d90fdb9d-34b7-46d2-b73e-8de037485f7c"
+  }, {
+    "intent": "claim.installation_unavailable",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I understand your concern. Would you like me to connect you to a customer service representative? If so, please reply 'yes'.", "Thank you for sharing your issue. Should I connect you to a customer service representative? Just reply 'yes' to proceed.", "I apologize for the inconvenience. Would you like to be connected to a customer service representative? If so, reply 'yes'.", "I’m sorry to hear that. Shall I connect you to a customer service representative for more assistance? Reply 'yes' if you'd like that.", "I understand your frustration. Would you like me to connect you to someone who can help resolve this issue? Please reply 'yes'.", "Let's get this sorted out. Should I transfer you to a customer service representative? Reply 'yes' if you'd like to proceed.", "I'm here to help. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "Thank you for bringing this to our attention. Should I transfer you to a customer service representative? Reply 'yes' to confirm.", "I'm sorry you're experiencing this issue. Would you like to be connected to a customer service representative? Please reply 'yes'.", "I understand the problem. Shall I connect you to a customer service representative for more support? Reply 'yes' if you'd like that.", "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "5ec1863e-6fd8-482f-92cb-63b2d4f7b979"
+  }, {
+    "intent": "claim.reinstallation_unavailable",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "9a678786-d1b8-4314-ab98-f82b01c1ef0c"
+  }, {
+    "intent": "claim.property_damage",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "22bf5e7d-4a6f-4ed4-ac82-beec947b8555"
+  }, {
+    "intent": "claim.product_use_frustration",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "9a2380fa-063c-42c7-8a8a-5a8610e05d6c"
+  }, {
+    "intent": "claim.technician_rudeness",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "9698646e-3de9-4b3c-bb25-f82bcf2187d0"
+  }, {
+    "intent": "claim.service_unavailable",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "8cc95703-f48f-49ad-8780-60153f19961d"
+  }, {
+    "intent": "claim.service_reissue",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "0f92f9fc-1df1-43d8-9d14-00e42742938a"
+  }, {
+    "intent": "claim.leakage_compensation",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "e17b4192-d287-4a6b-9456-f74a9bc012de"
+  }, {
+    "intent": "claim.technician_no_show",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "fd593c00-7ee4-41b5-ab3a-9e567be808ae"
+  }, {
+    "intent": "claim.leakage_compensation",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "1b2d788b-f3b5-4894-85e7-0be557a8b662"
+  }, {
+    "intent": "claim.technician_incompetence",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "cb2353b1-1a79-4b27-af8a-f7ef70608c25"
+  }, {
+    "intent": "claim.request_customer_service",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm.", "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "80dda228-f199-4002-902a-bc685e441374"
+  }, {
+    "intent": "claim.request_pl_claim",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue.", "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "6927233d-e4b1-451b-ba94-89a7d0956b77"
+  }, {
+    "intent": "claim.branch",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I’m sorry to hear about this. Shall I transfer you to a customer service representative for more assistance? Please reply 'yes'.", "Thank you for letting us know. Should I transfer you to a customer service representative? Reply 'yes' to confirm.", "I understand your situation. Would you like me to connect you to a customer service representative? Reply 'yes' if you do.", "I apologize for the trouble. Would you like me to transfer you to a customer service representative? Just reply 'yes' to proceed.", "Let's get this issue resolved. Should I connect you to a customer service representative? Reply 'yes' if you want to continue." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "claim",
+      "setParameterActions": [ {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "b51b5872-ec67-49c6-a413-f7b39c0a32e2"
+  } ]
+}

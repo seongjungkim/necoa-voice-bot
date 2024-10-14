@@ -1,0 +1,32 @@
+{
+  "name": "cc43c462-43a3-49d5-83d2-49e4da4bd3ba",
+  "displayName": "Choose Filter Operation",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.operation = NULL",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Manage Filter",
+    "name": "64590b3d-8e11-4a8b-bb38-89d8531e52e6"
+  }, {
+    "condition": "$session.params.operation = \"Check Delivery Status\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Check Delivery Status",
+    "name": "79bb9bcc-f521-439f-8897-7f0e72b1efd4"
+  }, {
+    "condition": "$session.params.operation_complete = true OR $session.params.operation != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "8fa5141e-8645-46ca-9e3a-bdd676b45eef"
+  } ]
+}

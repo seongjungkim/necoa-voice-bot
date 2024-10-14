@@ -1,0 +1,47 @@
+{
+  "name": "07fbe387-8bdc-4fe9-a282-f8b6d52c6abc",
+  "displayName": "# customers search email",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.login_user = null",
+    "triggerFulfillment": {
+      "webhook": "customers_search_email",
+      "tag": "abc",
+      "setParameterActions": [ {
+        "parameter": "$flow.customers_search_email",
+        "value": "$session.params.email"
+      }, {
+        "parameter": "$flow.customers_search_customerId",
+        "value": ""
+      } ]
+    },
+    "targetPage": "# customers detail search",
+    "name": "1907dda0-1579-4727-954f-a46bc570f752"
+  }, {
+    "condition": "$session.params.login_user != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "# customers detail search",
+    "name": "68e6a2a5-3150-41f2-bde0-8d1020213141"
+  } ],
+  "eventHandlers": [ {
+    "targetFlow": "Agent Connection",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "There's a glitch with our server right now. If you require assistance, a support agent can help!", "We're having trouble fetching your order details. Need help? Just ask to speak with our support team!", "Server issues are affecting order access. Need to speak to our support team? Let us know!", "Currently facing issues retrieving your order. Want us to connect you with support?", "Oops! We can't access your order info at the moment. If you need a hand, our support team is here." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "name": "0b95ee42-3bcb-47f6-95c2-ac4edc85e73d"
+  } ]
+}

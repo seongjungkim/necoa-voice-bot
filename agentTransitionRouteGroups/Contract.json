@@ -1,0 +1,71 @@
+{
+  "name": "07c9becd-3df8-43f8-9007-dc743196c62b",
+  "displayName": "Contract",
+  "transitionRoutes": [ {
+    "intent": "contract.view_cancellation_fee",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Currently, we do not offer the ability to check the cancellation fee.", "At this time, we don't provide the option to view the cancellation fee.", "Sorry, checking the cancellation fee is not a feature we support right now.", "Unfortunately, you cannot check the cancellation fee at this moment.", "I'm sorry, but we don't have the capability to check the cancellation fee right now.", "Checking the cancellation fee isn't available at the moment.", "Right now, we can't provide information on the cancellation fee.", "We apologize, but the option to view the cancellation fee isn't available." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default"
+    },
+    "name": "133dd1b9-580e-4343-bc48-a9f6a51f9718"
+  }, {
+    "intent": "contract.view_payment",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "View Payment"
+      } ]
+    },
+    "name": "a54f40ce-8b3c-4004-a1d1-d42b496e870b"
+  }, {
+    "intent": "contract.view_receipt",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "You can view your payment history from the My Page section.", "Please visit the My Page section to check receipts.", "To see your payment records, go to My Page.", "You can find your payment statements by logging into My Page.", "All your receipts are available in the My Page section.", "Visit My Page to access your payment history.", "You can view your payment statements from My Page.", "Please check the My Page section for your payment history.", "To access your receipts, log into My Page.", "Your payment history can be found in the My Page section." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default"
+    },
+    "name": "6f89f661-1e90-4680-a540-a7f36e4cee7f"
+  }, {
+    "intent": "contract.change_active_rental",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I'm sorry, but we cannot change your rental product due to a change of mind.", "Unfortunately, we don't offer the option to switch rental products once in use.", "Regrettably, we can't change the product you're currently renting due to a change of preference.", "I'm sorry, but we do not allow changes to rental products after they have been issued.", "Unfortunately, it's not possible to swap your current rental product just based on preference.", "We apologize, but changing your rental product due to a change of mind is not an option.", "I'm sorry, but once a rental product is in use, it cannot be changed.", "Unfortunately, we can't accommodate changes to your rental product after it's been delivered.", "Regrettably, changing your rental product because of a change of mind is not supported.", "I'm sorry, but our policy doesn't allow changing rental products after they've been issued." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default"
+    },
+    "name": "59d3618d-0f84-4328-a469-e8dc1469027d"
+  }, {
+    "intent": "contract.view_contract",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "View Contract"
+      } ]
+    },
+    "name": "48f5e79e-4610-461b-b1e3-98c7b89e9881"
+  }, {
+    "intent": "contract.view_order_detail",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation",
+        "value": "View Order Detail"
+      } ]
+    },
+    "name": "4dfd9f36-8f52-4aa1-94a4-69ad42030669"
+  } ]
+}

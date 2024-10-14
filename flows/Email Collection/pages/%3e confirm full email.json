@@ -1,0 +1,151 @@
+{
+  "name": "8c264dec-b3d8-4af7-b643-c4e83e4b3a7e",
+  "displayName": "\u003e confirm full email",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.count",
+      "value": "$sys.func.COUNT($flow.split_full_email)"
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_no",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that right. Let's start capturing the email again." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.format_domain",
+        "value": ""
+      }, {
+        "parameter": "$flow.format_local_part",
+        "value": ""
+      }, {
+        "parameter": "$flow.full_email_separate",
+        "value": ""
+      }, {
+        "parameter": "$flow.split_full_email",
+        "value": [ ]
+      }, {
+        "parameter": "$flow.user_provided_full_email",
+        "value": ""
+      } ]
+    },
+    "targetPage": "initial start page",
+    "name": "d7df2811-d076-4901-9c67-5670d3ea8d04"
+  }, {
+    "intent": "components_email_collection_confirmation_no",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that right. Let's start capturing the email again." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "targetPage": "initial start page",
+    "name": "5eaa3630-deca-46c0-8513-cfbb5b8dd69f"
+  }, {
+    "intent": "prebuilt_components_confirmation_yes",
+    "condition": "$flow.user_provided_full_email.local-part != NULL AND $flow.user_provided_full_email.domain != NULL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_local_part",
+        "value": "$flow.format_local_part"
+      }, {
+        "parameter": "$flow.user_provided_domain",
+        "value": "$flow.format_domain"
+      }, {
+        "parameter": "$flow.user_provided_full_email",
+        "value": "$sys.func.CONCATENATE($flow.format_local_part,\"@\",$flow.format_domain)"
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "6702f749-cf42-4027-9c80-6bf6c9f7f365"
+  }, {
+    "intent": "prebuilt_components_confirmation_yes",
+    "condition": "$flow.count \u003e= 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_local_part",
+        "value": "$flow.format_local_part"
+      }, {
+        "parameter": "$flow.user_provided_domain",
+        "value": "$flow.format_domain"
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "a1dcbfe1-37a6-4348-b0fb-dce03732f6f7"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "93e0477c-fcb1-4d3d-8fa9-5a7f84dc9dfe"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "6a1db41d-b63a-4c62-97fb-8d692fcef552"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "47f8ba12-346d-4f0c-b963-d6c0211ae33e"
+  }, {
+    "condition": "$flow.user_provided_full_email != NULL AND $flow.count \u003e= 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "\u003cspeak\u003e\n  Just to check, is your email \u003csay-as interpret-as=\"characters\"\u003e$flow.user_provided_full_email\u003c/say-as\u003e? Did we get that right?\n\u003c/speak\u003e", "\u003cspeak\u003e\n  Can you confirm if your email is \u003csay-as interpret-as=\"characters\"\u003e$flow.user_provided_full_email\u003c/say-as\u003e? Is that correct?\n\u003c/speak\u003e", "\u003cspeak\u003e\n  We have your email as \u003csay-as interpret-as=\"characters\"\u003e$flow.user_provided_full_email\u003c/say-as\u003e. Does that look right?\n\u003c/speak\u003e", "\u003cspeak\u003e\n  Is your email \u003csay-as interpret-as=\"characters\"\u003e$flow.user_provided_full_email\u003c/say-as\u003e? Did we spell that correctly?\n\u003c/speak\u003e", "\u003cspeak\u003e\n  I have your email as \u003csay-as interpret-as=\"characters\"\u003e$flow.user_provided_full_email\u003c/say-as\u003e. Is that the right one?\n\u003c/speak\u003e", "\u003cspeak\u003e\n  Please confirm, is your email \u003csay-as interpret-as=\"characters\"\u003e$flow.user_provided_full_email\u003c/say-as\u003e? Did we get it right?\n\u003c/speak\u003e", "\u003cspeak\u003e\n  We recorded your email as \u003csay-as interpret-as=\"characters\"\u003e$flow.user_provided_full_email\u003c/say-as\u003e. Is that accurate?\n\u003c/speak\u003e", "\u003cspeak\u003e\n  To make sure, is your email \u003csay-as interpret-as=\"characters\"\u003e$flow.user_provided_full_email\u003c/say-as\u003e? Did we get that correct?\n\u003c/speak\u003e", "\u003cspeak\u003e\n  Double-checking your email: \u003csay-as interpret-as=\"characters\"\u003e$flow.user_provided_full_email\u003c/say-as\u003e. Is that right?\n\u003c/speak\u003e" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.last_prompt",
+        "value": "To confirm, your email is $sys.func.SUBSTITUTE($sys.func.SUBSTITUTE($sys.func.SUBSTITUTE($sys.func.SUBSTITUTE($sys.func.JOIN(\". \", $sys.func.SPLIT($flow.format_local_part,\"\")), \"_\\.\", \"underscore.\"), \"-\\.\", \"hyphen.\"), \"\\.\\.\", \"dot.\"), \"\\+\\.\", \"plus sign.\"). at. $sys.func.SUBSTITUTE($sys.func.JOIN(\". \", $sys.func.SPLIT($flow.format_domain,\"\")), \"\\.\\.\", \"dot.\"). Did we spell your full email correctly?"
+      } ]
+    },
+    "name": "fcf79d94-5718-418f-b260-30ba8e733a9b"
+  }, {
+    "condition": "$flow.count \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that right.  Let's start capturing the email again." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.format_local_part",
+        "value": null
+      }, {
+        "parameter": "$flow.format_domain",
+        "value": null
+      } ]
+    },
+    "targetPage": "initial start page",
+    "name": "db8b6541-b805-42f9-a2cc-f2afe2f26121"
+  } ]
+}

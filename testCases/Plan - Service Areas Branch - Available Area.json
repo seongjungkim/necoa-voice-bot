@@ -1,0 +1,93 @@
+{
+  "name": "a411eac5-bb83-49c2-bf92-46f484a9dddb",
+  "tags": [ "#plan" ],
+  "displayName": "Plan - Service Areas Branch - Available Area",
+  "testCaseConversationTurns": [ {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "hi"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "Default Welcome Intent"
+      },
+      "currentPage": {
+        "name": "Main Menu",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eHey!\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eI'm the Necoa Assistant Bot. What can I do for you today?\u003c/speak\u003e" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "Is my area within your service coverage?"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "triggeredIntent": {
+        "name": "plan.service_area"
+      },
+      "currentPage": {
+        "name": "\u003e collect zipcode",
+        "flow": "Plan"
+      },
+      "textResponses": [ {
+        "text": [ "Say your zipcode or enter the five digits and press the pound key." ]
+      } ],
+      "currentFlow": {
+        "name": "Plan"
+      }
+    }
+  }, {
+    "userInput": {
+      "isWebhookEnabled": true,
+      "input": {
+        "text": {
+          "text": "77003"
+        },
+        "languageCode": "en"
+      }
+    },
+    "virtualAgentOutput": {
+      "currentPage": {
+        "name": "Main Menu",
+        "flow": "Default Start Flow"
+      },
+      "textResponses": [ {
+        "text": [ "\u003cspeak\u003eThanks! We have your zipcode as \u003csay-as interpret-as='verbatim'\u003e77003\u003c/say-as\u003e.\u003c/speak\u003e" ]
+      }, {
+        "text": [ "\u003cspeak\u003eWe can install at your address. Houston Branch in Houston will handle it. Contact them at \u003csay-as interpret-as='telephone' google:style='zero-as-zero'\u003e+1-214-747-6286\u003c/say-as\u003e.\u003c/speak\u003e" ]
+      }, {
+        "text": [ "Can I help you with anything else?" ]
+      } ],
+      "currentFlow": {
+        "name": "Default Start Flow"
+      }
+    }
+  } ],
+  "creationTime": {
+    "seconds": 1718612669,
+    "nanos": 794553000
+  },
+  "testConfig": {
+    "flow": "Default Start Flow",
+    "page": "Start Page"
+  },
+  "languageCode": "en"
+}

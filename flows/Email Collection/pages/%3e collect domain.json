@@ -1,0 +1,126 @@
+{
+  "name": "2210c61b-fc40-4ceb-b886-96486f24abc7",
+  "displayName": "\u003e collect domain",
+  "form": {
+    "parameters": [ {
+      "displayName": "$flow.user_provided_domain",
+      "required": true,
+      "entityType": "@components_email_collection_domain",
+      "fillBehavior": {
+        "initialPromptFulfillment": {
+          "messages": [ {
+            "text": {
+              "text": [ "What is a domain of your email address?" ]
+            },
+            "languageCode": "en"
+          } ]
+        },
+        "repromptEventHandlers": [ {
+          "targetPage": "\u003e collect alternate domain",
+          "event": "sys.no-match-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we  didn't get that. What is the domain of your email address?" ]
+              },
+              "languageCode": "en"
+            } ],
+            "setParameterActions": [ {
+              "parameter": "$flow.last_prompt",
+              "value": "Sorry, we  didn't get that. What is the domain of your email address?"
+            } ]
+          },
+          "name": "01605508-6a50-4400-abfd-83c34d19dad0"
+        }, {
+          "targetPage": "\u003e collect spelling domain",
+          "event": "sys.no-match-2",
+          "triggerFulfillment": {
+          
+          },
+          "name": "5f48b77a-7764-4dfa-9b04-9d778775110d"
+        }, {
+          "event": "sys.no-input-1",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Sorry, we weren't able to hear you. What is your domain of email?" ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "7ca95812-4ec6-4bfb-8f12-2bf77654df29"
+        }, {
+          "event": "sys.no-input-2",
+          "triggerFulfillment": {
+            "messages": [ {
+              "text": {
+                "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+              },
+              "languageCode": "en"
+            } ]
+          },
+          "name": "0852bff7-2b9d-4b43-ab54-6c25e8e5db2c"
+        }, {
+          "targetPage": "end failure",
+          "event": "sys.no-input-3",
+          "triggerFulfillment": {
+            "setParameterActions": [ {
+              "parameter": "retry",
+              "value": "2"
+            } ]
+          },
+          "name": "a747f14b-4736-4926-9326-6013fe774052"
+        } ]
+      }
+    } ]
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "f368d5c6-4fbe-42c7-8700-428d89a78646"
+  }, {
+    "condition": "$page.params.status = FINAL",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_domain",
+        "value": "$flow.user_provided_domain"
+      }, {
+        "parameter": "$flow.collect_local_part",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e confirm domain",
+    "name": "5d5d24c1-248d-4fc7-bc66-98ac36d0f5a5"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "7f2fd3ee-869f-438d-9418-93800633e31b"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "312fb02b-56da-4ad6-b996-5d29afcd9434"
+  } ]
+}

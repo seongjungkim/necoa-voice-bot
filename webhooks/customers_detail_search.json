@@ -1,0 +1,20 @@
+{
+  "name": "bd0d6ee8-4a28-436e-8ccd-83354da89b52",
+  "displayName": "customers_detail_search",
+  "genericWebService": {
+    "uri": "https://fulfillment-dot-necoa-aicc-dev.uc.r.appspot.com/fulfillment/cx/webhook_flex/necoa/en_US/customers_detail_search",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"sessionId\": \"$session.params.sessionId\",\n  \"customerId\": \"$session.params.login_user.customerId\"\n}",
+    "parameterMapping": [ {
+      "key": "$flow.api_response",
+      "value": "$.data"
+    }, {
+      "key": "user_detail",
+      "value": "$.data"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

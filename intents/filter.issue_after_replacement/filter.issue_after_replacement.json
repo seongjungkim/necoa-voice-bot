@@ -1,0 +1,10 @@
+{
+  "name": "217fce89-663b-41e1-ad20-fb6895329357",
+  "displayName": "filter.issue_after_replacement",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 17
+}

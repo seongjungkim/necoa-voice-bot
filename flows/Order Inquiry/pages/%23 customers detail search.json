@@ -1,0 +1,42 @@
+{
+  "name": "a7428227-2437-4d43-ac21-52c4976aa340",
+  "displayName": "# customers detail search",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "webhook": "customers_detail_search",
+    "tag": "abc"
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "user_order_items",
+        "value": "$sys.func.GET_FIELD($session.params.guest_order, \"orderItems\")"
+      }, {
+        "parameter": "order_size",
+        "value": "$sys.func.COUNT($session.params.guest_order_items)"
+      } ]
+    },
+    "targetPage": "check order size",
+    "name": "c5a855b6-c039-4dc5-bbce-66bc86639378"
+  } ],
+  "eventHandlers": [ {
+    "targetFlow": "Agent Connection",
+    "event": "webhook.error",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Oops! We can't access your order info at the moment. If you need a hand, our support team is here.", "There's a glitch with our server right now. If you require assistance, a support agent can help!", "We're having trouble fetching your order details. Need help? Just ask to speak with our support team!", "Server issues are affecting order access. Need to speak to our support team? Let us know!", "Currently facing issues retrieving your order. Want us to connect you with support?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "noConfirmMessage",
+        "value": true
+      } ]
+    },
+    "name": "6e3a20e8-e854-41f3-b70d-b4c5859bb432"
+  } ]
+}

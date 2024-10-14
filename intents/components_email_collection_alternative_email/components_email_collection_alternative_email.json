@@ -1,0 +1,10 @@
+{
+  "name": "be76a3ed-a547-42d8-a57b-7274bf6e2d14",
+  "displayName": "components_email_collection_alternative_email",
+  "parameters": [ {
+    "id": "alternative_email",
+    "entityType": "@sys.any"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 2
+}

@@ -1,0 +1,10 @@
+{
+  "name": "1c710023-ffec-472e-9492-53a015efa5f0",
+  "displayName": "product.water_purifier.installation_guide",
+  "parameters": [ {
+    "id": "necoa_unit_water_purifier",
+    "entityType": "@necoa_unit_water_purifier"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 3
+}

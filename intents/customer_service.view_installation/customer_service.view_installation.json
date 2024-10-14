@@ -1,0 +1,10 @@
+{
+  "name": "624eacb4-e00b-47ea-886e-c2df2977048d",
+  "displayName": "customer_service.view_installation",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 1
+}

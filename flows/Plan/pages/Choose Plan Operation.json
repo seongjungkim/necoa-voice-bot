@@ -1,0 +1,43 @@
+{
+  "name": "cc43c462-43a3-49d5-83d2-49e4da4bd3ba",
+  "displayName": "Choose Plan Operation",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.operation = NULL",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Manage Plan",
+    "name": "64590b3d-8e11-4a8b-bb38-89d8531e52e6"
+  }, {
+    "condition": "$session.params.operation = \"Check Order Ship Status\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Check Order Ship Status",
+    "name": "0bbc4084-9592-4609-91cf-606f80910f3e"
+  }, {
+    "condition": "$session.params.operation = \"Change Order\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "TODO: Change Order",
+    "name": "5397b3d4-a2af-4072-baca-08252b07c6c1"
+  }, {
+    "condition": "$session.params.operation = \"Rental Overdue\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e collect payment",
+    "name": "904a0d00-2f15-479e-b5fc-81e1fe7f4aa0"
+  }, {
+    "condition": "$session.params.operation_complete = true OR $session.params.operation != null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "680f0073-e221-490b-86a9-f8a6354ac9c4"
+  } ]
+}

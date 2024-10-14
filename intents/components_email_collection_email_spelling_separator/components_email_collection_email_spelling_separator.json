@@ -1,0 +1,10 @@
+{
+  "name": "7d498ede-4339-4467-808d-f825a54b0d24",
+  "displayName": "components_email_collection_email_spelling_separator",
+  "parameters": [ {
+    "id": "spelling_separator",
+    "entityType": "@components_email_collection_seperator"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 7
+}

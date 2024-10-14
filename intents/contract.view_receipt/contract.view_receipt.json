@@ -1,0 +1,10 @@
+{
+  "name": "17419706-65d3-4b08-8f0b-6abec91c93df",
+  "displayName": "contract.view_receipt",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 15
+}

@@ -1,0 +1,16 @@
+{
+  "name": "9082c255-a17f-4acc-a913-0ceb6f6b676f",
+  "displayName": "prebuilt_components_name_collection_full_name",
+  "parameters": [ {
+    "id": "user_provided_full_name",
+    "entityType": "@prebuilt_components_name_collection_full_name"
+  }, {
+    "id": "first-name",
+    "entityType": "@sys.person"
+  }, {
+    "id": "last-name",
+    "entityType": "@sys.person"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 21
+}

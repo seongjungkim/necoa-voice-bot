@@ -1,0 +1,64 @@
+{
+  "name": "5438aa87-6d19-4936-be8e-2d733bc2d26e",
+  "displayName": "\u003e confirm auto select order",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "The product associated with your account is $flow.card_channelOrderItemId. Is this correct?", "We've found an order in your account: $flow.card_channelOrderItemId. Does this look right to you?", "Your current order record shows $flow.card_channelOrderItemId. Can you confirm this is accurate?", "I see that $flow.card_channelOrderItemId is registered under your account. Is this the order you are referring to?", "It appears that $flow.card_channelOrderItemId is the only product linked to your account. Is this correct?" ]
+      },
+      "languageCode": "en"
+    } ],
+    "webhook": "Chatbot Fulfillment",
+    "tag": "default",
+    "setParameterActions": [ {
+      "parameter": "$flow.card_channelOrderItemId",
+      "value": "$sys.func.GET_FIELD($session.params.current_order, \"channelOrderItemId\")"
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "small_talk.confirmation.yes",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Excellent! We've confirmed your order.", "Wonderful, your order has been confirmed successfully.", "Perfect! We have confirmed your order details.", "Awesome! Your order is now confirmed.", "Great! We've got your order confirmed." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default"
+    },
+    "targetPage": "# order item detail search unmasked",
+    "name": "a09ef136-2993-4df6-a9cd-2d409836993d"
+  }, {
+    "intent": "small_talk.confirmation.no",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "If no products are registered under your account, you can easily add them via our website.", "It seems there are no products currently linked to your account. You can register your products on our website anytime.", "If you don’t see any registered products, please go to our website to add them to your account.", "Looks like there are no products registered yet. You can do this quickly by visiting our website.", "No registered products found. Please visit our website to register your products at your convenience." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "default",
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      } ]
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "2fcec3c6-f18e-4eb5-9e7e-0a8ee884f0f6"
+  }, {
+    "intent": "small_talk.agent_hand_off",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "reset",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "9f4868c0-fa49-458a-b289-5c5756905577"
+  } ]
+}

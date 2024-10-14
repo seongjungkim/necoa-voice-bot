@@ -1,0 +1,223 @@
+{
+  "name": "02db3247-5eb2-43aa-ad4a-5f6a86d72466",
+  "displayName": "\u003e confirm second part after email separator",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "\u003cspeak\u003e$flow.verify_local_part_part_ssml. Tell us if that's wrong, if that's the end, or, what's next: a dot, underscore, plus sign, or hyphen.\u003c/speak\u003e" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.verify_local_part_part_ssml",
+      "value": "\u003cprosody rate='slow'\u003e   \u003csay-as interpret-as='verbatim'\u003e     $sys.func.SUBSTITUTE(       $sys.func.SUBSTITUTE(         $sys.func.SUBSTITUTE(           $sys.func.SUBSTITUTE(             $sys.func.SUBSTITUTE(               $sys.func.SUBSTITUTE(                 $flow.verify_local_part_part,                 \"_\\\\.\", \"\u003c/say-as\u003e\u003csub alias='underscore'\u003e_\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003e\"               ),               \"-\\\\.\", \"\u003c/say-as\u003e\u003csub alias='hyphen'\u003e-\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003e\"             ),             \"\\\\.\\\\.\", \"\u003c/say-as\u003e\u003csub alias='dot'\u003e.\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003e\"           ),           \"\\\\+\\\\.\", \"\u003c/say-as\u003e\u003csub alias='plus sign'\u003e+\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003e\"         ),         \"'\u003e'\u003c\", \"\u003c/say-as\u003e\u003csub alias='apostrophe'\u003e'\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003e\"       ),       \"\\\"\\\"\u003e\", \"\u003c/say-as\u003e\u003csub alias='space'\u003e' '\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003e\"     )   \u003c/say-as\u003e \u003c/prosody\u003e"
+    }, {
+      "parameter": "$flow.last_prompt",
+      "value": "\u003cspeak\u003e$flow.verify_local_part_part_ssml. Tell us if that's wrong, if that's the end, or, what's next: a dot, underscore, plus sign, or hyphen.\u003c/speak\u003e"
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.incorrect_next_part_counter \u003c 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.verify_local_part_part",
+        "value": null
+      }, {
+        "parameter": "$flow.spelling_local_part",
+        "value": "$flow.verify_local_part"
+      }, {
+        "parameter": "$flow.incorrect_next_part_counter",
+        "value": "$sys.func.ADD($flow.incorrect_next_part_counter,1)"
+      } ]
+    },
+    "targetPage": "special character initial",
+    "name": "b2cc0b52-03a3-4117-95b4-32059fe511e1"
+  }, {
+    "intent": "components_email_collection_email_spelling_separator",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.email_separator",
+        "value": "$intent.params.spelling_separator.original"
+      }, {
+        "parameter": "$flow.verify_local_part",
+        "value": "$sys.func.CONCATENATE($flow.verify_local_part, $flow.verify_local_part_part)"
+      }, {
+        "parameter": "$flow.spelling_separator",
+        "value": "$session.params.spelling_separator"
+      }, {
+        "parameter": "spelling_separator",
+        "value": null
+      }, {
+        "parameter": "$flow.verify_local_part_part",
+        "value": null
+      } ]
+    },
+    "targetPage": "\u003e confirm email separator",
+    "name": "6b124744-4eee-4e8a-8df1-af73c5f26adc"
+  }, {
+    "intent": "prebuilt_components_confirmation_done",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.verify_local_part",
+        "value": "$sys.func.CONCATENATE($flow.verify_local_part, $flow.verify_local_part_part)"
+      }, {
+        "parameter": "$flow.verify_local_part_part",
+        "value": null
+      }, {
+        "parameter": "$flow.is_select_initial_path",
+        "value": false
+      }, {
+        "parameter": "$flow.spelling_local_part",
+        "value": null
+      }, {
+        "parameter": "$flow.spelling_separator",
+        "value": null
+      } ]
+    },
+    "targetPage": "initial start page",
+    "name": "a84f4091-5aaa-4bfd-9722-ee8e95386df4"
+  }, {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.verify_local_part",
+        "value": "$sys.func.CONCATENATE($flow.verify_local_part, $flow.verify_local_part_part)"
+      }, {
+        "parameter": "$flow.verify_local_part_part",
+        "value": null
+      }, {
+        "parameter": "$flow.is_select_initial_path",
+        "value": false
+      }, {
+        "parameter": "$flow.spelling_local_part",
+        "value": null
+      }, {
+        "parameter": "$flow.spelling_separator",
+        "value": null
+      }, {
+        "parameter": "$flow.incorrect_next_part_counter",
+        "value": 0
+      } ]
+    },
+    "targetPage": "initial start page",
+    "name": "0d8060cb-3ce6-41df-be75-2b6c20cd0506"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "a5efdba2-a062-48be-8523-67c54f014e34"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.incorrect_next_part_counter = 2",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, we've tried too many times and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "e903c894-20aa-4356-8f50-2464e0421e15"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "ac3b004b-c781-46e9-ab82-71d9d26fb06f"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "ad1feb98-9edd-4561-ae2f-3fdf1135a3a2"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren't able to hear you. $sys.func.SUBSTITUTE($sys.func.SUBSTITUTE($sys.func.SUBSTITUTE($sys.func.SUBSTITUTE($sys.func.JOIN(\". \", $sys.func.SPLIT($flow.verify_local_part_part,\"\")), \"_\\.\", \"underscore.\"), \"-\\.\", \"hyphen.\"), \"\\.\\.\", \"dot.\"), \"\\+\\.\", \"plus sign.\") . Tell us if that's wrong, if that's the end, or, what's next: a dot, underscore, plus sign, or hyphen." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "1cbd2cba-8b64-4e5a-97ef-3b0eca92f673"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "5add0a46-4de6-4ccd-9124-39859656c244"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "2260dd69-f9f4-4f69-94c3-6e682dc88b89"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. $sys.func.SUBSTITUTE($sys.func.SUBSTITUTE($sys.func.SUBSTITUTE($sys.func.SUBSTITUTE($sys.func.JOIN(\". \", $sys.func.SPLIT($flow.verify_local_part_part,\"\")), \"_\\.\", \"underscore.\"), \"-\\.\", \"hyphen.\"), \"\\.\\.\", \"dot.\"), \"\\+\\.\", \"plus sign.\") . Tell us if that's wrong, if that's the end, or, what's next: a dot, underscore, plus sign, or hyphen." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "6a784882-067f-41b3-b247-9da81e0e5862"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. $sys.func.SUBSTITUTE($sys.func.SUBSTITUTE($sys.func.SUBSTITUTE($sys.func.SUBSTITUTE($sys.func.JOIN(\". \", $sys.func.SPLIT($flow.verify_local_part_part,\"\")), \"_\\.\", \"underscore.\"), \"-\\.\", \"hyphen.\"), \"\\.\\.\", \"dot.\"), \"\\+\\.\", \"plus sign.\") . Tell us if that's wrong, if that's the end, or, what's next: a dot, underscore, plus sign, or hyphen." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "244ab9ad-fb74-4f48-8716-72f1a6f94818"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "361ef938-2197-4ba0-9b6c-ce205d167ebf"
+  } ]
+}

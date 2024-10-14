@@ -1,0 +1,10 @@
+{
+  "name": "c87c91fb-ac6d-43bc-a279-d3914de609f9",
+  "displayName": "filter.damage_replacement",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 15
+}

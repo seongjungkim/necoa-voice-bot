@@ -1,0 +1,87 @@
+{
+  "name": "18a0c82e-73b0-467e-9aa2-2dc59ffcebee",
+  "displayName": "Contract",
+  "transitionRoutes": [ {
+    "intent": "small_talk.agent_hand_off",
+    "triggerFulfillment": {
+    
+    },
+    "name": "2ddac64e-b1e3-4a8b-91fc-1f1226d771b7"
+  }, {
+    "intent": "small_talk.start_over",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      } ]
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "bdbb7f33-eb0a-4ea0-9223-8b321dd3a70e"
+  }, {
+    "condition": "$session.params.operation = \"Lease Agreement Access\" OR $session.params.operation = \"View Payment\" OR $session.params.operation = \"View Contract\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I can help you with that.", "Sure, no problem.", "I'll be happy to help!", "Happy to assist!", "I can definitely look into that." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "choose_item",
+        "value": true
+      } ]
+    },
+    "targetPage": "Order Lookup",
+    "name": "2ada2e48-cb00-4be7-8cd8-c5cead179152"
+  }, {
+    "condition": "$session.params.operation = \"View Order Detail\"",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I can help you with that.", "Sure, no problem.", "I'll be happy to help!", "Happy to assist!", "I can definitely look into that." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "choose_item",
+        "value": true
+      } ]
+    },
+    "targetPage": "Order Lookup",
+    "name": "98ae6551-a37d-49c5-9396-a612e203e425"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "bb66cd54-9d65-42db-813c-a4a50e38d74f"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "658cfd6b-87d0-4a42-988d-c53af69e61e8"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001,
+    "modelTrainingMode": "MODEL_TRAINING_MODE_AUTOMATIC",
+    "multiIntentSettings": {
+    
+    }
+  },
+  "advancedSettings": {
+    "enabled": true
+  }
+}

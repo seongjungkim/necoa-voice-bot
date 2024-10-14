@@ -1,0 +1,435 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "I found the email with the order number "
+    }, {
+      "text": "39472039",
+      "parameterId": "code_channel_order_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Here it's in my email "
+    }, {
+      "text": "34458125",
+      "parameterId": "code_channel_order_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I got a text message with the number "
+    }, {
+      "text": "392123492",
+      "parameterId": "code_channel_order_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I have it in my email it's "
+    }, {
+      "text": "20053932",
+      "parameterId": "code_channel_order_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "If I remember correctly it's "
+    }, {
+      "text": "392028139",
+      "parameterId": "code_channel_order_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Could you try "
+    }, {
+      "text": "39211229",
+      "parameterId": "code_channel_order_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "There's a lot of numbers here try "
+    }, {
+      "text": "242098793",
+      "parameterId": "code_channel_order_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I found a number here it's "
+    }, {
+      "text": "23923",
+      "parameterId": "code_channel_order_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Does this work as a number "
+    }, {
+      "text": "39239",
+      "parameterId": "code_channel_order_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I found my number "
+    }, {
+      "text": "30400",
+      "parameterId": "code_channel_order_number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Here's the number "
+    }, {
+      "text": "00242"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I think "
+    }, {
+      "text": "424240"
+    }, {
+      "text": " is my number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The order number is "
+    }, {
+      "text": "42424"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I found the number "
+    }, {
+      "text": "44402"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I found my number it's "
+    }, {
+      "text": "4402"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "2222"
+    }, {
+      "text": " is my number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "It looks like my order number is "
+    }, {
+      "text": "2222"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "0002392"
+    }, {
+      "text": " is my number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My number is "
+    }, {
+      "text": "000349"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "This looks like the number "
+    }, {
+      "text": "02302"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Finally found the number it's "
+    }, {
+      "text": "2392"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I think I found it "
+    }, {
+      "text": "30520"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Does "
+    }, {
+      "text": "3929"
+    }, {
+      "text": " work"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Does "
+    }, {
+      "text": "33420"
+    }, {
+      "text": " look like a valid order number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Is this the number "
+    }, {
+      "text": "2303"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I think it's "
+    }, {
+      "text": "90233"
+    }, {
+      "text": " but I'm not sure"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "It's "
+    }, {
+      "text": "39454"
+    }, {
+      "text": " thank you very much"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "3589"
+    }, {
+      "text": " is my order number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I have found my order number it's "
+    }, {
+      "text": "12356"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Here it is I found it it's "
+    }, {
+      "text": "3354776"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My order number was "
+    }, {
+      "text": "6879764"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Reading it now "
+    }, {
+      "text": "33879"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "There's the order number "
+    }, {
+      "text": "11123"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "33468"
+    }, {
+      "text": " that's my order number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "9976"
+    }, {
+      "text": " is my order number"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I'm reading here that it's "
+    }, {
+      "text": "3487"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I think it's "
+    }, {
+      "text": "223334"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Found the number "
+    }, {
+      "text": "44777"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Here's the order number "
+    }, {
+      "text": "33344"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Here it is order number "
+    }, {
+      "text": "11133"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The order number is "
+    }, {
+      "text": "112348"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I have found my number at last it is "
+    }, {
+      "text": "11122"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "1236"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I found my number it's "
+    }, {
+      "text": "2444"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Finally got it the number is "
+    }, {
+      "text": "38385"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Here it is "
+    }, {
+      "text": "34839"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Got it "
+    }, {
+      "text": "38345"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Found it the number is "
+    }, {
+      "text": "12354"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "The number is "
+    }, {
+      "text": "09257"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "23789"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "Here is my order number "
+    }, {
+      "text": "89456"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My order number is "
+    }, {
+      "text": "52867"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

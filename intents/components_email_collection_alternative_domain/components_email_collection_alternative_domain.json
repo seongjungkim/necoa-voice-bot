@@ -1,0 +1,10 @@
+{
+  "name": "b38d9ff6-2657-4706-831d-c6151e3dcd33",
+  "displayName": "components_email_collection_alternative_domain",
+  "parameters": [ {
+    "id": "alternative_domain",
+    "entityType": "@components_email_collection_domain"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 5
+}

@@ -1,0 +1,50 @@
+{
+  "name": "9990cf5c-9870-4103-a3b4-11f3f2fa9bf9",
+  "displayName": "Agent Connection",
+  "transitionRoutes": [ {
+    "condition": "$session.params.noConfirmMessage != true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "confirm message",
+    "name": "e95b88a8-0970-47a6-9f3f-9956944a3a7e"
+  }, {
+    "condition": "$session.params.noConfirmMessage = true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e confirm agent connect",
+    "name": "9dd51fa0-85ea-46c9-89d1-af1078914916"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "no-match"
+    },
+    "name": "1b0c7f92-d42f-477f-ace0-e78d010517d9"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "no-input"
+    },
+    "name": "963d4c9d-b949-4b8e-8eb2-22ce62056733"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_ADVANCED",
+    "classificationThreshold": 0.30000001
+  }
+}

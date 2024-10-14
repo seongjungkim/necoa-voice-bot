@@ -1,0 +1,27 @@
+{
+  "trainingPhrases": [ {
+    "parts": [ {
+      "text": "Can I provide my new credit card information over the phone to make a payment for my lease bills?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "I received a notification that my credit card on file has expired. Can you guide me through the process of updating my payment details to avoid any disruption in my lease payments?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "My credit card has expired, and I need to make a payment for my leased items. What steps should I take to update my payment information?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  }, {
+    "parts": [ {
+      "text": "How do I make payments for my leased items?"
+    } ],
+    "repeatCount": 1,
+    "languageCode": "en"
+  } ]
+}

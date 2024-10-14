@@ -1,0 +1,18 @@
+{
+  "name": "c09b9197-5381-4f30-97f9-b6b8b580aad3",
+  "displayName": "Parameter Cleanup",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "End Flow",
+    "name": "3c224091-e2b8-4e56-960a-84641ceae527"
+  } ]
+}

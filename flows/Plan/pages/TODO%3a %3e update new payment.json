@@ -1,0 +1,44 @@
+{
+  "name": "3d65ddc2-80c4-4860-8470-f3a14eb7ed86",
+  "displayName": "TODO: \u003e update new payment",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "성공적으로 변경했습니다." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      } ]
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "b712425a-0c42-4b36-861a-0aac0d9973d1"
+  }, {
+    "condition": "false",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "실패했습니다. " ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      }, {
+        "parameter": "reset",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "79a29738-d619-4282-87fe-9c3ee29a4d73"
+  } ],
+  "description": "변경 완료 문구 변경"
+}

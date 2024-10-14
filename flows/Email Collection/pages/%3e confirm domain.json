@@ -1,0 +1,186 @@
+{
+  "name": "3eb5c11e-de57-4328-8171-ea654d665cac",
+  "displayName": "\u003e confirm domain",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "$flow.user_provided_domain_ssml. Did we spell your domain of email correctly?" ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.user_provided_domain_ssml",
+      "value": "\u003cprosody rate='slow'\u003e   \u003csay-as interpret-as='verbatim'\u003e     $sys.func.SUBSTITUTE(       $sys.func.SUBSTITUTE(         $sys.func.SUBSTITUTE(           $sys.func.SUBSTITUTE(             $flow.user_provided_domain,             \"_\", \"\u003c/say-as\u003e\u003csub alias='underscore'\u003e_\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003e\"           ),           \"-\", \"\u003c/say-as\u003e\u003csub alias='hyphen'\u003e-\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003e\"         ),         \"\\.\", \"\u003c/say-as\u003e\u003csub alias='dot'\u003e.\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003e\"       ),       \"\\+\", \"\u003c/say-as\u003e\u003csub alias='plus sign'\u003e+\u003c/sub\u003e\u003csay-as interpret-as='verbatim'\u003e\"     )   \u003c/say-as\u003e \u003c/prosody\u003e"
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "prebuilt_components_confirmation_yes",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_full_email",
+        "value": "$sys.func.LOWER($sys.func.CONCATENATE($flow.user_provided_local_part,\"@\",$flow.user_provided_domain))"
+      } ]
+    },
+    "targetPage": "end success",
+    "name": "4963f5a8-513d-4b7c-ad93-392aa88778c1"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.incorrect_domain_counter = 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, we've tried too many times and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "33a59c87-0ccc-4c46-931d-1ad01b4e623f"
+  }, {
+    "intent": "prebuilt_components_confirmation_no",
+    "condition": "$flow.incorrect_domain_counter \u003c 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_domain",
+        "value": null
+      }, {
+        "parameter": "$flow.incorrect_domain_counter",
+        "value": "$sys.func.ADD($flow.incorrect_domain_counter,1)"
+      } ]
+    },
+    "targetPage": "\u003e collect spelling domain",
+    "name": "c7149eba-2ea7-4e7d-bd5e-dee75ab24a5e"
+  }, {
+    "intent": "components_email_collection_confirmation_no",
+    "condition": "$flow.incorrect_domain_counter \u003c 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_domain",
+        "value": null
+      }, {
+        "parameter": "$flow.incorrect_domain_counter",
+        "value": "$sys.func.ADD($flow.incorrect_domain_counter,1)"
+      } ]
+    },
+    "targetPage": "\u003e collect spelling domain",
+    "name": "71a421cc-bb88-4349-86ff-b7bb1886f328"
+  }, {
+    "intent": "components_email_collection_confirmation_no",
+    "condition": "$flow.incorrect_domain_counter = 1",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.failure_msg",
+        "value": "Sorry, I've used too many tries and failed to collect your response."
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "da7c2f49-84ee-48b1-9763-14f3a769285a"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "c5a39564-384a-419e-94d1-848410df2bb1"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      }, {
+        "parameter": "$flow.last_prompt",
+        "value": "$flow.user_provided_domain_ssml. Did we spell your domain of email correctly?"
+      } ]
+    },
+    "name": "9cdd0689-b04a-4400-b9c9-ee581cbc442d"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "5535ee38-08d4-46e0-8850-f302ed754f93"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. $flow.user_provided_domain_ssml. Did we spell your domain correctly?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "321a6b8a-dc48-492c-96bc-6d270a11b2b3"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. $flow.user_provided_domain_ssml. Did we spell your domain of email correctly?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "fd06005a-3d83-4dae-96e5-14d441a2f480"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "6df622f5-f334-4e1a-adf2-29a7bf6c11fb"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren't able to hear you. $flow.user_provided_domain_ssml. Did we spell your domain correctly?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "9c2a4a24-4e6e-45a1-a67a-8a522c691622"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "0f599784-acd9-481c-be3c-66dc9f5192d9"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "67ba1042-8012-4472-af39-d9e94aa18fb3"
+  } ]
+}

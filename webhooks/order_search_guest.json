@@ -1,0 +1,23 @@
+{
+  "name": "43f9f739-2555-40ca-9e33-459dd7def62c",
+  "displayName": "order_search_guest",
+  "genericWebService": {
+    "uri": "https://fulfillment-dot-necoa-aicc-dev.uc.r.appspot.com/fulfillment/cx/webhook_flex/necoa/en_US/order_search",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"sessionId\": \"$session.params.sessionId\",\n  \"channelOrderId\": \"$flow.order_search_channel_order_id\",\n  \"email\": \"$flow.order_search_email\"\n}",
+    "parameterMapping": [ {
+      "key": "$flow.api_response",
+      "value": "$.data"
+    }, {
+      "key": "guest_order",
+      "value": "$.data.items[0]"
+    }, {
+      "key": "guest_order_items",
+      "value": "$.data.items[0].orderItems"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

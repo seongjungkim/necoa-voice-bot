@@ -1,0 +1,10 @@
+{
+  "name": "18446297-3f1b-4048-8dbf-53ab65d153f8",
+  "displayName": "contract.view_order_detail",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 21
+}

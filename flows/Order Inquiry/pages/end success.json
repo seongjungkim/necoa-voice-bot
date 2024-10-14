@@ -1,0 +1,24 @@
+{
+  "name": "b5ced9ed-d5e4-44a0-abbc-adf4c7936bb6",
+  "displayName": "end success",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "setParameterActions": [ {
+      "parameter": "has_order_data",
+      "value": true
+    } ]
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "has_order_data",
+        "value": true
+      } ]
+    },
+    "targetPage": "Parameter Cleanup",
+    "name": "8f284d3f-16c2-48cf-a2da-e6d833d10ac6"
+  } ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "61262596-1067-436f-b129-c8d736de2104",
+  "displayName": "common_code_DurationInMonths",
+  "genericWebService": {
+    "uri": "https://fulfillment-dot-necoa-aicc-dev.uc.r.appspot.com/fulfillment/cx/webhook_flex/necoa/en_US/common_code",
+    "webhookType": "FLEXIBLE",
+    "httpMethod": "POST",
+    "requestBody": "{\n  \"isAllNotation\": false,\n  \"commonCodeIds\": \"DurationInMonths\"\n}",
+    "parameterMapping": [ {
+      "key": "common_code_DurationInMonths",
+      "value": "$.data.commonCodes[0]"
+    } ]
+  },
+  "timeout": {
+    "seconds": 5
+  }
+}

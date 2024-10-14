@@ -1,0 +1,10 @@
+{
+  "name": "aee5e3b0-cfbc-4f6b-a6cf-12c4900dbcd1",
+  "displayName": "order_inquiry.other_product",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 15
+}

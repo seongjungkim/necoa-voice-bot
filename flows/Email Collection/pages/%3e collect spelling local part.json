@@ -1,0 +1,164 @@
+{
+  "name": "d316a7a8-3b3a-4e72-b8da-ab5828e94c0a",
+  "displayName": "\u003e collect spelling local part",
+  "form": {
+  
+  },
+  "entryFulfillment": {
+    "messages": [ {
+      "text": {
+        "text": [ "Please spell out your local part of email." ]
+      },
+      "languageCode": "en"
+    } ],
+    "setParameterActions": [ {
+      "parameter": "$flow.last_prompt",
+      "value": "Please spell out your local part of email."
+    }, {
+      "parameter": "$flow.waiting_room_counter",
+      "value": 0
+    } ]
+  },
+  "transitionRoutes": [ {
+    "intent": "components_email_collection_spell_out_local_part",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "$flow.user_provided_local_part",
+        "value": "$sys.func.SUBSTITUTE($session.params.spell_out_local_part, \"[^0-9a-zA-Z]\", \"\")"
+      }, {
+        "parameter": "spell_out_name",
+        "value": null
+      } ]
+    },
+    "name": "22a4ff3c-e9a6-4c4f-a7e1-22201a3282bb"
+  }, {
+    "intent": "prebuilt_components_escalate_human_agent",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "agent"
+      } ]
+    },
+    "targetPage": "end escalation",
+    "name": "e890ba1d-4370-47f4-9664-695b7bf43698"
+  }, {
+    "condition": "$flow.local_part_spell_out_counter = 2 AND $flow.user_provided_local_part = \"\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "end failure",
+    "name": "ab99666d-2a69-4af8-8cf4-c008a7377efb"
+  }, {
+    "condition": "$flow.user_provided_local_part = \"\" AND $flow.local_part_spell_out_counter \u003c 2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Please spell your local part of email." ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "$flow.local_part_spell_out_counter",
+        "value": "$sys.func.ADD($flow.local_part_spell_out_counter,1)"
+      } ]
+    },
+    "name": "cc2b9d62-edb2-4e5c-8ac0-885854c5b115"
+  }, {
+    "condition": "$session.params.from_waiting_room_reusable_flow = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$flow.last_prompt" ]
+        },
+        "languageCode": "en"
+      } ],
+      "setParameterActions": [ {
+        "parameter": "from_waiting_room_reusable_flow",
+        "value": null
+      } ]
+    },
+    "name": "615597d8-d35b-4545-9033-51677215f392"
+  }, {
+    "condition": "$session.params.waiting_room_event_handler = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "waiting_room_event_handler",
+        "value": null
+      } ]
+    },
+    "targetPage": "end failure",
+    "name": "78d10053-c855-4cde-9dda-28fec9e4f864"
+  }, {
+    "condition": "$flow.user_provided_local_part != null AND $flow.user_provided_local_part != \"\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "\u003e confirm local part",
+    "name": "461710f1-8367-4a81-9255-b87cddc23ed3"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we weren't able to hear you. Please spell your local part of email." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "17b18681-4abe-4bb7-bc22-9b6860a4ca97"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still cannot hear you. Try speaking louder or moving to a quieter area." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "d6b4031e-a0ca-4064-a779-1ca31215f660"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_input"
+      } ]
+    },
+    "name": "551ff0e1-4df6-4f65-9928-b9e45df5cc92"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry, we didn't get that. Please spell your local part of email." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "f6aa1669-5317-4bdd-8728-5ca57f9b9e62"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Hmm, we still weren't able to get that. Please spell your local part of email." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "b1f4b552-ba60-4a4a-8edb-5271d1ed2b25"
+  }, {
+    "targetPage": "end failure",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "transfer_reason",
+        "value": "max_no_match"
+      } ]
+    },
+    "name": "92b8fec3-a8ce-478e-878a-25fa97f875eb"
+  } ]
+}

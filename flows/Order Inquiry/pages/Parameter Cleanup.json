@@ -1,0 +1,21 @@
+{
+  "name": "06eaa2ec-5fa2-4039-8f9e-fb2e2409c2b7",
+  "displayName": "Parameter Cleanup",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "collect_channel_order_number",
+        "value": null
+      }, {
+        "parameter": "collect_email",
+        "value": null
+      } ]
+    },
+    "targetPage": "End Flow",
+    "name": "48035696-4043-4eec-a219-e837e5c288a3"
+  } ]
+}

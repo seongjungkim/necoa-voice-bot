@@ -1,0 +1,298 @@
+{
+  "name": "00000000-0000-0000-0000-000000000000",
+  "displayName": "Default Start Flow",
+  "description": "A start flow created along with the agent",
+  "transitionRoutes": [ {
+    "intent": "Default Welcome Intent",
+    "condition": "$session.params.hasVisited = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "set global variable",
+    "name": "b3abd1fe-dc32-40f2-ab5d-81eed867a796"
+  }, {
+    "intent": "small_talk.agent_hand_off",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Agent Connection",
+    "name": "43cb48d3-5885-4d24-b88d-d95cd1c8143e"
+  }, {
+    "intent": "small_talk.confirmation.no",
+    "condition": "$session.params.has_welcomed_user = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Glad I could help! Thank you for calling. Bye!", "In that case, thank you for calling. Goodbye!", "I hope you were satisfied with our service today. Thanks and goodbye!" ]
+        },
+        "languageCode": "en"
+      }, {
+        "liveAgentHandoff": {
+          "metadata": {
+            "end_type": "bye"
+          }
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "end"
+    },
+    "targetPage": "End Session",
+    "name": "1121e41e-1d97-4d99-b46a-e168759e0970"
+  }, {
+    "intent": "small_talk.confirmation.no_thats_all",
+    "condition": "$session.params.has_welcomed_user = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Glad I could help! Thank you for calling. Bye!", "In that case, thank you for calling. Goodbye!", "I hope you were satisfied with our service today. Thanks and goodbye!" ]
+        },
+        "languageCode": "en"
+      }, {
+        "liveAgentHandoff": {
+          "metadata": {
+            "end_type": "bye"
+          }
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "end"
+    },
+    "targetPage": "End Session",
+    "name": "bd5d9a05-0309-4c18-a8af-c3eaf91ca342"
+  }, {
+    "intent": "small_talk.wait",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sure, just let me know when you're ready.", "Okay, I can wait. Let me know when you're ready.", "No problem! Just speak up when you're ready." ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "f94eeb87-bf8b-42fe-94ef-24293ec90732"
+  }, {
+    "intent": "small_talk.ready",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Okay! How can I help you?", "Alright. What can I help you with today?", "Great! How can I assist you today?", "No problem. What do you need help with today?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "7b80e3ef-b25d-4ec7-9411-467b1415972b"
+  }, {
+    "intent": "small_talk.still_there",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I'm still here! How can I help you today?", "I'm here! What can I help you with today?", "Don't worry, I'm here. How can I assist you today?", "Don't worry, I'm still here. How can I help?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "3efea8b5-f5b9-459a-9d51-f3678f773bab"
+  }, {
+    "intent": "small_talk.confirmation.yes",
+    "condition": "$session.params.has_completed_one_operation = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "What else can I help you with?", "How else can I help?", "What else do you need today?" ]
+        },
+        "languageCode": "en"
+      } ]
+    },
+    "name": "da50a2b6-3de2-497e-9737-279cc6687a1a"
+  }, {
+    "intent": "Default Welcome Intent",
+    "condition": "$session.params.hasVisited = true",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "Welcome Message",
+    "name": "1cf17dae-32f8-4460-97ee-fcf07c85750c"
+  }, {
+    "condition": "$session.params.hasVisited = null",
+    "triggerFulfillment": {
+    
+    },
+    "targetPage": "set global variable",
+    "name": "9091df91-54eb-403c-82f8-f11a4cb6e545"
+  }, {
+    "condition": "true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "has_welcomed_user",
+        "value": true
+      } ]
+    },
+    "targetPage": "Main Menu",
+    "name": "fe4846ff-d5d6-4847-b6d4-690663b2f2d7"
+  } ],
+  "eventHandlers": [ {
+    "event": "sys.no-match-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "no-match",
+      "enableGenerativeFallback": true
+    },
+    "name": "b9919b50-5430-44c2-823c-3b1a67a7bd4a"
+  }, {
+    "event": "sys.no-input-default",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "I missed what you said. What was that?", "Sorry, could you say that again?", "Sorry, can you say that again?", "Can you say that again?", "Sorry, I didn't get that. Can you rephrase?", "Sorry, what was that?", "One more time?", "What was that?", "Say that one more time?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "no-input"
+    },
+    "name": "9e40ca28-4d54-4e0c-ae48-5efc32b90233"
+  }, {
+    "event": "sys.no-input-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry I could not hear you there. Can you repeat that?", "Sorry I am unable to hear you. Could you say that again please?", "I am having trouble hearing you. Can you repeat that please?", "I didn't get that. Can you repeat?", "I missed that, say that again?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "no-input"
+    },
+    "name": "5fb10739-7e56-4149-8bff-64a4c66fe1eb"
+  }, {
+    "event": "sys.no-match-1",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't get that. Can you say it again?", "Sorry, could you repeat that?", "I didn't understand that. Could you repeat it please?", "Sorry, I didn't get that. Can you rephrase?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "no-match"
+    },
+    "name": "1256a533-4a89-481c-b13a-bb29de20e63c"
+  }, {
+    "event": "sys.no-match-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't understand that. Could you repeat it please?", "Sorry can you repeat that again?", "I was not able to understand that. Can you say it again please?", "Can you please say that again?", "Sorry, I didn't get that. Can you rephrase?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "no-match"
+    },
+    "name": "aff87732-c849-4f4e-8478-c32e8ec64880"
+  }, {
+    "event": "sys.no-input-2",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "I didn't understand that. Could you repeat it please?", "Sorry can you repeat that again?", "I was not able to understand that. Can you say it again please?", "Can you please say that again?", "Sorry, I didn't get that. Can you rephrase?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "no-input"
+    },
+    "name": "c86b65ed-64c5-4994-850c-08e53a5208d3"
+  }, {
+    "targetFlow": "Agent Connection",
+    "event": "sys.no-input-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sorry I am having trouble hearing you. Let me transfer you to an agent for better service. ", "Sorry I didn't get that. Let me transfer you to an agent for better assistance.", "Sorry I was not able to hear you. Im going to transfer you to an agent for better service. " ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "no-input"
+    },
+    "name": "83e3a90a-157f-4642-afea-b2fe0d1d5848"
+  }, {
+    "targetFlow": "Agent Connection",
+    "event": "sys.no-match-3",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Looks like i'm having trouble understanding the request. Let me transfer you to an agent. ", "Sorry I am having trouble understanding, let me transfer you to an agent. ", "My apologies, doesn't look like I can help with that, let me transfer you to an agent." ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "no-match"
+    },
+    "name": "243c0706-e0a2-4453-b23d-ea95fd58279a"
+  } ],
+  "nluSettings": {
+    "modelType": "MODEL_TYPE_STANDARD",
+    "classificationThreshold": 0.69999999
+  },
+  "knowledgeConnectorSettings": {
+    "enabled": true,
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$request.generative.things-to-do" ]
+        },
+        "languageCode": "en"
+      }, {
+        "languageCode": "en",
+        "knowledgeInfoCard": {
+          "maximumSnippets": 1
+        }
+      } ],
+      "webhook": "projects/necoa-aicc-dev/locations/us-central1/agents/01b50b1b-27e0-4990-a49a-50ed4ab56bf9/webhooks/c8366c4d-ca38-4bc7-81ae-373a57ee8223",
+      "tag": "data store",
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      }, {
+        "parameter": "is_returning",
+        "value": true
+      } ],
+      "generators": [ {
+        "generator": "projects/necoa-aicc-dev/locations/us-central1/agents/01b50b1b-27e0-4990-a49a-50ed4ab56bf9/generators/ecd1dc01-24f2-439b-a93a-c9597ea68fba",
+        "inputParameters": [ {
+          "key": "request",
+          "value": "$request.knowledge.answers[0]"
+        } ],
+        "outputParameter": "$request.generative.things-to-do"
+      } ]
+    },
+    "dataStoreConnections": [ {
+      "dataStoreType": "UNSTRUCTURED",
+      "dataStore": "projects/164191557128/locations/us/collections/default_collection/dataStores/miss-chatbot-pdf-meta-us_1717463222381",
+      "languageCode": "en",
+      "documentProcessingMode": "DOCUMENTS",
+      "aclConfig": {
+      
+      }
+    }, {
+      "dataStoreType": "STRUCTURED",
+      "dataStore": "projects/164191557128/locations/us/collections/default_collection/dataStores/miss-chatbot-csv-us_1717463165571",
+      "languageCode": "en",
+      "documentProcessingMode": "DOCUMENTS",
+      "aclConfig": {
+      
+      }
+    } ]
+  },
+  "agentTransitionRouteGroups": [ "Account", "Guide", "Plan", "Tech", "Claim", "Filter", "Customer Service", "Water Purifier", "Contract" ]
+}

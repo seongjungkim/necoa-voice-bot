@@ -1,0 +1,10 @@
+{
+  "name": "423aee9d-031c-4ed5-8f4e-f852ca098e85",
+  "displayName": "components_email_collection_special_characters_decider",
+  "parameters": [ {
+    "id": "spelling_separator",
+    "entityType": "@components_email_collection_seperator"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 10
+}

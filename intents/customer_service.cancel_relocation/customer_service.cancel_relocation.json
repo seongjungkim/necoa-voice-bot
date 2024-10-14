@@ -1,0 +1,13 @@
+{
+  "name": "4657fad6-4174-42aa-82f0-bb0f437c4b38",
+  "displayName": "customer_service.cancel_relocation",
+  "parameters": [ {
+    "id": "common_first_name",
+    "entityType": "@common_first_name"
+  }, {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 2
+}

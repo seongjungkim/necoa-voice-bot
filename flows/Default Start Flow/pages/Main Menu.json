@@ -1,0 +1,144 @@
+{
+  "name": "ac160358-53bc-47c3-b15e-99b47f35677c",
+  "displayName": "Main Menu",
+  "form": {
+  
+  },
+  "transitionRoutes": [ {
+    "condition": "$session.params.operation = \"Update Account Address\" OR $session.params.operation = \"Update Account Email\" OR $session.params.operation = \"Update Account Phone\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Account",
+    "name": "42e1f9d3-0742-4457-b215-95605bab63d6"
+  }, {
+    "condition": "$session.params.operation = \"Check Order Ship Status\" OR $session.params.operation = \"Change Order\" OR $session.params.operation = \"Service Area\" OR $session.params.operation = \"Rental Overdue\" OR $session.params.operation = \"Buy Product\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Plan",
+    "name": "a6cdb98a-3fef-4c6f-86ee-f80b8c45de6d"
+  }, {
+    "condition": "$session.params.operation = \"Add After Service\" OR $session.params.operation = \"Add Reinsatll\" OR $session.params.operation = \"Add Install\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Customer Service",
+    "name": "cba13ed9-ee5a-4ba1-976a-34b31bf3a904"
+  }, {
+    "condition": "$session.params.operation = \"Check Delivery Address\" OR $session.params.operation = \"Check Delivery Status\"",
+    "triggerFulfillment": {
+    
+    },
+    "targetFlow": "Filter",
+    "name": "d49bf03c-5e3b-4df4-a847-6111ff570f86"
+  }, {
+    "condition": "$session.params.operation = \"Lease Agreement Access\" OR $session.params.operation = \"View Payment\" OR $session.params.operation = \"View Contract\" OR $session.params.operation = \"View Order Detail\"",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": false
+      }, {
+        "parameter": "is_returning",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Contract",
+    "name": "476a955d-456c-4c11-803f-cf290515df56"
+  }, {
+    "condition": "$session.params.is_returning = true AND $session.params.operation_complete = true",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Is there anything else you need help with?", "Anything else for you today?", "Can I help you with anything else?", "What else can I help you with?" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "Chatbot Fulfillment",
+      "tag": "anything else",
+      "setParameterActions": [ {
+        "parameter": "is_returning",
+        "value": false
+      }, {
+        "parameter": "operation_complete",
+        "value": false
+      }, {
+        "parameter": "operation",
+        "value": null
+      }, {
+        "parameter": "has_completed_one_operation",
+        "value": true
+      }, {
+        "parameter": "cnsl_type",
+        "value": ""
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "319eba2f-1544-4d97-b94d-29d5d7d9c8fb"
+  }, {
+    "condition": "$session.params.operation_complete = false AND $session.params.is_returning = true",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "is_returning",
+        "value": false
+      }, {
+        "parameter": "operation_complete",
+        "value": false
+      }, {
+        "parameter": "operation",
+        "value": null
+      }, {
+        "parameter": "cnsl_type",
+        "value": ""
+      } ]
+    },
+    "targetPage": "Current Page",
+    "name": "20d48415-4190-4e67-b8d4-cfd1826bf823"
+  } ],
+  "knowledgeConnectorSettings": {
+    "enabled": true,
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "$request.generative.things-to-do" ]
+        },
+        "languageCode": "en"
+      } ],
+      "webhook": "projects/necoa-aicc-dev/locations/us-central1/agents/01b50b1b-27e0-4990-a49a-50ed4ab56bf9/webhooks/c8366c4d-ca38-4bc7-81ae-373a57ee8223",
+      "tag": "data store",
+      "setParameterActions": [ {
+        "parameter": "operation_complete",
+        "value": true
+      }, {
+        "parameter": "is_returning",
+        "value": true
+      } ],
+      "generators": [ {
+        "generator": "projects/necoa-aicc-dev/locations/us-central1/agents/01b50b1b-27e0-4990-a49a-50ed4ab56bf9/generators/ecd1dc01-24f2-439b-a93a-c9597ea68fba",
+        "inputParameters": [ {
+          "key": "request",
+          "value": "$request.knowledge.answers[0]"
+        } ],
+        "outputParameter": "$request.generative.things-to-do"
+      } ]
+    },
+    "dataStoreConnections": [ {
+      "dataStoreType": "UNSTRUCTURED",
+      "dataStore": "projects/164191557128/locations/us/collections/default_collection/dataStores/miss-chatbot-pdf-meta-us_1717463222381",
+      "languageCode": "en",
+      "documentProcessingMode": "DOCUMENTS",
+      "aclConfig": {
+      
+      }
+    }, {
+      "dataStoreType": "STRUCTURED",
+      "dataStore": "projects/164191557128/locations/us/collections/default_collection/dataStores/miss-chatbot-csv-us_1717463165571",
+      "languageCode": "en",
+      "documentProcessingMode": "DOCUMENTS",
+      "aclConfig": {
+      
+      }
+    } ]
+  },
+  "agentTransitionRouteGroups": [ "Account", "Claim", "Customer Service", "Filter", "Guide", "Plan", "Tech", "Water Purifier" ]
+}

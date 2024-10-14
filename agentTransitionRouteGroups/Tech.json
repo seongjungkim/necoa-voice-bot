@@ -1,0 +1,45 @@
+{
+  "name": "5582637e-0014-440b-99ba-3e6551e5d52d",
+  "displayName": "Tech",
+  "transitionRoutes": [ {
+    "intent": "tech.wifi_pairing_error",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "9070d577-23a2-43a9-b814-2599bf76f28a"
+  }, {
+    "intent": "tech.isp_router_change_issue",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "48b30dd8-361a-46ff-a42f-4e2ab6e2007e"
+  }, {
+    "intent": "tech.app_accessibility_issue",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "98eb947a-fe83-4d6f-aa17-0db5ada18ea4"
+  }, {
+    "intent": "tech.app_error",
+    "triggerFulfillment": {
+      "setParameterActions": [ {
+        "parameter": "confirmAgentConnect",
+        "value": true
+      } ]
+    },
+    "targetFlow": "Agent Connection",
+    "name": "589ca8f3-e498-489b-9802-1a13b57195ea"
+  } ]
+}
