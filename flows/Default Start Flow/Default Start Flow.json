@@ -285,7 +285,7 @@
       
       }
     }, {
-      "dataStoreType": "STRUCTURED",
+      "dataStoreType": "FAQ",
       "dataStore": "projects/164191557128/locations/us/collections/default_collection/dataStores/miss-chatbot-csv-us_1717463165571",
       "languageCode": "en",
       "documentProcessingMode": "DOCUMENTS",

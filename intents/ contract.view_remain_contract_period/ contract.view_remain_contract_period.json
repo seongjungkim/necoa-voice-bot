@@ -1,0 +1,10 @@
+{
+  "name": "d07a615c-fe25-4f6c-9b79-e0ee2bc86dc2",
+  "displayName": " contract.view_remain_contract_period",
+  "parameters": [ {
+    "id": "service_product",
+    "entityType": "@service_product"
+  } ],
+  "priority": 500000,
+  "numTrainingPhrases": 3
+}

@@ -67,5 +67,19 @@
       } ]
     },
     "name": "4dfd9f36-8f52-4aa1-94a4-69ad42030669"
+  }, {
+    "intent": " contract.view_remain_contract_period",
+    "triggerFulfillment": {
+      "messages": [ {
+        "text": {
+          "text": [ "Sample Message: We will provide policy information regarding the rental period." ]
+        },
+        "languageCode": "en"
+      } ],
+      "nextActionOverride": {
+      
+      }
+    },
+    "name": "ef65dfda-5b30-4fcb-a06a-ffaf3e5596ad"
   } ]
 }
