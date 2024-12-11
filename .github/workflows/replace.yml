@@ -51,3 +51,6 @@ jobs:
           files: 'README.md'
           search-text: '{0}'
           replacement-text: '42'
+
+      - name: Sync
+        uses: stefanzweifel/git-auto-commit-action@v4
