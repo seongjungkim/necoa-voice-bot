@@ -49,7 +49,23 @@ jobs:
 
       - name: Download a file from GCS
         run: |
-          gsutil cp gs://${{ env.BUCKET_NAME }}/test.txt ./downloads/
+          gsutil cp gs://${{ env.BUCKET_NAME }}/test.json ./downloads/
+
+      # https://stackoverflow.com/questions/61919141/read-json-file-in-github-actions
+      - name: Read JSON
+        uses: actions/github-script@v6
+        id: check-env
+        with:
+          result-encoding: string
+          script: |
+            try {
+              const fs = require('fs')
+              const jsonString = fs.readFileSync('./downloads/test.json')
+              var apps = JSON.parse(jsonString)
+            } catch(err) {
+              core.error("Error while reading or parsing the JSON")
+              core.setFailed(err)
+            }
 
       #
       - name: Replace
