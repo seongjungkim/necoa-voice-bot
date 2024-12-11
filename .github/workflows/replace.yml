@@ -14,8 +14,8 @@ on:
   workflow_dispatch:
 
 env:
-  PROJECT_ID: "flights-429420"
-  BUCKET_NAME: "flights-cicd-bucket"
+  PROJECT_ID: "tpcg-datacollector"
+  BUCKET_NAME: "rubicon-data"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -49,7 +49,7 @@ jobs:
 
       - name: Download a file from GCS
         run: |
-          gsutil cp gs://${{ env.BUCKET_NAME }}/test.json ./downloads/
+          gsutil cp gs://${{ env.BUCKET_NAME }}/github/test.json ./downloads/
 
       # https://stackoverflow.com/questions/61919141/read-json-file-in-github-actions
       - name: Read JSON
