@@ -22,6 +22,13 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      #
+      - name: Replace
+        uses: rheuvel89/replace-action@v1
+        with: 
+          files: 'webhooks/test.txt'
+          replacements: 'hello=hi,world=good'
+
       # Replace all the occurrences of 'hello' with 'world' in all the txt files,
       # excluding the node_modules folder
       - name: Replace multiple files
