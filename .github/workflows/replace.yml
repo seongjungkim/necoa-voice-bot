@@ -43,7 +43,7 @@ jobs:
   
       - name: Init Credentials
         run: |
-          gcloud auth activate-service-account --key-file=${{ env.GOOGLE_APPLICATION_CREDENTIALS }}
+          gcloud auth login --cred-file=${{ env.GOOGLE_APPLICATION_CREDENTIALS }}
       
       - name: Create GCS bucket if not exists
         run: |
