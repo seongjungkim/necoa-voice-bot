@@ -12,6 +12,13 @@ on:
 
   workflow_dispatch:
 
+env:
+  PG_HOST: "34.121.185.166"
+  PG_PORT: "5432"
+  PG_USER: "tpcg"
+  PG_PWD: "root"
+  PG_DB: "news-tmp"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,9 +34,9 @@ jobs:
         with:
           query: |
             SELECT * FROM tb_newscontent WHERE cast(writedate as date) = '2024-03-12' AND process_status=0 AND (title_eng is null or title_kor is null) LIMIT 5
-          host: 34.121.185.166
-          port: 5432
-          username: tpcg
-          password: root
-          db: news-tmp
+          host: ${{ env.PG_HOST }}
+          port: ${{ env.PG_PORT }}
+          username: ${{ env.PG_USER }}
+          password: ${{ env.PG_PWD }}
+          db: ${{ env.PG_DB }}
           ssl: 'false'
