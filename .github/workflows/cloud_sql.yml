@@ -1,0 +1,48 @@
+#
+# https://github.com/mattes/gce-cloudsql-proxy-action
+# https://github.com/marketplace/actions/google-cloud-sql-proxy-action
+#
+# github actions - run sql script in postgres service
+# https://stackoverflow.com/questions/63168549/github-actions-run-sql-script-in-postgres-service
+
+name: Cloud SQL Process
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+# cloud-sql-proxy tpcg-datacollector:us-central1:posco-news-tmp --credentials-file tpcg-datacollector.json
+# psql "host=10.96.144.9 sslmode=disable dbname=news-tmp user=tpcg"
+# psql "host=127.0.0.1 sslmode=disable dbname=news-tmp user=tpcg"
+# psql "host=34.121.185.166 port=5432 sslmode=disable dbname=news-tmp user=tpcg"
+env:
+  PG_HOST: "34.121.185.166"
+  PG_PORT: "5432"
+  PG_USER: "tpcg"
+  PG_PWD: "root"
+  PG_DB: "news-tmp"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: tpcg-datacollector
+          service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          export_default_credentials: true
+      
+      - name: Execute SQL query
+        run: |
+          gcloud sql connect tpcg-datacollector:us-central1:posco-news-tmp  --user=tpcg --quiet
+          gcloud sql query "SELECT * FROM tb_newscontent WHERE cast(writedate as date) = '2024-03-12' AND process_status=0 AND (title_eng is null or title_kor is null) LIMIT 5"
+    
