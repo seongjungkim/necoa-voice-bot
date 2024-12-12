@@ -31,6 +31,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    # 0.
+    - name: Authenticate with GCP using Service Account
+      uses: 'google-github-actions/auth@v2'
+      with:
+        project_id: ${{ env.GCP_PROJECT_ID }}
+        credentials_json: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+  
     # 1. Google Cloud SDK 설치 및 인증
     - name: Set up Google Cloud SDK
       uses: google-github-actions/setup-gcloud@v2
