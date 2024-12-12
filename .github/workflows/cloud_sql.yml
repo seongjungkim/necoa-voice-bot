@@ -46,7 +46,7 @@ jobs:
 
       - name: Authenticate with gcloud
         run: |
-          gcloud auth activate-service-account --key-file="{{ env.GOOGLE_APPLICATION_CREDENTIALS }}"
+          gcloud auth activate-service-account --key-file={{ env.GOOGLE_APPLICATION_CREDENTIALS }}
 
       # 2. PostgreSQL 클라이언트 설치
       - name: Install PostgreSQL Client
