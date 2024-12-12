@@ -94,12 +94,15 @@ jobs:
           search-text: '{0}'
           replacement-text: '42'
 
-      - name: Push
+      - name: Git Status
+        run: |
+          git status
+
+      - name: Push files
         #uses: stefanzweifel/git-auto-commit-action@v4
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git status
           git rm --cached gha-creds-*.json
           git add .
           git commit -m "generated"
