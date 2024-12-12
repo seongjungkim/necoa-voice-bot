@@ -2,7 +2,7 @@
 # setup-gcloud GitHub Action
 # https://github.com/google-github-actions/setup-gcloud
 
-name: Modified Files And Push
+name: Modify files and Push
 
 # Controls when the workflow will run
 on:
