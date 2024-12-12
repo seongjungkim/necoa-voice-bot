@@ -1,6 +1,9 @@
 #
 # https://github.com/mattes/gce-cloudsql-proxy-action
 # https://github.com/marketplace/actions/google-cloud-sql-proxy-action
+#
+# github actions - run sql script in postgres service
+# https://stackoverflow.com/questions/63168549/github-actions-run-sql-script-in-postgres-service
 
 name: Database Process
 
@@ -12,6 +15,10 @@ on:
 
   workflow_dispatch:
 
+# cloud-sql-proxy tpcg-datacollector:us-central1:posco-news-tmp --credentials-file tpcg-datacollector.json
+# psql "host=10.96.144.9 sslmode=disable dbname=news-tmp user=tpcg"
+# psql "host=127.0.0.1 sslmode=disable dbname=news-tmp user=tpcg"
+# psql "host=34.121.185.166 port=5432 sslmode=disable dbname=news-tmp user=tpcg"
 env:
   PG_HOST: "34.121.185.166"
   PG_PORT: "5432"
