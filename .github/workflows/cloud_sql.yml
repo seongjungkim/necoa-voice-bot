@@ -40,8 +40,8 @@ jobs:
           version: '>= 363.0.0'
           project_id: tpcg-datacollector
           credentials_json: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-          #service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-          #export_default_credentials: true
+          service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          export_default_credentials: true
 
       - name: Set up Cloud SDK
         uses: 'google-github-actions/setup-gcloud@v2.0.0'
@@ -63,7 +63,7 @@ jobs:
           DB_PASSWORD: ${{ env.PG_PWD }}
           DB_NAME: ${{ env.PG_DB }}
         run: |
-          PGPASSWORD="$DB_PASSWORD" psql -h $DB_HOST -U $DB_USER -d $DB_NAME -c "SELECT * FROM tb_newscontent WHERE cast(writedate as date) = '2024-03-12' AND process_status=0 AND (title_eng is null or title_kor is null) LIMIT 5;"
-          #gcloud sql connect tpcg-datacollector:us-central1:posco-news-tmp  --user=tpcg --quiet
-          #gcloud sql query "SELECT * FROM tb_newscontent WHERE cast(writedate as date) = '2024-03-12' AND process_status=0 AND (title_eng is null or title_kor is null) LIMIT 5"
+          #PGPASSWORD="$DB_PASSWORD" psql -h $DB_HOST -U $DB_USER -d $DB_NAME -c "SELECT * FROM tb_newscontent WHERE cast(writedate as date) = '2024-03-12' AND process_status=0 AND (title_eng is null or title_kor is null) LIMIT 5;"
+          gcloud sql connect tpcg-datacollector:us-central1:posco-news-tmp  --user=tpcg --quiet
+          gcloud sql query "SELECT * FROM tb_newscontent WHERE cast(writedate as date) = '2024-03-12' AND process_status=0 AND (title_eng is null or title_kor is null) LIMIT 5"
     
