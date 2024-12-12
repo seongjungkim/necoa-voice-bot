@@ -1,4 +1,6 @@
 # This is a basic workflow to help you get started with Actions
+# setup-gcloud GitHub Action
+# https://github.com/google-github-actions/setup-gcloud
 
 name: CI
 
@@ -42,20 +44,13 @@ jobs:
       - name: Use gcloud CLI
         run: 'gcloud info'
   
-      - name: Auth List
-        run: 'gcloud auth activate-service-account --key-file=${{ env.GOOGLE_APPLICATION_CREDENTIALS }}'
-        #run: 'gcloud auth list --filter=status:ACTIVE --format="value(account)"'
-        #921864948654-compute@developer.gserviceaccount.com
-      
-      - name: Create GCS bucket if not exists
-        run: |
-          if ! gcloud storage ls gs://${{ env.BUCKET_NAME }}/; then
-            gcloud storage buckets create --location=asia-northeast3 gs://${{ env.BUCKET_NAME }}/
-          fi
-
-      - name: Download a file from GCS
-        run: |
-          gcloud storage cp gs://${{ env.BUCKET_NAME }}/github/test.json ./downloads/
+      - name: Download JSON file from GCS
+        uses: 'braineanear/gcp-storage-download@main'
+        env:
+          GCP_SERVICE_ACCOUNT_KEY_FILE: ${{ secrets.GOOGLE_CREDENTIALS }}
+          GCP_STORAGE_BUCKET: ${{ env.BUCKET_NAME }}
+          SOURCE_DIR: "/github/test.json"
+          DEST_DIR: "./downloads/"
 
       # https://stackoverflow.com/questions/61919141/read-json-file-in-github-actions
       - name: Read JSON
