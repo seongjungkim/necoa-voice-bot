@@ -1,3 +1,4 @@
+# Query Google Cloud SQL (PostgreSQL), created by Gemini
 #
 # https://github.com/mattes/gce-cloudsql-proxy-action
 # https://github.com/marketplace/actions/google-cloud-sql-proxy-action
@@ -5,7 +6,7 @@
 # github actions - run sql script in postgres service
 # https://stackoverflow.com/questions/63168549/github-actions-run-sql-script-in-postgres-service
 
-name: Cloud SQL Process
+name: Google Cloud SQL by Gemini
 
 on:
   push:
@@ -20,6 +21,7 @@ on:
 # psql "host=127.0.0.1 sslmode=disable dbname=news-tmp user=tpcg"
 # psql "host=34.121.185.166 port=5432 sslmode=disable dbname=news-tmp user=tpcg"
 env:
+  PG_INSTANCE: "tpcg-datacollector:us-central1:posco-news-tmp"
   PG_HOST: "34.121.185.166"
   PG_PORT: "5432"
   PG_USER: "tpcg"
@@ -43,22 +45,13 @@ jobs:
 
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2.0.0
-
-      - name: Authenticate with gcloud
-        run: |
-          gcloud auth activate-service-account --key-file=${{ env.GOOGLE_APPLICATION_CREDENTIALS }}
+        with:
+          project_id: tpcg-datacollector
+          service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          export_default_credentials: true
 
       # 2. PostgreSQL 클라이언트 설치
-      - name: Install PostgreSQL Client
-        run: sudo apt-get install -y postgresql-client
-      
-      - name: Execute SQL query
-        env:
-          DB_HOST: ${{ env.PG_HOST }}
-          DB_USER: ${{ env.PG_USER }}
-          DB_PASSWORD: ${{ env.PG_PWD }}
-          DB_NAME: ${{ env.PG_DB }}
-        run: |
-          gcloud sql connect posco-news-tmp --project=tpcg-datacollector --user=tpcg --quiet
-          gcloud sql query "SELECT * FROM tb_newscontent WHERE cast(writedate as date) = '2024-03-12' AND process_status=0 AND (title_eng is null or title_kor is null) LIMIT 5"
-    
+      - name: Connect to Cloud SQL and run query
+        run:  |
+          gcloud sql connect ${{ env.PG_INSTANCE }} --user=${{ env.PG_DB }} --quiet
+          psql -c "SELECT * FROM tb_newscontent WHERE cast(writedate as date) = '2024-03-12' AND process_status=0 AND (title_eng is null or title_kor is null) LIMIT 5;" # 실행할 select 쿼리
