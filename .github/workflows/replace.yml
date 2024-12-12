@@ -43,7 +43,9 @@ jobs:
         run: 'gcloud info'
   
       - name: Auth List
-        run: 'gcloud auth list --filter=status:ACTIVE --format="value(account)"'
+        run: 'gcloud auth activate-service-account --key-file=${{ env.GOOGLE_APPLICATION_CREDENTIALS }}'
+        #run: 'gcloud auth list --filter=status:ACTIVE --format="value(account)"'
+        #921864948654-compute@developer.gserviceaccount.com
       
       - name: Create GCS bucket if not exists
         run: |
