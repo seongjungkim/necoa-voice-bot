@@ -1,4 +1,4 @@
-world, world!!
-world, github!!
-world, SeongJung!!
-world
+hello, world!!
+hello, github!!
+hi, SeongJung!!
+hello
