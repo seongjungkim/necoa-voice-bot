@@ -27,12 +27,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Getting latest Code
-        uses: actions/checkout@v2.3.2
+        uses: actions/checkout@v4
 
       # https://stackoverflow.com/questions/79173485/github-actions-cannot-upload-file-to-google-cloud-storage
       - name: Authenticate with GCP using Service Account
         uses: 'google-github-actions/auth@v2'
         with:
+          project_id: ${{ env.GCP_PROJECT_ID }}
           credentials_json: ${{ secrets.GOOGLE_CREDENTIALS }}
   
       - name: Setup GCP CLI
