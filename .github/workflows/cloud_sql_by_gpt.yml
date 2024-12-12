@@ -62,7 +62,8 @@ jobs:
       run: |
         curl -o cloud-sql-proxy https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.14.1/cloud-sql-proxy.linux.amd64
         chmod +x cloud-sql-proxy
-        ./cloud-sql-proxy -instances=${{ env.PG_INSTANCE }}=tcp:5432 &
+        #./cloud-sql-proxy -instances=${{ env.PG_INSTANCE }}=tcp:5432 &
+        ./cloud-sql-proxy --address 0.0.0.0 --port=5432 ${{ env.PG_INSTANCE }} &
         sleep 5
 
     # 2. PostgreSQL 클라이언트 설치
