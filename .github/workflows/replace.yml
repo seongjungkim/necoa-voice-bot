@@ -40,6 +40,8 @@ jobs:
         uses: 'google-github-actions/setup-gcloud@v2'
         with:
           project_id: ${{ env.GCP_PROJECT_ID }}
+  
+      - name: Init Credentials
         run: |
           gcloud auth activate-service-account --key-file=${{ env.GOOGLE_APPLICATION_CREDENTIALS }}
       
