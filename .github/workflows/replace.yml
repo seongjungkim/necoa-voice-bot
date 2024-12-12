@@ -43,7 +43,7 @@ jobs:
   
       - name: Init Credentials
         run: |
-          gcloud config set project ${{ env.GCP_PROJECT_ID }}
+          gcloud config set project ${{ env.PROJECT_ID }}
           gcloud auth login --cred-file=${{ env.GOOGLE_APPLICATION_CREDENTIALS }}
       
       - name: Create GCS bucket if not exists
