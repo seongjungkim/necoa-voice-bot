@@ -47,7 +47,7 @@ jobs:
       - name: Download JSON file from GCS
         uses: 'braineanear/gcp-storage-download@main'
         env:
-          GCP_SERVICE_ACCOUNT_KEY_FILE: ${{ secrets.GOOGLE_CREDENTIALS }}
+          GCP_SERVICE_ACCOUNT_KEY_FILE: ${{ env.GOOGLE_APPLICATION_CREDENTIALS }}
           GCP_STORAGE_BUCKET: ${{ env.BUCKET_NAME }}
           SOURCE_DIR: "/github/test.json"
           DEST_DIR: "./downloads/"
