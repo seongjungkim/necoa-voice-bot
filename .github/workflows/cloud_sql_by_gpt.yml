@@ -65,7 +65,8 @@ jobs:
     - name: Run SELECT query
       env:
         #DB_HOST: ${{ env.PG_HOST }}
-        DB_HOST: ${{ env.PG_LOCALHOST }}
+        #DB_HOST: ${{ env.PG_LOCALHOST }}
+        DB_HOST: 127.0.0.1
         DB_USER: ${{ env.PG_USER }}
         DB_PASSWORD: ${{ env.PG_PWD }}
         DB_NAME: ${{ env.PG_DB }}
