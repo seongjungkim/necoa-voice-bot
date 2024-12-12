@@ -5,6 +5,9 @@
 #
 # github actions - run sql script in postgres service
 # https://stackoverflow.com/questions/63168549/github-actions-run-sql-script-in-postgres-service
+#
+# ERROR: (gcloud.sql.connect) It seems your client does not have ipv6 connectivity and the database instance does not have an ipv4 address.
+# Please request an ipv4 address for this database instance.
 
 name: Google Cloud SQL by Gemini
 
