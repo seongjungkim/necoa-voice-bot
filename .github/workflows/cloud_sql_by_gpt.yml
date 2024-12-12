@@ -1,0 +1,58 @@
+#
+# https://github.com/mattes/gce-cloudsql-proxy-action
+# https://github.com/marketplace/actions/google-cloud-sql-proxy-action
+#
+# github actions - run sql script in postgres service
+# https://stackoverflow.com/questions/63168549/github-actions-run-sql-script-in-postgres-service
+
+name: Google Cloud SQL by ChatGPT
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+# cloud-sql-proxy tpcg-datacollector:us-central1:posco-news-tmp --credentials-file tpcg-datacollector.json
+# psql "host=10.96.144.9 sslmode=disable dbname=news-tmp user=tpcg"
+# psql "host=127.0.0.1 sslmode=disable dbname=news-tmp user=tpcg"
+# psql "host=34.121.185.166 port=5432 sslmode=disable dbname=news-tmp user=tpcg"
+env:
+  PG_HOST: "34.121.185.166"
+  PG_PORT: "5432"
+  PG_USER: "tpcg"
+  PG_PWD: "root"
+  PG_DB: "news-tmp"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Google Cloud SDK 설치 및 인증
+    - name: Set up Google Cloud SDK
+      uses: google-github-actions/setup-gcloud@v2
+      with:
+        version: '428.0.0'
+        service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+        
+    - name: Authenticate with gcloud
+      run: |
+        echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > "${HOME}/gcloud-service-key.json"
+        gcloud auth activate-service-account --key-file="${HOME}/gcloud-service-key.json"
+
+    # 2. PostgreSQL 클라이언트 설치
+    - name: Install PostgreSQL Client
+      run: sudo apt-get install -y postgresql-client
+
+    # 3. SELECT 쿼리 실행
+    - name: Run SELECT query
+      env:
+        DB_HOST: ${{ env.PG_HOST }}
+        DB_USER: ${{ env.PG_USER }}
+        DB_PASSWORD: ${{ env.PG_PWD }}
+        DB_NAME: ${{ env.PG_DB }}
+      run: |
+        PGPASSWORD="$DB_PASSWORD" psql -h $DB_HOST -U $DB_USER -d $DB_NAME -c "SELECT * FROM your_table LIMIT 10;"
