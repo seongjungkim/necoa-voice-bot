@@ -5,6 +5,9 @@
 #
 # github actions - run sql script in postgres service
 # https://stackoverflow.com/questions/63168549/github-actions-run-sql-script-in-postgres-service
+# This is the Cloud SQL Proxy v1. It is no longer receiving active feature development. 
+# For the latest features and improvements, migrate to the v2 version of the Cloud SQL Proxy. 
+# For details, see: https://github.com/GoogleCloudPlatform/cloud-sql-proxy/blob/main/migration-guide.md
 
 name: Google Cloud SQL by ChatGPT
 
@@ -52,7 +55,8 @@ jobs:
 
     - name: Start Cloud SQL Auth Proxy
       run: |
-        wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
+        #wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
+        curl -o cloud-sql-proxy https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.14.1/cloud-sql-proxy.linux.amd64
         chmod +x cloud_sql_proxy
         ./cloud_sql_proxy -instances=${{ env.PG_INSTANCE }}=tcp:5432 &
         sleep 5
