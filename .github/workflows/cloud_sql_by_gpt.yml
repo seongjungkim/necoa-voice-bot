@@ -12,6 +12,7 @@
 # Cloud SQL 인증 프록시 다운로드 및 설치
 # https://cloud.google.com/sql/docs/mysql/sql-proxy?hl=ko#install
 # wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
+# chmod +x cloud_sql_proxy
 
 name: Google Cloud SQL by ChatGPT
 
@@ -60,8 +61,8 @@ jobs:
     - name: Start Cloud SQL Auth Proxy
       run: |
         curl -o cloud-sql-proxy https://storage.googleapis.com/cloud-sql-connectors/cloud-sql-proxy/v2.14.1/cloud-sql-proxy.linux.amd64
-        chmod +x cloud_sql_proxy
-        ./cloud_sql_proxy -instances=${{ env.PG_INSTANCE }}=tcp:5432 &
+        chmod +x cloud-sql-proxy
+        ./cloud-sql-proxy -instances=${{ env.PG_INSTANCE }}=tcp:5432 &
         sleep 5
 
     # 2. PostgreSQL 클라이언트 설치
