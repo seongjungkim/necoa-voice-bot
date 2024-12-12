@@ -1,4 +1,4 @@
-# Query Google Cloud SQL (PostgreSQL), created by ChatGPT
+# Query Google Cloud SQL (PostgreSQL), base source created by ChatGPT
 # 
 # https://github.com/mattes/gce-cloudsql-proxy-action
 # https://github.com/marketplace/actions/google-cloud-sql-proxy-action
@@ -19,6 +19,7 @@ on:
 env:
   PG_INSTANCE: "tpcg-datacollector:us-central1:posco-news-tmp"
   PG_HOST: "34.121.185.166"
+  PG_LOCALHOST: "127.0.0.1"
   PG_PORT: "5432"
   PG_USER: "tpcg"
   PG_PWD: "root"
@@ -29,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 0.
+    # 0. Authentication
     - name: Authenticate with GCP using Service Account
       uses: 'google-github-actions/auth@v2'
       with:
@@ -64,7 +65,7 @@ jobs:
     - name: Run SELECT query
       env:
         #DB_HOST: ${{ env.PG_HOST }}
-        DB_HOST: 127.0.0.1
+        DB_HOST: ${{ env.PG_LOCALHOST }}
         DB_USER: ${{ env.PG_USER }}
         DB_PASSWORD: ${{ env.PG_PWD }}
         DB_NAME: ${{ env.PG_DB }}
