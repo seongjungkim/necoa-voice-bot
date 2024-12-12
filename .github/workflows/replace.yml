@@ -49,8 +49,8 @@ jobs:
         env:
           GCP_SERVICE_ACCOUNT_KEY_FILE: ${{ env.GOOGLE_APPLICATION_CREDENTIALS }}
           GCP_STORAGE_BUCKET: ${{ env.BUCKET_NAME }}
-          SOURCE_DIR: "/github/test.json"
-          DEST_DIR: "./downloads/"
+          SOURCE_DIR: "github/test.json"
+          DEST_DIR: "downloads/"
 
       # https://stackoverflow.com/questions/61919141/read-json-file-in-github-actions
       - name: Read JSON
