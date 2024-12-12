@@ -37,12 +37,28 @@ jobs:
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
         with:
+          version: '>= 363.0.0'
           project_id: tpcg-datacollector
           service_account_key: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           export_default_credentials: true
+
+      - name: Authenticate with gcloud
+        run: |
+          echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}" > "${HOME}/gcloud-service-key.json"
+          gcloud auth activate-service-account --key-file="${HOME}/gcloud-service-key.json"
+
+      # 2. PostgreSQL 클라이언트 설치
+      - name: Install PostgreSQL Client
+        run: sudo apt-get install -y postgresql-client
       
       - name: Execute SQL query
+        env:
+          DB_HOST: ${{ env.PG_HOST }}
+          DB_USER: ${{ env.PG_USER }}
+          DB_PASSWORD: ${{ env.PG_PWD }}
+          DB_NAME: ${{ env.PG_DB }}
         run: |
-          gcloud sql connect tpcg-datacollector:us-central1:posco-news-tmp  --user=tpcg --quiet
-          gcloud sql query "SELECT * FROM tb_newscontent WHERE cast(writedate as date) = '2024-03-12' AND process_status=0 AND (title_eng is null or title_kor is null) LIMIT 5"
+          PGPASSWORD="$DB_PASSWORD" psql -h $DB_HOST -U $DB_USER -d $DB_NAME -c "SELECT * FROM your_table LIMIT 10;"
+          #gcloud sql connect tpcg-datacollector:us-central1:posco-news-tmp  --user=tpcg --quiet
+          #gcloud sql query "SELECT * FROM tb_newscontent WHERE cast(writedate as date) = '2024-03-12' AND process_status=0 AND (title_eng is null or title_kor is null) LIMIT 5"
     
