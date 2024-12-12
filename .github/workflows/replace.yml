@@ -41,12 +41,6 @@ jobs:
   
       - name: Use gcloud CLI
         run: 'gcloud info'
-  
-      - name: Init Credentials
-        run: |
-          gcloud config set project ${{ env.PROJECT_ID }}
-          gcloud config set account sjkim@tpcg.co.kr
-          gcloud auth login --cred-file=${{ env.GOOGLE_APPLICATION_CREDENTIALS }}
       
       - name: Create GCS bucket if not exists
         run: |
