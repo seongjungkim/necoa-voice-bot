@@ -20,6 +20,7 @@ on:
 # psql "host=127.0.0.1 sslmode=disable dbname=news-tmp user=tpcg"
 # psql "host=34.121.185.166 port=5432 sslmode=disable dbname=news-tmp user=tpcg"
 env:
+  PG_INSTANCE: "tpcg-datacollector:us-central1:posco-news-tmp"
   PG_HOST: "34.121.185.166"
   PG_PORT: "5432"
   PG_USER: "tpcg"
@@ -51,6 +52,13 @@ jobs:
         #gcloud auth activate-service-account --key-file="${HOME}/gcloud-service-key.json"
         gcloud auth activate-service-account --key-file=${{ env.GOOGLE_APPLICATION_CREDENTIALS }}
 
+    - name: Start Cloud SQL Auth Proxy
+      run: |
+        wget https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64 -O cloud_sql_proxy
+        chmod +x cloud_sql_proxy
+        ./cloud_sql_proxy -instances=${{ env.PG_INSTANCE }}=tcp:5432 &
+        sleep 5
+
     # 2. PostgreSQL 클라이언트 설치
     - name: Install PostgreSQL Client
       run: sudo apt-get install -y postgresql-client
@@ -58,7 +66,8 @@ jobs:
     # 3. SELECT 쿼리 실행
     - name: Run SELECT query
       env:
-        DB_HOST: ${{ env.PG_HOST }}
+        #DB_HOST: ${{ env.PG_HOST }}
+        DB_HOST: 127.0.0.1
         DB_USER: ${{ env.PG_USER }}
         DB_PASSWORD: ${{ env.PG_PWD }}
         DB_NAME: ${{ env.PG_DB }}
