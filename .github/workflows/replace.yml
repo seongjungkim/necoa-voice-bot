@@ -40,8 +40,7 @@ jobs:
         uses: 'google-github-actions/setup-gcloud@v2'
         with:
           project_id: ${{ env.PROJECT_ID }}
-          workload_identity_provider: 'projects/921864948654/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
-          service_account: '921864948654-compute@developer.gserviceaccount.com'
+          install_components: 'gcloud'
   
       - name: Init Credentials
         run: |
