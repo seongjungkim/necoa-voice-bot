@@ -106,6 +106,7 @@ jobs:
           git config user.email github-actions@github.com
           #git rm --cached gha-creds-*.json
           git add .
-          git diff --stat
-          git commit -m "Modified all files"
-          git push
+          if ! git diff-files --quiet; then
+            git commit -m "Modified all files"
+            git push
+          fi
