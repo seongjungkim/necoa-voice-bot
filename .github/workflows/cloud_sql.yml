@@ -51,5 +51,5 @@ jobs:
       # 2. PostgreSQL 클라이언트 설치
       - name: Connect to Cloud SQL and run query
         run:  |
-          gcloud sql connect ${{ env.PG_INSTANCE }} ----project=${{ env.GCP_PROJECT_ID }} --user=${{ env.PG_DB }} --quiet
+          gcloud sql connect ${{ env.PG_INSTANCE }} --project=${{ env.GCP_PROJECT_ID }} --user=${{ env.PG_DB }} --quiet
           psql -c "SELECT * FROM tb_newscontent WHERE cast(writedate as date) = '2024-03-12' AND process_status=0 AND (title_eng is null or title_kor is null) LIMIT 5;" # 실행할 select 쿼리
