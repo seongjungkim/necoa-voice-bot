@@ -36,7 +36,7 @@ jobs:
         uses: 'google-github-actions/auth@v2'
         with:
           project_id: ${{ env.GCP_PROJECT_ID }}
-          credentials_json: ${{ secrets.GOOGLE_CREDENTIALS }}
+          credentials_json: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
   
       - name: Set up Cloud SDK
         uses: 'google-github-actions/setup-gcloud@v2.0.0'
@@ -44,28 +44,28 @@ jobs:
       - name: Use gcloud CLI
         run: 'gcloud info'
   
-      #- name: Download JSON file from GCS
-      #  uses: 'braineanear/gcp-storage-download@main'
-      #  env:
-      #    GCP_STORAGE_BUCKET: ${{ env.BUCKET_NAME }}
-      #    SOURCE_DIR: "downloads/test.json"
-      #    DEST_DIR: "github/test.json"
+      - name: Download JSON file from GCS
+        uses: 'braineanear/gcp-storage-download@main'
+        env:
+          GCP_STORAGE_BUCKET: ${{ env.BUCKET_NAME }}
+          SOURCE_DIR: "test.json"
+          DEST_DIR: "github/test.json"
 
       # https://stackoverflow.com/questions/61919141/read-json-file-in-github-actions
-      #- name: Read JSON
-      #  uses: actions/github-script@v6
-      #  id: check-env
-      #  with:
-      #    result-encoding: string
-      #    script: |
-      #      try {
-      #        const fs = require('fs')
-      #        const jsonString = fs.readFileSync('./downloads/test.json')
-      #        var apps = JSON.parse(jsonString)
-      #      } catch(err) {
-      #        core.error("Error while reading or parsing the JSON")
-      #        core.setFailed(err)
-      #      }
+      - name: Read JSON
+        uses: actions/github-script@v6
+        id: check-env
+        with:
+          result-encoding: string
+          script: |
+            try {
+              const fs = require('fs')
+              const jsonString = fs.readFileSync('./test.json')
+              var apps = JSON.parse(jsonString)
+            } catch(err) {
+              core.error("Error while reading or parsing the JSON")
+              core.setFailed(err)
+            }
 
       #
       - name: Replace
@@ -97,6 +97,7 @@ jobs:
       - name: Show Git Status
         run: |
           mv gha-creds-*.json ..
+          mv test.json ..
           git status
 
       - name: Push files to Github if changed
