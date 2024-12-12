@@ -63,4 +63,4 @@ jobs:
         DB_PASSWORD: ${{ env.PG_PWD }}
         DB_NAME: ${{ env.PG_DB }}
       run: |
-        PGPASSWORD="$DB_PASSWORD" psql -h $DB_HOST -U $DB_USER -d $DB_NAME -c "SELECT * FROM your_table LIMIT 10;"
+        PGPASSWORD="$DB_PASSWORD" psql -h $DB_HOST -U $DB_USER -d $DB_NAME -c "SELECT * FROM tb_newscontent WHERE cast(writedate as date) = '2024-03-12' AND process_status=0 AND (title_eng is null or title_kor is null) LIMIT 5;"
