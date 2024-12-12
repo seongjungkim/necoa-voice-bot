@@ -47,7 +47,7 @@ jobs:
           #if ! gsutil ls -b gs://${{ env.BUCKET_NAME }}/; then
           #  gsutil mb -l EU gs://${{ env.BUCKET_NAME }}/
           #fi
-          gcloud auth activate-service-account --key-file=$GOOGLA_APPLICATION_CREDENTIALS
+          gcloud auth activate-service-account --key-file=${{ env.GOOGLE_APPLICATION_CREDENTIALS }}
           if ! gcloud storage ls gs://${{ env.BUCKET_NAME }}/; then
             gcloud storage buckets create --location=asia-northeast3 gs://${{ env.BUCKET_NAME }}/
           fi
