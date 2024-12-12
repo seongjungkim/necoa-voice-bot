@@ -36,11 +36,11 @@ jobs:
           project_id: ${{ env.GCP_PROJECT_ID }}
           credentials_json: ${{ secrets.GOOGLE_CREDENTIALS }}
   
-      - name: Setup GCP CLI
+      - name: Set up Cloud SDK
         uses: 'google-github-actions/setup-gcloud@v2'
-        with:
-          project_id: ${{ env.PROJECT_ID }}
-          install_components: 'gcloud'
+  
+      - name: Use gcloud CLI
+        run: 'gcloud info'
   
       - name: Init Credentials
         run: |
