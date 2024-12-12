@@ -1,4 +1,6 @@
 #
+# https://github.com/mattes/gce-cloudsql-proxy-action
+# https://github.com/marketplace/actions/google-cloud-sql-proxy-action
 
 name: Database Process
 
@@ -20,3 +22,14 @@ jobs:
         with:
           creds: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
           instance: tpcg-datacollector:us-central1:posco-news-tmp
+      - name: SELECT FROM
+        uses: yakubique/query-postgresql@v1.2
+        with:
+          query: |
+            SELECT * FROM tb_newscontent WHERE cast(writedate as date) = '2024-03-12' AND process_status=0 AND (title_eng is null or title_kor is null) LIMIT 5
+          host: 34.121.185.166
+          port: 5432
+          username: tpcg
+          password: root
+          db: news-tmp
+          ssl: 'false'
