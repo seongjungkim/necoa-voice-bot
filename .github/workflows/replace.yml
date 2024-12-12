@@ -40,17 +40,21 @@ jobs:
         uses: 'google-github-actions/setup-gcloud@v2'
         with:
           project_id: ${{ env.GCP_PROJECT_ID }}
-          install_components: 'gsutil'
+          #install_components: 'gsutil'
       
       - name: Create GCS bucket if not exists
         run: |
-          if ! gsutil ls -b gs://${{ env.BUCKET_NAME }}/; then
-            gsutil mb -l EU gs://${{ env.BUCKET_NAME }}/
+          #if ! gsutil ls -b gs://${{ env.BUCKET_NAME }}/; then
+          #  gsutil mb -l EU gs://${{ env.BUCKET_NAME }}/
+          #fi
+          if ! gcloud storage ls gs://${{ env.BUCKET_NAME }}/; then
+            gcloud storage buckets create --location=asia-northeast3 gs://${{ env.BUCKET_NAME }}/
           fi
 
       - name: Download a file from GCS
         run: |
-          gsutil cp gs://${{ env.BUCKET_NAME }}/github/test.json ./downloads/
+          #gsutil cp gs://${{ env.BUCKET_NAME }}/github/test.json ./downloads/
+          gcloud storage cp gs://${{ env.BUCKET_NAME }}/github/test.json ./downloads/
 
       # https://stackoverflow.com/questions/61919141/read-json-file-in-github-actions
       - name: Read JSON
