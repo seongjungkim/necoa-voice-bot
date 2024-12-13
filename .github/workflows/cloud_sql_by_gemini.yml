@@ -23,7 +23,7 @@ env:
   GCP_PROJECT_ID: "tpcg-datacollector"
   #PG_INSTANCE: "tpcg-datacollector:us-central1:posco-news-tmp"
   PG_INSTANCE: "posco-news-tmp"
-  PG_HOST: "34.121.185.166"
+  PG_HOST: "34.171.40.55"
   PG_PORT: "5432"
   PG_USER: "tpcg"
   PG_PWD: "root"
