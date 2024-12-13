@@ -8,6 +8,10 @@
 #
 # ERROR: (gcloud.sql.connect) It seems your client does not have ipv6 connectivity and the database instance does not have an ipv4 address.
 # Please request an ipv4 address for this database instance.
+#
+# Connecting to database with SQL user [tpcg].Password: 
+# psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: No such file or directory
+#	Is the server running locally and accepting connections on that socket?
 
 name: Google Cloud SQL by Gemini
 
@@ -21,8 +25,8 @@ on:
 
 env:
   GCP_PROJECT_ID: "tpcg-datacollector"
-  #PG_INSTANCE: "tpcg-datacollector:us-central1:posco-news-tmp"
-  PG_INSTANCE: "posco-news-tmp"
+  PG_INSTANCE: "tpcg-datacollector:us-central1:posco-news-tmp"
+  #PG_INSTANCE: "posco-news-tmp"
   PG_HOST: "34.171.40.55"
   PG_PORT: "5432"
   PG_USER: "tpcg"
